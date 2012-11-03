@@ -1,0 +1,7 @@
+C:\Project\YourTravel\Db\DALProjects\YourTravel_DAL\bin\Debug\YourTravel_DAL.dll
+C:\Project\YourTravel\Db\DALProjects\YourTravel_DAL\bin\Debug\YourTravel_DAL.pdb
+C:\Project\YourTravel\Db\DALProjects\YourTravel_DAL\bin\Debug\MyGeneration.dOOdads.dll
+C:\Project\YourTravel\Db\DALProjects\YourTravel_DAL\bin\Debug\MyGeneration.dOOdads.pdb
+C:\Project\YourTravel\Db\DALProjects\YourTravel_DAL\obj\Debug\ResolveAssemblyReference.cache
+C:\Project\YourTravel\Db\DALProjects\YourTravel_DAL\obj\Debug\YourTravel_DAL.dll
+C:\Project\YourTravel\Db\DALProjects\YourTravel_DAL\obj\Debug\YourTravel_DAL.pdb

@@ -1,0 +1,25 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="DefaultMP.master.cs" Inherits="MasterPage" %>
+<%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>YourTravel.biz | Cheap Hotels, Discounts, Hotel Deals and Offers</title>
+ <link href="style.css" type="text/css" rel="stylesheet"/>
+    <link rel="icon" type="image/gif" href="Images/icon.gif"/>		
+    <meta name="title" content="YourTravel.biz | Cheap Hotels, Discounts, Hotel Deals and Offers" />
+    <meta name="description" content="Find cheap hotels and discounts when you book on YourTravel.biz. Compare to find the Best Price for hotel." xml:lang="en" />
+    <meta name="keywords" content="Your Travel, hotels, rooms, bookings, bookings, cheap, romantic hotels, offers, discount, deals, lastminute" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />	
+    <meta content="VIKKI Soft, office@vikkisoft.com" name="VIKKIsoft" />    
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body style="width:100%; height:100%">
+    <form id="form1" runat="server" style="width:100%; height:100%">
+        <telerik:RadScriptManager runat="Server" ID="RadScriptManager1" />
+        <asp:ContentPlaceHolder id="cphWithoutScroll" runat="server">        
+        </asp:ContentPlaceHolder>  
+    </form>
+</body>
+</html>
