@@ -16,7 +16,7 @@ public partial class SiteList : ListControlBase, Interfaces.IColouredGrid
 
 	protected override string GetEditableControlName()
 	{
-        return "RoomEdit";
+        return "SiteEdit";
 	}
 
 	protected override Type GetEditableEntityType()
@@ -34,10 +34,14 @@ public partial class SiteList : ListControlBase, Interfaces.IColouredGrid
 		base.InitGrid ();
 		this.editableGrid.GridMode = GridModes.Add | GridModes.Delete
 			| GridModes.Edit | GridModes.Refresh;				
-		editableGrid.Width = 800;
+		editableGrid.Width = 1200;
         SetColumnSettings(VikkiSoft_BLL.Site.ColumnNames.SiteID, false, VikkiSoft_BLL.Site.ColumnNames.SiteID,
 				0, HorizontalAlign.Center, "");
         SetColumnSettings(VikkiSoft_BLL.Site.ColumnNames.Name, true, "Назва", 0, HorizontalAlign.Center, "");
+        SetColumnSettings("SiteTypeName", true, "Тип сайту", 0, HorizontalAlign.Center, "");
+        SetColumnSettings(VikkiSoft_BLL.Site.ColumnNames.Active, true, "Активний", 0, HorizontalAlign.Center, "");
+        SetColumnSettings(VikkiSoft_BLL.Site.ColumnNames.Notes, true, "Примітки", 0, HorizontalAlign.Center, "");
+        SetColumnSettings(VikkiSoft_BLL.Site.ColumnNames.OrderIndex, true, "Порядок сортування", 50, HorizontalAlign.Center, "");
 	}
 
     protected override DataTable GetDataSource()

@@ -138,6 +138,14 @@ public class Utils
         }
     }
 
+    public static string GaleryTempImagePath
+    {
+        get
+        {
+            return System.Configuration.ConfigurationManager.AppSettings["GaleryTempImagePath"];
+        }
+    }
+
     public static void DeleteFile(string targetFolder, string fileName)
     {
         string filePath = Path.Combine(targetFolder, fileName);

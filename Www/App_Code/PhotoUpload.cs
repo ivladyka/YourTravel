@@ -193,7 +193,7 @@ public class PhotoUpload : ControlBase
     protected override void InitOnFirstLoading()
     {
         base.InitOnFirstLoading();
-        auFile.TemporaryFolder = Utils.GaleryImagePath + "/RadUploadTemp";
+        auFile.TemporaryFolder = Utils.GaleryTempImagePath;
         imgDelete.Attributes["onclick"] = "return VIKKI_DeletePhoto('" + imgPhoto.ClientID
             + "', '" + hdPhotoNameDeleted.ClientID + "', '" + imgDelete.ClientID + "');";
         imgPhoto.ImageUrl = Path.Combine(Utils.GaleryImagePath, "nophoto.jpg");

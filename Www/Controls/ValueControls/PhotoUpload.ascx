@@ -14,11 +14,11 @@
         </td>
     </tr>
 </table>
-<telerik:RadAsyncUpload runat="server" ID="auFile" AllowedFileExtensions="jpg" 
+<telerik:RadAsyncUpload runat="server" ID="auFile" AllowedFileExtensions="jpg,gif,png" 
     MaxFileInputsCount="1" onfileuploaded="auFile_FileUploaded">
     <Localization Remove="Видалити" Select="Вибрати" />
 </telerik:RadAsyncUpload>
-<asp:Label ID="lblAllowedExtensions" runat="server" >Виберіть зображення для завантаження (jpg)</asp:Label>
+<asp:Label ID="lblAllowedExtensions" runat="server" >Виберіть зображення для завантаження (jpg,gif,png)</asp:Label>
 <INPUT id="hdPhotoNameDeleted" type="hidden" name="hdPhotoNameDeleted" runat="server" value=""/>
 <telerik:RadWindow ID="radWindow" runat="server" Width="170px"
         Height="460px" Title="Фотохата" 

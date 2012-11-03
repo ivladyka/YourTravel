@@ -11,4 +11,17 @@ public partial class MasterPage : MasterPageBase
     {
 
     }
+
+    public string ScriptTag
+    {
+        get
+        {
+            string path = "";
+            if (Request.Url.ToString().ToLower().IndexOf("office/office.aspx") >= 0)
+            {
+                path = "../js/";
+            }
+            return "<script src='" + path + "Scripts.js' type='text/javascript'></script>";
+        }
+    }
 }

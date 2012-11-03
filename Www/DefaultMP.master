@@ -11,7 +11,10 @@
     <meta name="description" content="Find cheap hotels and discounts when you book on YourTravel.biz. Compare to find the Best Price for hotel." xml:lang="en" />
     <meta name="keywords" content="Your Travel, hotels, rooms, bookings, bookings, cheap, romantic hotels, offers, discount, deals, lastminute" />
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />	
-    <meta content="VIKKI Soft, office@vikkisoft.com" name="VIKKIsoft" />    
+    <meta content="VIKKI Soft, office@vikkisoft.com" name="VIKKIsoft" />   
+    <telerik:RadCodeBlock ID="RadCodeBlock1" runat="server">
+    <%=ScriptTag%> 
+    </telerik:RadCodeBlock>
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>

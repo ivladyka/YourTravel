@@ -19,5 +19,13 @@ namespace  VikkiSoft_BLL
         {
             return base.LoadFromSql("[" + this.SchemaStoredProcedure + "usp_Site_LoadWithSiteTypeName]");
         }
+
+        public virtual bool LoadBySiteTypeID(int siteTypeID)
+        {
+            ListDictionary parameters = new ListDictionary();
+            parameters.Add(new SqlParameter("@SiteTypeID", SqlDbType.Int), siteTypeID);
+
+            return base.LoadFromSql("[" + this.SchemaStoredProcedure + "usp_Site_LoadBySiteTypeID]", parameters);
+        }
 	}
 }
