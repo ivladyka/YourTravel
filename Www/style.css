@@ -10,10 +10,25 @@ body
     background-position: left top;
     width: 100%;
     height: 100%;
-    background-color: #cde9ff;
-    background-image: url('Images/background1.gif');
-    background-repeat: repeat-y;
-    
+    background-color: #ffffff;
+    background-repeat: repeat-x;
+    background-image:url(images/Background.gif);    
+    font-family:Arial;    
+}
+Form
+{
+   width: 100%;
+    height:100% !important;
+    position:absolute;   
+}
+.formdiv
+{
+    max-width: 1110px;
+    height:100% !important;
+    position:relative;
+    float: none;
+    overflow:hidden;
+    margin: 0 auto;
 }
 @font-face {
  font-family:Bolid;
@@ -32,17 +47,6 @@ body
  src: local("Opium"), url('Fonts/Opium.ttf'); 
  /* TTF file for CSS3 browsers */
 }
-form div#formdiv
-{ 
-    background-image: url('Images/background.jpg');
-    width: 100%;
-    height: 100%;
-    background-repeat: no-repeat;
-    background-position: 0px 0px;
-    display: block;
-    overflow: hidden;
-    vertical-align: middle; text-align: center; }
-
 #logo
 {
     vertical-align: middle;
@@ -51,31 +55,29 @@ form div#formdiv
 }
 .CompanyName
 {font-family:Bolid;
- font-size:60pt;
+ font-size:40pt;
  color:#f5ac00;
  text-shadow:0px 2px 1px #5c5c5c;
- behavior: url(PIE.htc);   
+ behavior: url(PIE.htc); 
 }  
 .CompanyName1
 {font-family:Bolid;
- font-size:60pt;
+ font-size:40pt;
  color:#00a5d0;
  text-shadow:0px 2px 1px #5c5c5c;
- behavior: url(PIE.htc);   
+ behavior: url(PIE.htc); 
 }
 .Comingsoom
 {
     top: 60px;
     position: relative;
-    color:#027190;
+    color:#f9c700;
     font-family:Opium;
     font-size:45pt;
-     text-shadow:-1px -1px 1px rgba(255,255,255,0.4), /* наверх и влево */
-   1px 1px 1px rgba(255,255,255,0.4), /* вниз и вправо */
-   1px 1px 1px rgba(0,0,0,0.9); /* тёмная тень */    
+    text-shadow:-1px -1px 1px rgba(255,255,255,0.4), /* наверх и влево */
+        1px 1px 1px rgba(255,255,255,0.4), /* вниз и вправо */
+        1px 1px 1px rgba(0,0,0,0.9); /* тёмная тень */    
 }
-
-
 .VIKKI_HiddenButton
 {
 	visibility: hidden;
@@ -86,4 +88,273 @@ form div#formdiv
 .VIKKI_HandCursor
 {
     CURSOR: pointer;
+}
+
+
+.divmenu
+{     
+   	border-radius: 10px 10px 10px 10px ; 
+    -webkit-border-radius: 10px 10px 10px 10px ; 
+    -moz-border-radius:10px 10px 10px 10px ;
+    behavior: url(PIE.htc);      
+    background: url(images/a_bg1.gif) repeat-x left top;   
+    overflow: hidden;  
+    display:block;
+     margin-top:10px; 
+    -webkit-box-shadow: 2px 4px 5px rgba(50, 50, 50, 0.35);
+    -moz-box-shadow:2px 4px 5px rgba(50, 50, 50, 0.35);
+    box-shadow: 2px 4px 5px rgba(50, 50, 50, 0.35);
+    behavior: url(PIE.htc); 
+    max-width:800px;
+    float:right
+}
+
+ul#topnav 
+{
+	margin: 0px; 
+	list-style: none;	
+	font-size: 11pt;
+    font-weight:bold;
+	clear: both;
+	float: left;  
+    overflow: hidden;  
+    display:block;
+}
+ul#topnav li
+{
+	margin: 0; 
+	padding: 0; 
+	overflow: hidden; 
+	float: left; 
+	height:40px;    
+}
+
+ul#topnav a, ul#topnav span 
+{
+	padding: 10px 20px; 
+	float: left; 
+	text-decoration: none; 
+	color: #fff;
+	text-transform: uppercase;
+	clear: both;
+	height: 20px;
+	line-height: 20px;
+	background: #1d1d1d; 
+    text-shadow:0px 2px 1px rgba(50, 50, 50, 0.35);
+}
+ul#topnav a 
+{	
+    color: #7bc441;
+}
+ul#topnav span {
+	display: none;
+}
+
+ul#topnav.v2 span{
+	background: url(images/a_bg.gif) repeat-x left top;
+}
+ul#topnav.v2 a{
+	color: #ffffff;
+	background: url(images/a_bg.gif) repeat-x left bottom;
+}
+.logodiv
+{
+    margin-top:10px;
+    margin-bottom:5px;
+    vertical-align:middle;
+    width:350px;     
+}
+div.logodiv div#logospan
+{
+   top:10px;   
+   width:240px;
+   float:right;
+   position:relative;
+   bottom:5px; 
+}
+a {
+    color: #FE5E08;
+    text-decoration: none;
+}
+a:hover {
+    color: #333333;
+    text-decoration: none;
+}
+p {
+    margin: 0 0 5px;
+    padding: 5px 0;
+    text-align: left;
+}
+.container {
+    margin-left: auto;
+    margin-right: auto;
+     width: 1100px;
+}
+
+#header {
+    background-color: #FFFFFF;
+    display: block;
+    float: left;
+    padding-bottom: 0;
+    position: relative;
+    width: 1070px;
+    height:460px;
+    margin-top:20px;
+    padding:20px;
+    border-top: solid 5px #fbaf00;
+    -webkit-box-shadow: 2px 4px 5px rgba(50, 50, 50, 0.35);
+    -moz-box-shadow:2px 4px 5px rgba(50, 50, 50, 0.35);
+    box-shadow: 2px 4px 5px rgba(50, 50, 50, 0.35);
+    behavior: url(PIE.htc); 
+}
+.slide{
+    position: absolute; 
+	top: 0px; 
+	left: 1100px; 
+	display: none; 
+	z-index: 4; 
+	opacity: 1; 
+	 width: 1060px;
+	height: 460px;
+}
+
+#header #header-content {
+    margin-top: 0;
+}
+#header .slideshow {
+    background-color: transparent;
+    height: 460px;
+    outline: medium none;
+    overflow: hidden;
+    position: relative;
+     width: 1060px;
+    z-index: 100;
+}
+#slider {
+    height: 460px;
+    list-style: none outside none;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+     width: 1060px;
+}
+ul#slider {
+    margin-bottom: 0;
+}
+#slider li {
+    background: none repeat scroll 0 0 transparent !important;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 0;
+    width: 1060px;
+}
+
+#slider .sliding-image, #slider .sliding-text {
+    height: 460px;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    width:1060px;
+}
+
+#slider .sliding-text p {
+    margin: 0;
+    padding: 5px 0;
+}
+#slider .slide-img {
+    float: left;
+    margin: 0;
+}
+#nav {
+    float: right;
+    height: 14px;
+    margin: 0 auto;
+    padding: 5px 5px 0 0;
+    position: relative;
+    z-index: 100;
+}
+#nav a {
+    background: url("images/slider-bullet.png") no-repeat scroll 0 0 transparent;
+    border: 0 none;
+    display: block;
+    float: left;
+    height: 14px;
+    margin-right: 5px;
+    outline: 0 none;
+    text-indent: -9999px;
+    width: 14px;
+}
+#nav a.activeSlide {
+    background-position: -15px 0;
+}
+.controls {
+    display: block;
+    float: right;
+    margin-top: -35px;
+    margin-right:40px;
+    z-index:10000;
+    position:relative
+}
+#pauseButton {
+    float: right;
+    height: 14px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 100;
+}
+#pauseButton a {
+    background: url("Images/slider-controls.png") no-repeat scroll 0 0 transparent;
+    border: 0 none;
+    display: block;
+    float: left;
+    height: 14px;
+    margin: 5px 5px 0 0;
+    outline: 0 none;
+    text-indent: -9999px;
+    width: 14px;
+}
+#resumeButton {
+    float: right;
+    height: 14px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 100;
+}
+#resumeButton a {
+    background: url("Images/slider-controls.png") no-repeat scroll 100% 0 transparent;
+    border: 0 none;
+    display: block;
+    float: left;
+    height: 14px;
+    margin: 5px 30px 0 0;
+    outline: 0 none;
+    text-indent: -9999px;
+    width: 14px;
+}
+.footer
+{
+    bottom:0px;
+    width:100%;
+    position:fixed;
+
+    background-color:#849db6;
+    padding:20px;
+    
+}
+.footerlinks
+{    
+    position:relative;
+    margin: 0 auto;  
+    max-width: 1110px;
+    float: none;
+    overflow:hidden;
+     margin: 0 auto;
+     color:#ffffff
+}
+div.footerlinks a
+{    
+       color:#ffffff;
+       font-size:10pt
 }

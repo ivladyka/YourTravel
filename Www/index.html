@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+     <head>
+             <meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+             <title>Слайдер | pcvector.net</title>
+			 <link rel="shortcut icon" href="/favicon.ico" />
+
+			 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+			 <script type='text/javascript' src='jquery.cycle.all.js'></script>
+			 <script type='text/javascript' src='jquery.easing.1.3.js'></script>
+			 <script type='text/javascript' src='cycle_script.js'></script>
+
+<style type="text/css">
+body {background: #ffffff; color:#555;}		 
+a {
+    color: #FE5E08;
+    text-decoration: none;
+}
+a:hover {
+    color: #333333;
+    text-decoration: none;
+}
+p {
+    margin: 0 0 5px;
+    padding: 5px 0;
+    text-align: left;
+}
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 960px;
+}
+
+#header {
+    background-color: #FFFFFF;
+    display: block;
+    float: left;
+    padding-bottom: 0;
+    position: relative;
+    width: 100%;
+}
+.slide{
+    position: absolute; 
+	top: 0px; 
+	left: 960px; 
+	display: none; 
+	z-index: 4; 
+	opacity: 1; 
+	width: 960px; 
+	height: 430px;
+}
+
+#header #header-content {
+    margin-top: 0;
+}
+#header .slideshow {
+    background-color: transparent;
+    height: 430px;
+    outline: medium none;
+    overflow: hidden;
+    position: relative;
+    width: 960px;
+    z-index: 100;
+}
+#slider {
+    height: 430px;
+    list-style: none outside none;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    width: 960px;
+}
+ul#slider {
+    margin-bottom: 0;
+}
+#slider li {
+    background: none repeat scroll 0 0 transparent !important;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 0;
+    width: 960px;
+}
+
+#slider .sliding-image, #slider .sliding-text {
+    height: 430px;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    width: 940px;
+}
+
+#slider .sliding-text p {
+    margin: 0;
+    padding: 5px 0;
+}
+#slider .slide-img {
+    float: left;
+    margin: 0;
+}
+#nav {
+    float: right;
+    height: 14px;
+    margin: 0 auto;
+    padding: 5px 5px 0 0;
+    position: relative;
+    z-index: 100;
+}
+#nav a {
+    background: url("img/slider-bullet.png") no-repeat scroll 0 0 transparent;
+    border: 0 none;
+    display: block;
+    float: left;
+    height: 14px;
+    margin-right: 5px;
+    outline: 0 none;
+    text-indent: -9999px;
+    width: 14px;
+}
+#nav a.activeSlide {
+    background-position: -15px 0;
+}
+.controls {
+    display: block;
+    float: right;
+    margin-top: -35px;
+}
+#pauseButton {
+    float: right;
+    height: 14px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 100;
+}
+#pauseButton a {
+    background: url("img/slider-controls.png") no-repeat scroll 0 0 transparent;
+    border: 0 none;
+    display: block;
+    float: left;
+    height: 14px;
+    margin: 5px 5px 0 0;
+    outline: 0 none;
+    text-indent: -9999px;
+    width: 14px;
+}
+#resumeButton {
+    float: right;
+    height: 14px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 100;
+}
+#resumeButton a {
+    background: url("img/slider-controls.png") no-repeat scroll 100% 0 transparent;
+    border: 0 none;
+    display: block;
+    float: left;
+    height: 14px;
+    margin: 5px 30px 0 0;
+    outline: 0 none;
+    text-indent: -9999px;
+    width: 14px;
+}
+</style>
+</head>
+	 
+     <body>
+	 <div id="header">
+	 <div class="container" id="header-content">
+	     <div class="slideshow">
+		     <ul id="slider" style="overflow: hidden;">
+			     <li class="slide">
+					<img width="940" height="430" class="slide-img" alt="" src="1.png">
+					<div class="sliding-image">
+					     <img width="940" height="430" class="slide-img" alt="" src="2.png">
+					</div>
+
+					<div class="sliding-text">
+					     <div style="width:550px; height:100px; top:250px; left: 0px; position:absolute; z-index:9999;">
+						     <p><strong>Катберт</strong> пробовалась на роль Мери-Джейн Уотсон в фильме <strong>«Человек-паук»</strong>, но роль досталась Кирстен Данст. Она начала свою карьеру в Голливуде с маленьких ролей в фильмах <strong>«Реальная любовь»</strong> и <strong>«Старая закалка»</strong> (2001).</p>
+							 <p>В следующем фильме <strong>«Соседка»</strong> она получила свою первую главную роль. У актрисы были сомнения по поводу съёмок в фильме, но режиссёр Люк Гринфилд не оставлял её в покое. Во время подготовки к съёмкам Элиша разговаривала с настоящими порноактрисами.</p>
+						 </div>
+					</div>
+				</li>
+				<li class="slide">
+					 <img width="940" height="430" class="slide-img" alt="" src="3.png">
+					<div class="sliding-image">
+   					     <img width="940" height="430" class="slide-img" alt="" src="4.png">
+					</div>
+
+					<div class="sliding-text">
+					     <div style="width:652px; height:100px; top:270px; left: 270px; position:absolute; z-index:9999;">
+						     <p>В 2007 году к Меган Фокс пришёл настоящий успех, поскольку она приняла участие в главной и самой зрелищной кинокартине 2007 года — <strong>«Трансформеры»</strong>, где исполнила роль Микаэлы Бейнс. В 2008 году снялась в роли восходящей звезды кино в фильме <strong>«Как потерять друзей и заставить всех тебя ненавидеть»</strong>.</p>
+						</div>
+					</div>
+				</li>
+				<li class="slide">
+					 <img width="940" height="430" class="slide-img" alt="" src="5.png">
+					 <div class="sliding-image"> 
+					     <img width="940" height="430" class="slide-img" alt="" src="6.png">
+					 </div>
+					 <div class="sliding-text">
+					     <div style="width:560px; height:100px; top:240px; left: 25px; position:absolute; z-index:9999;">
+						     <p>В 1994 году Натали прошла кастинг к фильму Люка Бессона <strong>«Леон»</strong> (фр. Leon), где сыграла свою первую главную роль, девочку по имени Матильда, которая дружит с наёмным убийцей Леоном (Жан Рено). Вскоре после получения роли актриса в целях секретности взяла псевдоним «Портман», однако на DVD-диске с режиссёрской версией фильма она упоминается в титрах как Натали Хершлаг. Фильм вышел в прокат 18 ноября 1994 года и в целом получил положительные отзывы. Таким образом, её дебют в художественном кино состоялся, когда ей было всего 13 лет.</p>
+							 </div>
+					 </div>
+				</li>
+				<li class="slide">
+					 <img width="940" height="430" class="slide-img" alt="" src="7.jpg">
+					 <div class="sliding-image"> 
+					     <img width="940" height="430" class="slide-img" alt="" src="8.png">
+				     </div>
+					 <div class="sliding-text">
+					     <div style="width:485px; height:200px; top:200px; right: 0px; position:absolute; z-index:9999;">
+						     <p>В 1995 году, в одиннадцатилетнем возрасте, Ализе участвовала в конкурсе, организованном бывшей французской авиакомпанией <strong>«Air Outre Mer»</strong> (ныне Swissair). Необходимо было нарисовать рисунок на корпусе самолёта, изображённого на специальном бланке. Ализе победила в этом конкурсе, и, помимо выигранной ей поездки на Мальдивские острова, её рисунок изобразили на настоящем самолёте в полную величину, а самолёт был назван её именем.</p>
+							 <p><a title="Узнать больше" href="http://ru.wikipedia.org/wiki/%D0%96%D0%B0%D0%BA%D0%BE%D1%82%D0%B5,_%D0%90%D0%BB%D0%B8%D0%B7%D0%B5">Подробнее</a></p>
+								
+						</div>
+					</div>
+				</li>
+			</ul> 
+		</div>
+		<div class="controls"> 
+		     <span style="" id="resumeButton"><a title="Плей" href="">Плей</a></span> 
+			 <span style="" id="pauseButton"><a title="Пауза" href="">Пауза</a></span>
+			 <div style="" id="nav"></div>
+		</div>
+	</div>
+	</div>
+	 
+<!-- pcvector.net -->
+<script type="text/javascript" src="/templates/pcv/js/pcvector.js"></script>
+<!-- /pcvector.net -->
+     </body>
+</html>	 
