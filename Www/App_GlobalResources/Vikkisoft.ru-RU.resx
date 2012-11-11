@@ -120,7 +120,46 @@
   <data name="AboutUs" xml:space="preserve">
     <value>О нас</value>
   </data>
+  <data name="Adults" xml:space="preserve">
+    <value>Взрослые</value>
+  </data>
+  <data name="CheckIn" xml:space="preserve">
+    <value>Прибытие</value>
+  </data>
+  <data name="CheckOut" xml:space="preserve">
+    <value>Отъезд</value>
+  </data>
+  <data name="Children" xml:space="preserve">
+    <value>Дети</value>
+  </data>
+  <data name="ContactUS" xml:space="preserve">
+    <value>Контакты</value>
+  </data>
+  <data name="DateCompareError" xml:space="preserve">
+    <value>Дата выезда должна быть больше даты заезда</value>
+  </data>
+  <data name="English" xml:space="preserve">
+    <value>Анг</value>
+  </data>
   <data name="PageTitle" xml:space="preserve">
     <value>YourTravel.biz</value>
+  </data>
+  <data name="RequiredField" xml:space="preserve">
+    <value>обязательное поле.</value>
+  </data>
+  <data name="Rooms" xml:space="preserve">
+    <value>Номеров</value>
+  </data>
+  <data name="Russian" xml:space="preserve">
+    <value>Рус</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Поиск</value>
+  </data>
+  <data name="Ukrainian" xml:space="preserve">
+    <value>Укр</value>
+  </data>
+  <data name="WhereGo" xml:space="preserve">
+    <value>Куда вы хотите поехать?</value>
   </data>
 </root>

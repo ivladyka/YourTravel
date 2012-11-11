@@ -36,7 +36,7 @@ public class ProjectPageBase : System.Web.UI.Page
                 }
                 else
                 {
-                    ret = "CategoryView";
+                    ret = "";
                 }
             }
             return ret;
@@ -78,31 +78,34 @@ public class ProjectPageBase : System.Web.UI.Page
     {
         base.OnLoad(e);
 
-        userControl = (System.Web.UI.UserControl)Page.LoadControl("~/Controls/" + ContentControlName + ".ascx");
-        userControl.ID = ContentControlName + "ID";
-
-        HtmlForm form = (HtmlForm)Page.Master.FindControl("form1");
-        if (form != null)
+        if (ContentControlName != "")
         {
-            ContentPlaceHolder contentPlaceHolder = (ContentPlaceHolder)form.FindControl("cphWithoutScroll");
-            if (contentPlaceHolder != null)
+            userControl = (System.Web.UI.UserControl)Page.LoadControl("~/Controls/" + ContentControlName + ".ascx");
+            userControl.ID = ContentControlName + "ID";
+
+            HtmlForm form = (HtmlForm)Page.Master.FindControl("form1");
+            if (form != null)
             {
-                if (userControl is ControlBase)
+                ContentPlaceHolder contentPlaceHolder = (ContentPlaceHolder)form.FindControl("cphWithoutScroll");
+                if (contentPlaceHolder != null)
                 {
-                    MasterPageBase dmp = (MasterPageBase)Page.Master;
-                /*    if (dmp != null)
+                    if (userControl is ControlBase)
                     {
-                        dmp.BackButtonURL = ((ControlBase) userControl).BackURL;
-                    }*/
-                    AddOnlyBrowserTitle = ((ControlBase) userControl).AddOnlyBrowserTitle;
+                        MasterPageBase dmp = (MasterPageBase)Page.Master;
+                        /*    if (dmp != null)
+                            {
+                                dmp.BackButtonURL = ((ControlBase) userControl).BackURL;
+                            }*/
+                        AddOnlyBrowserTitle = ((ControlBase)userControl).AddOnlyBrowserTitle;
+                    }
+                    contentPlaceHolder.Controls.Add(userControl);
                 }
-                contentPlaceHolder.Controls.Add(userControl);
             }
-        }
 
-        if (userControl is Interfaces.INamedControl)
-        {
-            this.PageTitle = (userControl as Interfaces.INamedControl).Name;
+            if (userControl is Interfaces.INamedControl)
+            {
+                this.PageTitle = (userControl as Interfaces.INamedControl).Name;
+            }
         }
     }
 

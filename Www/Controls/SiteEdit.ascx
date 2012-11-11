@@ -26,7 +26,7 @@
             URL:
         </td>
         <td>
-            <asp:TextBox ID="text_URL" runat="server" CssClass="textBoxStyle" MaxLength="50" Width="300px"></asp:TextBox>
+            <asp:TextBox ID="text_URL" runat="server" CssClass="textBoxStyle" MaxLength="500" Width="300px"></asp:TextBox>
             &nbsp;
             <asp:RequiredFieldValidator ID="rfvURL" runat="server" ControlToValidate="text_URL" Display="Dynamic" 
                 ErrorMessage="Обов'язкове поле."></asp:RequiredFieldValidator>

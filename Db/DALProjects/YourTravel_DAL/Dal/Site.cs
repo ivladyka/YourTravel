@@ -127,7 +127,7 @@ namespace  VikkiSoft_BLL.DAL
 			{
 				get
 				{
-					return new SqlParameter("@URL", SqlDbType.VarChar, 50);
+					return new SqlParameter("@URL", SqlDbType.VarChar, 500);
 				}
 			}
 			

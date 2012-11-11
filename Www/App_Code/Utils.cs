@@ -221,16 +221,16 @@ public class Utils
     {
         get
         {
-            string culture = "uk-UA";
+            string culture = "en-US";
             if (Thread.CurrentThread.CurrentCulture != null)
             {
                 culture = Thread.CurrentThread.CurrentCulture.Name;
             }
-            string prefCulture = "";
+            string prefCulture = "_en";
             switch (culture)
             {
-                case "en-US":
-                    prefCulture = "_en";
+                case "uk-UA":
+                    prefCulture = "";
                     break;
                 case "ru-RU":
                     prefCulture = "_ru";

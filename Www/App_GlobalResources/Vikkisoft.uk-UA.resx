@@ -120,7 +120,46 @@
   <data name="AboutUs" xml:space="preserve">
     <value>Про нас</value>
   </data>
+  <data name="Adults" xml:space="preserve">
+    <value>Дорослі</value>
+  </data>
+  <data name="CheckIn" xml:space="preserve">
+    <value>Приїзд</value>
+  </data>
+  <data name="CheckOut" xml:space="preserve">
+    <value>Від'їзд</value>
+  </data>
+  <data name="Children" xml:space="preserve">
+    <value>Діти</value>
+  </data>
+  <data name="ContactUS" xml:space="preserve">
+    <value>Контакти</value>
+  </data>
+  <data name="DateCompareError" xml:space="preserve">
+    <value>Дата виїзду має бути більша дати заїзду</value>
+  </data>
+  <data name="English" xml:space="preserve">
+    <value>Анг</value>
+  </data>
   <data name="PageTitle" xml:space="preserve">
     <value />
+  </data>
+  <data name="RequiredField" xml:space="preserve">
+    <value>required field.</value>
+  </data>
+  <data name="Rooms" xml:space="preserve">
+    <value>Номерів</value>
+  </data>
+  <data name="Russian" xml:space="preserve">
+    <value>Рос</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Пошук</value>
+  </data>
+  <data name="Ukrainian" xml:space="preserve">
+    <value>Укр</value>
+  </data>
+  <data name="WhereGo" xml:space="preserve">
+    <value>Куди б ви хотіли поїхати?</value>
   </data>
 </root>

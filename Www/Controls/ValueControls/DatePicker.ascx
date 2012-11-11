@@ -6,4 +6,4 @@
                     <Calendar FocusedDate="1000-01-01"></Calendar>
                     <DatePopupButton ImageUrl="" HoverImageUrl=""></DatePopupButton>
                     </telerik:RadDatePicker>
-         <asp:RequiredFieldValidator ID="rfvDateInput" runat="server" ErrorMessage="Обов'язкове поле" ControlToValidate="dateInput" Display="Dynamic" Enabled="false"></asp:RequiredFieldValidator>
+         <asp:RequiredFieldValidator ID="rfvDateInput" runat="server" ErrorMessage="<%$Resources:Vikkisoft, RequiredField %>" ControlToValidate="dateInput" Display="Dynamic" Enabled="false"></asp:RequiredFieldValidator>

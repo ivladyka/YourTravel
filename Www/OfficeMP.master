@@ -1,0 +1,34 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="OfficeMP.master.cs" Inherits="OfficeMP" %>
+<%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="style.css" type="text/css" rel="stylesheet"/>
+    <telerik:RadCodeBlock ID="RadCodeBlock1" runat="server">
+    <%=ScriptTag%> 
+    </telerik:RadCodeBlock>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <table>
+        <tr>
+            <td><asp:Image ID="logo" runat="server" ImageUrl="Images/logo.png" Width="100px"  /></td>
+            <td>
+                <asp:HyperLink ID="hlSites" runat="server" Text="Сайти" NavigateUrl="~/Office/Office.aspx?content=SiteList"></asp:HyperLink>&nbsp;&nbsp;&nbsp;
+                <asp:HyperLink ID="hlChangePassword" runat="server" Text="Змінити пароль" NavigateUrl="~/Office/Office.aspx?content=ChangePassword"></asp:HyperLink>&nbsp;&nbsp;&nbsp;
+                <asp:HyperLink ID="hlLogOff" runat="server" Text="Вийти" NavigateUrl="~/LogOff.aspx"></asp:HyperLink>
+            </td>
+        </tr>
+    </table>
+    <div>
+        <telerik:RadScriptManager runat="Server" ID="RadScriptManager1" />
+         <asp:ContentPlaceHolder id="cphWithoutScroll" runat="server">        
+        </asp:ContentPlaceHolder>     
+    </div>
+    </form>
+</body>
+</html>

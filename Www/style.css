@@ -358,3 +358,8 @@ div.footerlinks a
        color:#ffffff;
        font-size:10pt
 }
+
+.VS_LangActive
+{
+    color: Blue;
+}
