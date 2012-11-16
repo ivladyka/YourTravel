@@ -21,106 +21,104 @@
     <ul class="ulblock" >
         <li class="li1block">
      <div class="bookingblock" >
-    <table border="0" style="width:210PX" >
+    <table border="0" width="340px" class="bookingblocktabl"  >
+              <tr >
+                  <td colspan="3" class="bookingblockheader"><%=Booking%></td>
+              </tr>
               <tr>
                   <td colspan="3"><%=WhereGo%></td>
               </tr>
               <tr>
                   <td colspan="3">
-                    <asp:TextBox ID="tbWhereGo" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="tbWhereGo" runat="server" Width="100%" Height="26px"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvWhereGo" runat="server" ErrorMessage="<%$Resources:Vikkisoft, RequiredField %>" ControlToValidate="tbWhereGo" Display="Dynamic" ValidationGroup="HomeSEARCHING"></asp:RequiredFieldValidator>
                   </td>
               </tr>
               <tr>
-                  <td colspan="3" style="padding-top:2px;"><%=CheckInRes%></td>
-              </tr>
-              <tr>
-                  <td colspan="3"> 
-                    <uc1:DatePicker id="dpCheckInDate" runat="server" IsRequire="true" Width="170" ValidationGroup="HomeSEARCHING" OnClientDateSelected="VIKKI_CheckInDateSelected"></uc1:DatePicker>
-                   </td>
-              </tr>
-                <tr>
-                  <td colspan="3"><%=CheckOutRes%></td>
-              </tr>
-                 <tr>
                   <td colspan="3">
-                    <uc1:DatePicker id="dpCheckOutDate" runat="server" IsRequire="true" Width="170" ValidationGroup="HomeSEARCHING"></uc1:DatePicker>
-                    </td>
-                    </tr> 
-                    <tr>
-                  <td colspan="3">  
-                    <asp:Label ID="dateCompare" runat="server" Visible="False" ForeColor="Red" Text="<%$Resources:Vikkisoft, DateCompareError %>"></asp:Label>
+                      <table border="0" width="100%" class="dateCheckInOut">
+                          <tr>
+                              <td><%=CheckInRes%></td> 
+                              <td><%=CheckOutRes%></td>
+                          </tr>
+                          <tr>
+                              <td><uc1:DatePicker Width="160" id="dpCheckInDate" runat="server" IsRequire="true"  ValidationGroup="HomeSEARCHING" OnClientDateSelected="VIKKI_CheckInDateSelected"></uc1:DatePicker></td> 
+                              <td><uc1:DatePicker  Width="160"  id="dpCheckOutDate" runat="server" IsRequire="true" ValidationGroup="HomeSEARCHING"></uc1:DatePicker></td>
+                          </tr>
+                      </table>
+                   <asp:Label ID="dateCompare" runat="server" Visible="False" ForeColor="white" Text="<%$Resources:Vikkisoft, DateCompareError %>"></asp:Label>
+
                   </td>
-              </tr>                
+              </tr>
                  <tr>
-                  <td style="width:33%; text-align:center"><%=RoomsRes%></td>
-                  <td style="width:33%; text-align:center"><%=AdultsRes%></td>
-                  <td style="width:33%; text-align:center"><%=ChildrenRes%></td>
+                  <td style="width:33%; text-align:left"><%=RoomsRes%></td>
+                  <td style="width:33%; text-align:left; padding-left:10px;"><%=AdultsRes%></td>
+                  <td style="width:33%; text-align:left; padding-left:20px;"><%=ChildrenRes%></td>
               </tr>
               <tr>
-                  <td style="padding-left: 0px;">
-                      <telerik:RadComboBox ID="ddlRooms" runat="server" Width="50px"  EnableLoadOnDemand="false" CssClass="homedropdown">
+                  <td>
+                      <telerik:RadComboBox ID="ddlRooms" Skin="Windows7" runat="server"  EnableLoadOnDemand="false" CssClass="homedropdown" Width="100px" >
                       </telerik:RadComboBox> 
                   </td>
-                  <td style="padding-left: 0px;">
-                    <telerik:RadComboBox ID="ddlAdults" runat="server" Width="50px" EnableLoadOnDemand="false" CssClass="homedropdown">
+                  <td style="text-align:center">
+                    <telerik:RadComboBox ID="ddlAdults" Skin="Windows7" runat="server"  EnableLoadOnDemand="false" CssClass="homedropdown" Width="100px" >
                        </telerik:RadComboBox></td>
-                  <td style="padding: 0px;">
-                      <telerik:RadComboBox ID="ddlChildren" runat="server" Width="50px"  EnableLoadOnDemand="false" CssClass="homedropdown">                       
+                  <td style="text-align:right">
+                      <telerik:RadComboBox ID="ddlChildren" Skin="Windows7" runat="server"  EnableLoadOnDemand="false" CssClass="homedropdown" Width="100px" >                       
                       </telerik:RadComboBox>
                   </td>
               </tr>
                  <tr>
                   <td colspan="3" style="padding-right:5px; padding-top:5px;"> 
-                      <asp:Button ID="btnSearch" runat="server" OnClick="btnSearch_Click" Text="<%$Resources:Vikkisoft, Search %>" ValidationGroup="HomeSEARCHING" CssClass="formbutton" Width="160px" />
+                      <asp:Button ID="btnSearch" runat="server" OnClick="btnSearch_Click" Text="<%$Resources:Vikkisoft, Search %>" ValidationGroup="HomeSEARCHING" CssClass="formbutton" Width="250"  Height="50px"/>
                   </td>
               </tr>
           </table>
         </div>
         </li>
-         <li> <div style=" width:650px; float:right">
+         <li> <div style=" width:680px; float:right">
              <div id="header">
 	 <div class="container" id="header-content">
 	     <div class="slideshow">
 		     <ul id="slider" style="overflow: hidden;">
 			     <li class="slide">
-					<img width="630" height="410" class="slide-img" alt="" src="Images/1.jpg">
+					<img width="680" height="410" class="slide-img" alt="" src="Images/1.jpg">
 					<div class="sliding-image">
 					</div>
 					<div class="sliding-text">
-					     <div style="width:550px; height:100px; top:250px; left: 0px; position:absolute; z-index:9999;">
-						     <p><strong>Катберт</strong> пробовалась на роль Мери-Джейн Уотсон в фильме <strong>«Человек-паук»</strong>, но роль досталась Кирстен Данст. Она начала свою карьеру в Голливуде с маленьких ролей в фильмах <strong>«Реальная любовь»</strong> и <strong>«Старая закалка»</strong> (2001).</p>
-							 <p>В следующем фильме <strong>«Соседка»</strong> она получила свою первую главную роль. У актрисы были сомнения по поводу съёмок в фильме, но режиссёр Люк Гринфилд не оставлял её в покое. Во время подготовки к съёмкам Элиша разговаривала с настоящими порноактрисами.</p>
+					     <div style="width:400px; height:100px; top:250px; left: 100px; position:absolute; z-index:9999;">
+						     <p> Text1</p>
+							 <p>Text2</p>
 						 </div>
 					</div>
 				</li>
 				<li class="slide">
-					 <img width="630" height="410" class="slide-img" alt="" src="Images/3.jpg">
+					 <img width="680" height="410" class="slide-img" alt="" src="Images/3.jpg">
 					<div class="sliding-image">   					   
 					</div>
 					<div class="sliding-text">
-					     <div style="width:610px; height:100px; top:270px; left: 270px; position:absolute; z-index:9999;">
-						     <p>В 2007 году к Меган Фокс пришёл настоящий успех, поскольку она приняла участие в главной и самой зрелищной кинокартине 2007 года — <strong>«Трансформеры»</strong>, где исполнила роль Микаэлы Бейнс. В 2008 году снялась в роли восходящей звезды кино в фильме <strong>«Как потерять друзей и заставить всех тебя ненавидеть»</strong>.</p>
+					     <div style="width:400px; height:100px; top:270px; left: 100px; position:absolute; z-index:9999;">
+						     <p> Text1</p>
 						</div>
 					</div>
 				</li>
 				<li class="slide">
-					 <img width="630" height="410" class="slide-img" alt="" src="Images/5.jpg">
+					 <img width="680" height="410" class="slide-img" alt="" src="Images/5.jpg">
 					 <div class="sliding-image"> 					
 					 </div>
 					 <div class="sliding-text">
-					     <div style="width:560px; height:100px; top:240px; left: 25px; position:absolute; z-index:9999;">
-						     <p>В 1994 году Натали прошла кастинг к фильму Люка Бессона <strong>«Леон»</strong> (фр. Leon), где сыграла свою первую главную роль, девочку по имени Матильда, которая дружит с наёмным убийцей Леоном (Жан Рено). Вскоре после получения роли актриса в целях секретности взяла псевдоним «Портман», однако на DVD-диске с режиссёрской версией фильма она упоминается в титрах как Натали Хершлаг. Фильм вышел в прокат 18 ноября 1994 года и в целом получил положительные отзывы. Таким образом, её дебют в художественном кино состоялся, когда ей было всего 13 лет.</p>
+					     <div style="width:400px; height:100px; top:240px; left: 100px; position:absolute; z-index:9999;">
+						     <p>Text1</p>
 							 </div>
 					 </div>
 				</li>
 				<li class="slide">
-					 <img width="630" height="410" class="slide-img" alt="" src="Images/7.jpg">
+					 <img width="680" height="410" class="slide-img" alt="" src="Images/7.jpg">
 					 <div class="sliding-image"> 					    
 				     </div>
 					 <div class="sliding-text">
-					     <div style="width:485px; height:200px; top:200px; right: 0px; position:absolute; z-index:9999;">
-						     <p>В 1995 году, в одиннадцатилетнем возрасте, Ализе участвовала в конкурсе, организованном бывшей французской авиакомпанией <strong>«Air Outre Mer»</strong> (ныне Swissair). Необходимо было нарисовать рисунок на корпусе самолёта, изображённого на специальном бланке. Ализе победила в этом конкурсе, и, помимо выигранной ей поездки на Мальдивские острова, её рисунок изобразили на настоящем самолёте в полную величину, а самолёт был назван её именем.</p>
+					     <div style="width:400px; height:200px; top:200px; right: 0px; position:absolute; z-index:9999;">
+						     <p>Text1</p>
 							 <p><a title="Узнать больше" href="http://ru.wikipedia.org/wiki/%D0%96%D0%B0%D0%BA%D0%BE%D1%82%D0%B5,_%D0%90%D0%BB%D0%B8%D0%B7%D0%B5">Подробнее</a></p>
 								
 						</div>

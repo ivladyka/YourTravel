@@ -56,12 +56,13 @@
 		<li><asp:HyperLink ID="hlContactUs" runat="server" Text="<%$Resources:Vikkisoft, ContactUS %>" /></li>
 	</ul>
 	</div>
-    <div class="logodiv">  
+        <div class="logodiv">  
         <asp:Image ID="logo" runat="server" ImageUrl="Images/logo.png" Width="100px"  />
-        <div id="logospan">
+        <div id="logospan">           
       <asp:Label ID="Label1" runat="server" Text="YourTravel" CssClass="CompanyName">Your</asp:Label>
       <asp:Label ID="Label2" runat="server" Text="YourTravel" CssClass="CompanyName1">Travel</asp:Label>
-        </div>
+        </div> 
+            <div class="langv">
             <asp:HyperLink id="hlEnglishLang" NavigateUrl="~/default.aspx" BorderWidth="0px" runat="server" ToolTip="<%$Resources:Vikkisoft, English %>">
              <asp:Label ID="lblEnglishLang" runat="server" Text="<%$Resources:Vikkisoft, English %>"></asp:Label>
              </asp:HyperLink> | 
@@ -71,17 +72,19 @@
             <asp:HyperLink ID="hlRussianLang" NavigateUrl="~/default.aspx" BorderWidth="0px" runat="server" ToolTip="<%$Resources:Vikkisoft, Russian %>">
             <asp:Label ID="lblRussianLang" runat="server" Text="<%$Resources:Vikkisoft, Russian %>"></asp:Label>
             </asp:HyperLink>
-    </div>	
-
+        </div>
+        </div>		     
         <telerik:RadScriptManager runat="Server" ID="RadScriptManager1" />
         <asp:ContentPlaceHolder id="cphWithoutScroll" runat="server">        
         </asp:ContentPlaceHolder>        
    </div> 
-
-    </form>     <div class="footer">  
+          <div class="footer">  
         <div class="footerlinks">
  <asp:HyperLink ID="HyperLink1" runat="server">Home</asp:HyperLink> | <asp:HyperLink ID="HyperLink2" runat="server">Hotels</asp:HyperLink> | <asp:HyperLink ID="HyperLink3" runat="server">Contact Us</asp:HyperLink>
       </div>
     </div> 
+    </form> 
+
+    
 </body>
 </html>
