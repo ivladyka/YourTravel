@@ -23,7 +23,7 @@ Form
 }
 .formdiv
 {
-    max-width: 1110px;
+    max-width: 1100px;
     height:100% !important;
     position:relative;
     float: none;
@@ -188,7 +188,7 @@ p {
 .container {
     margin-left: auto;
     margin-right: auto;
-     width: 1100px;
+   width: 630px;
 }
 
 #header {
@@ -197,25 +197,25 @@ p {
     float: left;
     padding-bottom: 0;
     position: relative;
-    width: 1070px;
-    height:460px;
-    margin-top:20px;
+    width: 630px;
     padding:20px;
     border-top: solid 5px #fbaf00;
     -webkit-box-shadow: 2px 4px 5px rgba(50, 50, 50, 0.35);
     -moz-box-shadow:2px 4px 5px rgba(50, 50, 50, 0.35);
     box-shadow: 2px 4px 5px rgba(50, 50, 50, 0.35);
     behavior: url(PIE.htc); 
+    float:right;
 }
 .slide{
     position: absolute; 
 	top: 0px; 
-	left: 1100px; 
+	 
 	display: none; 
 	z-index: 4; 
 	opacity: 1; 
-	 width: 1060px;
+	 width: 630px;
 	height: 460px;
+    border: solid 1px red;
 }
 
 #header #header-content {
@@ -223,20 +223,21 @@ p {
 }
 #header .slideshow {
     background-color: transparent;
-    height: 460px;
+    height: 410px;
     outline: medium none;
     overflow: hidden;
     position: relative;
-     width: 1060px;
+     width: 630px;
     z-index: 100;
+      
 }
 #slider {
-    height: 460px;
+    height: 410px;
     list-style: none outside none;
     margin-left: auto;
     margin-right: auto;
     position: relative;
-     width: 1060px;
+     width: 630px;
 }
 ul#slider {
     margin-bottom: 0;
@@ -246,7 +247,7 @@ ul#slider {
     margin: 0 auto;
     overflow: hidden;
     padding: 0;
-    width: 1060px;
+    width: 630px;
 }
 
 #slider .sliding-image, #slider .sliding-text {
@@ -256,7 +257,7 @@ ul#slider {
     padding: 0;
     position: absolute;
     top: 0;
-    width:1060px;
+    width:630px;
 }
 
 #slider .sliding-text p {
@@ -295,7 +296,8 @@ ul#slider {
     margin-top: -35px;
     margin-right:40px;
     z-index:10000;
-    position:relative
+    position:relative;
+  
 }
 #pauseButton {
     float: right;
@@ -345,13 +347,14 @@ ul#slider {
 }
 .footerlinks
 {    
-    position:relative;
+    position:absolute;
     margin: 0 auto;  
     max-width: 1110px;
     float: none;
     overflow:hidden;
      margin: 0 auto;
-     color:#ffffff
+     color:#ffffff;
+     bottom:0px;
 }
 div.footerlinks a
 {    
@@ -362,4 +365,32 @@ div.footerlinks a
 .VS_LangActive
 {
     color: Blue;
+}
+.ulblock
+{
+    list-style-type: none; 
+    list-style-image: none; 
+    list-style-position: inside; 
+    display: block;
+}
+.li1block
+{
+    list-style-type: none; 
+    list-style-image: none;
+    list-style-position: inside; 
+    display: block; 
+    width:430px; 
+    float:left; 
+}
+.bookingblock
+{
+    width:430px; 
+    margin-right:00px; 
+    height:455px;
+    background-color:#fbaf00;
+    border-radius: 10px 0px 0px 10px ; 
+    -webkit-border-radius: 10px 0px 0px 10px ; 
+    -moz-border-radius:10px 0px 0px 10px ;
+    behavior: url(PIE.htc);       
+
 }
