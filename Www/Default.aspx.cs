@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Telerik.Web.UI;
+using System.Collections.Specialized;
 
 public partial class _Default : ProjectPageBase
 {
@@ -18,6 +19,7 @@ public partial class _Default : ProjectPageBase
 
     private void LoadDDLs()
     {
+        dpCheckInDate.MinDate = dpCheckOutDate.MinDate = DateTime.Now.AddDays(1);
         LoadNumberDDL(ddlRooms, 1, 6);
         LoadNumberDDL(ddlAdults, 1, 4);
         LoadNumberDDL(ddlChildren, 0, 3);
@@ -82,9 +84,33 @@ public partial class _Default : ProjectPageBase
 
     protected void btnSearch_Click(object sender, EventArgs e)
     {
-        //http://travel.exampletravel.com/templates/310453/hotels/list;jsessionid=48248B80CB884956EB7381F25A8D987A.tn10tc03?checkin=12%2F2%2F12&rooms[0].adultsCount=2&targetId=AREA-601F9E75-0631-45DF-810A-62108DC82001|cities&rooms[0].childrenCount=0&lang=en_US&checkout=12%2F4%2F12&roomsCount=1&currency=USD
-        //http://reservations.yourtravel.biz/templates/407972?checkin=11%2F11%2F12&checkout=11%2F13%2F12&roomsCount=1&rooms[0].adultsCount=1&rooms[0].childrenCount=0&currency=USD&currencySymbol=%24&lang=en&showOptions=false&filtering=true
-        Response.Redirect("http://reservations.yourtravel.biz/templates/407972/hotels/list?checkin=" + dpCheckInDate.SelectedDate.ToString("MM/dd/yy")
-            + "&roomsCount=" + ddlRooms.SelectedValue + "");
+        NameValueCollection data = new NameValueCollection();
+        data.Add("pageName", "hotSearch");
+        data.Add("cid", "407972");
+        data.Add("submitted", "true");
+        data.Add("validateCity", "true");
+        data.Add("avail", "true");
+        data.Add("passThrough", "true");
+        data.Add("passThrough2", "true");
+        data.Add("isHotels", "true");
+        data.Add("isCondos", "false");
+        data.Add("showCondos", "true");
+        data.Add("showHotels", "true");
+        data.Add("mode", "2");
+        data.Add("netOnly", "false");
+        data.Add("firstSearch", "true");
+        data.Add("isAdvancedSearch", "false");
+        data.Add("specials", "false");
+        data.Add("showPopUp", "true");
+        data.Add("propertyType", "A");
+        data.Add("city", tbWhereGo.Text);
+        data.Add("arrivalMonth", dpCheckInDate.SelectedDate.Month.ToString());
+        data.Add("arrivalDay", dpCheckInDate.SelectedDate.Day.ToString());
+        data.Add("departureMonth", dpCheckOutDate.SelectedDate.Month.ToString());
+        data.Add("departureDay", dpCheckOutDate.SelectedDate.Day.ToString());
+        data.Add("numberOfRooms", ddlRooms.SelectedValue);
+        data.Add("room-0-adult-total", ddlAdults.SelectedValue);
+        data.Add("room-0-child-total", ddlChildren.SelectedValue);
+        HttpHelper.RedirectAndPOST(this.Page, "http://reservations.yourtravel.biz/index.jsp", data);
     }
 }
