@@ -28,3 +28,7 @@ C:\Project\Ekran\Db\DALProjects\MyGeneration.dOOdads\bin\Debug\MyGeneration.dOOd
 C:\Project\Ekran\Db\DALProjects\MyGeneration.dOOdads\obj\Debug\ResolveAssemblyReference.cache
 C:\Project\Ekran\Db\DALProjects\MyGeneration.dOOdads\obj\Debug\MyGeneration.dOOdads.dll
 C:\Project\Ekran\Db\DALProjects\MyGeneration.dOOdads\obj\Debug\MyGeneration.dOOdads.pdb
+D:\project\YourTravel\Db\DALProjects\MyGeneration.dOOdads\bin\Debug\MyGeneration.dOOdads.dll
+D:\project\YourTravel\Db\DALProjects\MyGeneration.dOOdads\bin\Debug\MyGeneration.dOOdads.pdb
+D:\project\YourTravel\Db\DALProjects\MyGeneration.dOOdads\obj\Debug\MyGeneration.dOOdads.dll
+D:\project\YourTravel\Db\DALProjects\MyGeneration.dOOdads\obj\Debug\MyGeneration.dOOdads.pdb

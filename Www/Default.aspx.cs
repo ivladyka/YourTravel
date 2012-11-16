@@ -33,6 +33,13 @@ public partial class _Default : ProjectPageBase
             ddl.Items.Add(new RadComboBoxItem(i.ToString(), i.ToString()));
         }
     }
+    public string Booking
+    {
+        get
+        {
+            return Resources.Vikkisoft.Booking;
+        }
+    }
 
     public string CheckInRes
     {

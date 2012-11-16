@@ -123,6 +123,9 @@
   <data name="Adults" xml:space="preserve">
     <value>Adults</value>
   </data>
+  <data name="Booking" xml:space="preserve">
+    <value>Booking</value>
+  </data>
   <data name="CheckIn" xml:space="preserve">
     <value>Check-in</value>
   </data>

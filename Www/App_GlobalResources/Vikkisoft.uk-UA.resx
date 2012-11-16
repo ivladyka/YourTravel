@@ -123,6 +123,9 @@
   <data name="Adults" xml:space="preserve">
     <value>Дорослі</value>
   </data>
+  <data name="Booking" xml:space="preserve">
+    <value>Бронювання</value>
+  </data>
   <data name="CheckIn" xml:space="preserve">
     <value>Приїзд</value>
   </data>
