@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Telerik.Web.UI;
 using System.Collections.Specialized;
+using System.Web.UI.HtmlControls;
 
 public partial class _Default : ProjectPageBase
 {
@@ -20,17 +21,97 @@ public partial class _Default : ProjectPageBase
     private void LoadDDLs()
     {
         dpCheckInDate.MinDate = dpCheckOutDate.MinDate = DateTime.Now.AddDays(1);
-        LoadNumberDDL(ddlRooms, 1, 6);
-        LoadNumberDDL(ddlAdults, 1, 4);
-        LoadNumberDDL(ddlChildren, 0, 3);
+        for (int i = 0; i < 8; i++)
+        {
+            HtmlTableRow row = new HtmlTableRow();
+            if (i > 0)
+            {
+                HideControl((HtmlControl)row);
+            }
+            HtmlTableCell cell = new HtmlTableCell();
+            if (i > 0)
+            {
+                cell.InnerHtml = "&nbsp;";
+            }
+            else
+            {
+                cell.Controls.Add(AddDDL("ddlRooms", -1, 1, 8, "", "VIKKI_RoomsChange(this)"));
+            }
+            row.Cells.Add(cell);
+            cell = new HtmlTableCell();
+            cell.InnerHtml = Resources.Vikkisoft.Room + " " + (i + 1).ToString();
+            row.Cells.Add(cell);
+            cell = new HtmlTableCell();
+            cell.Controls.Add(AddDDL("ddlAdults", i, 1, 4));
+            row.Cells.Add(cell);
+            cell = new HtmlTableCell();
+            cell.Controls.Add(AddDDL("ddlChildren", i, 0, 3, "", "VIKKI_ChildrenChange(this)"));
+            row.Cells.Add(cell);
+            cell = new HtmlTableCell();
+            HideControl((HtmlControl)cell);
+            cell.Controls.Add(AddChildAgeDDL("ddlChildAge0_", i, ""));
+            cell.Controls.Add(AddChildAgeDDL("ddlChildAge1_", i, "margin-left: 2px;"));
+            cell.Controls.Add(AddChildAgeDDL("ddlChildAge2_", i, "margin-left: 2px;"));
+            row.Cells.Add(cell);
+            tblRooms.Rows.Add(row);
+        }
     }
 
-    private void LoadNumberDDL(RadComboBox ddl, int startIndex, int endIndex)
+    private DropDownList AddChildAgeDDL(string id, int index, string style)
+    {
+        DropDownList ddl = AddDDL(id, index, 0, 6);
+        HideControl((WebControl)ddl);
+        return ddl;
+    }
+
+    private void HideControl(HtmlControl ctrl)
+    {
+        ctrl.Style["visibility"] = "hidden";
+        ctrl.Style["display"] = "none";
+    }
+
+    private void HideControl(WebControl ctrl)
+    {
+        ctrl.Style["visibility"] = "hidden";
+        ctrl.Style["display"] = "none";
+    }
+
+    private DropDownList AddDDL(string id, int index, int startIndex, int endIndex, string style, string clienOnChange)
+    {
+        DropDownList ddl = new DropDownList();
+        ddl.ID = id;
+        if (clienOnChange != "")
+        {
+            ddl.Attributes["onchange"] = clienOnChange;
+        }
+        if (index >= 0)
+        {
+            ddl.ID += index.ToString();
+        }
+        if (style != "")
+        {
+            ddl.Attributes["style"] = style;
+        }
+        LoadNumberDDL(ddl, startIndex, endIndex);
+        return ddl;
+    }
+
+    private DropDownList AddDDL(string id, int index, int startIndex, int endIndex)
+    {
+        return AddDDL(id, index, startIndex, endIndex, "", "");
+    }
+
+    private DropDownList AddDDL(string id, int index, int startIndex, int endIndex, string style)
+    {
+        return AddDDL(id, index, startIndex, endIndex, style, "");
+    }
+
+    private void LoadNumberDDL(DropDownList ddl, int startIndex, int endIndex)
     {
         ddl.Items.Clear();
         for (int i = startIndex; i <= endIndex; i++)
         {
-            ddl.Items.Add(new RadComboBoxItem(i.ToString(), i.ToString()));
+            ddl.Items.Add(new ListItem(i.ToString(), i.ToString()));
         }
     }
     public string Booking
@@ -89,6 +170,14 @@ public partial class _Default : ProjectPageBase
         }
     }
 
+    public string AgeOfChildren
+    {
+        get
+        {
+            return Resources.Vikkisoft.AgeOfChildren;
+        }
+    }
+
     protected void btnSearch_Click(object sender, EventArgs e)
     {
         NameValueCollection data = new NameValueCollection();
@@ -115,9 +204,25 @@ public partial class _Default : ProjectPageBase
         data.Add("arrivalDay", dpCheckInDate.SelectedDate.Day.ToString());
         data.Add("departureMonth", dpCheckOutDate.SelectedDate.Month.ToString());
         data.Add("departureDay", dpCheckOutDate.SelectedDate.Day.ToString());
-        data.Add("numberOfRooms", ddlRooms.SelectedValue);
-        data.Add("room-0-adult-total", ddlAdults.SelectedValue);
-        data.Add("room-0-child-total", ddlChildren.SelectedValue);
+        int countRooms = int.Parse(GetDDLSelectedValue("ddlRooms"));
+        data.Add("numberOfRooms", countRooms.ToString());
+        for (int i = 0; i < countRooms; i++)
+        {
+            data.Add("room-" + i + "-adult-total", GetDDLSelectedValue("ddlAdults" + i));
+            data.Add("room-" + i + "-child-total", GetDDLSelectedValue("ddlChildren" + i));
+        }
         HttpHelper.RedirectAndPOST(this.Page, "http://reservations.yourtravel.biz/index.jsp", data);
+    }
+
+    private string GetDDLSelectedValue(string ddlID)
+    {
+        for (int i = 0; i < Request.Params.Keys.Count; i++)
+        {
+            if (Request.Params.Keys[i].IndexOf(ddlID) != -1)
+            {
+                return Request.Params[i].ToString();
+            }
+        }
+        return "";
     }
 }

@@ -52,6 +52,7 @@ public partial class Controls_Sites : System.Web.UI.Page
         cell.Align = "center";
         HyperLink hl = new HyperLink();
         hl.NavigateUrl = url;
+        hl.Attributes["rel"] = "nofollow";
         hl.Target = "_blank";
         if (banner != "")
         {

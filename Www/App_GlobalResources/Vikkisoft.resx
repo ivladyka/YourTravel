@@ -123,6 +123,9 @@
   <data name="Adults" xml:space="preserve">
     <value>Adults</value>
   </data>
+  <data name="AgeOfChildren" xml:space="preserve">
+    <value>Age of children</value>
+  </data>
   <data name="Booking" xml:space="preserve">
     <value>Booking</value>
   </data>
@@ -149,6 +152,9 @@
   </data>
   <data name="RequiredField" xml:space="preserve">
     <value>required field.</value>
+  </data>
+  <data name="Room" xml:space="preserve">
+    <value>Room</value>
   </data>
   <data name="Rooms" xml:space="preserve">
     <value>Rooms</value>

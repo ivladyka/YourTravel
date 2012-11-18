@@ -123,6 +123,9 @@
   <data name="Adults" xml:space="preserve">
     <value>Взрослые</value>
   </data>
+  <data name="AgeOfChildren" xml:space="preserve">
+    <value>Возраст детей</value>
+  </data>
   <data name="Booking" xml:space="preserve">
     <value>Бронирование</value>
   </data>
@@ -149,6 +152,9 @@
   </data>
   <data name="RequiredField" xml:space="preserve">
     <value>обязательное поле.</value>
+  </data>
+  <data name="Room" xml:space="preserve">
+    <value>Номер</value>
   </data>
   <data name="Rooms" xml:space="preserve">
     <value>Номеров</value>

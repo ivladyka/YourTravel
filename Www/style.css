@@ -402,13 +402,7 @@ div.footerlinks a
     behavior: url(PIE.htc);       
 
 }
-    .bookingblock table
-    {
-        margin-left:30px;
-        margin-right:30px;
-        position:relative;
-        color:#ffffff;
-    }
+
 .bookingblock table input
     {
      
@@ -468,7 +462,10 @@ div.footerlinks a
 }
 .bookingblocktabl
 {
-    
     padding-top:10px;
     padding-bottom:20px;
+    margin-left:30px;
+    margin-right:30px;
+    position:relative;
+    color:#ffffff;
 }

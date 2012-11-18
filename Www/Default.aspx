@@ -11,9 +11,55 @@
             VIKKI_SetDataPicketValue($find("<%= dpCheckOutDate.DatePickerClientID %>"), e.get_newDate());
         }
     }
+
     function VIKKI_SetDataPicketValue(datePicker, date) {
         date.setDate(date.getDate() + 1);
         datePicker.set_selectedDate(date);
+    }
+
+    function VIKKI_RoomsChange(e) {
+        var control = VIKKI_GetCurrentElementOrTarget(e);
+        var countRooms = parseInt(control.options[control.selectedIndex].text);
+        var tableRooms = document.getElementById("<%= tblRooms.ClientID %>");
+        for (var i = 1; i < tableRooms.rows.length; i++) {
+            var hide = true;
+            if (i <= countRooms) {
+                hide = false;
+            }
+            VIKKI_HideControl(tableRooms.rows[i], hide);
+        }
+        VIKKI_InitAgesColumn();
+    }
+
+    function VIKKI_ChildrenChange(e) {
+        var control = VIKKI_GetCurrentElementOrTarget(e);
+        var countChildren = parseInt(control.options[control.selectedIndex].text);
+        var tableRooms = document.getElementById("<%= tblRooms.ClientID %>");
+        for (var i = 0; i < 3; i++) {
+            var hide = true;
+            if (i < countChildren) {
+                hide = false;
+            }
+            var ChildAgeDDL = VIKKI_GetDDL(control.parentNode.parentNode.cells[4], "ddlChildAge" + i + "_");
+            VIKKI_HideControl(ChildAgeDDL, hide);
+        }
+        VIKKI_InitAgesColumn();
+    }
+
+    function VIKKI_InitAgesColumn() {
+        var tableRooms = document.getElementById("<%= tblRooms.ClientID %>");
+        var roomsDDL = VIKKI_GetDDL(tableRooms.rows[1].cells[0], "ddlRooms");
+        var countRooms = parseInt(roomsDDL.options[roomsDDL.selectedIndex].text);
+        var hideAgesColumn = true;
+        for (var i = 1; i <= countRooms; i++) {
+            var ChildrenDDL = VIKKI_GetDDL(tableRooms.rows[i].cells[3], "ddlChildren");
+            if (parseInt(ChildrenDDL.options[ChildrenDDL.selectedIndex].text) > 0) {
+                hideAgesColumn = false;
+            }
+        }
+        for (var i = 0; i <= countRooms; i++) {
+            VIKKI_HideControl(tableRooms.rows[i].cells[4], hideAgesColumn);
+        }
     }
 </script>
 </telerik:RadCodeBlock>
@@ -21,21 +67,21 @@
     <ul class="ulblock" >
         <li class="li1block">
      <div class="bookingblock" >
-    <table border="0" width="340px" class="bookingblocktabl"  >
+    <table border="0" width="350px" class="bookingblocktabl"  >
               <tr >
-                  <td colspan="3" class="bookingblockheader"><%=Booking%></td>
+                  <td class="bookingblockheader"><%=Booking%></td>
               </tr>
               <tr>
-                  <td colspan="3"><%=WhereGo%></td>
+                  <td><%=WhereGo%></td>
               </tr>
               <tr>
-                  <td colspan="3">
+                  <td>
                     <asp:TextBox ID="tbWhereGo" runat="server" Width="100%" Height="26px"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvWhereGo" runat="server" ErrorMessage="<%$Resources:Vikkisoft, RequiredField %>" ControlToValidate="tbWhereGo" Display="Dynamic" ValidationGroup="HomeSEARCHING"></asp:RequiredFieldValidator>
                   </td>
               </tr>
               <tr>
-                  <td colspan="3">
+                  <td>
                       <table border="0" width="100%" class="dateCheckInOut">
                           <tr>
                               <td><%=CheckInRes%></td> 
@@ -50,26 +96,29 @@
 
                   </td>
               </tr>
-                 <tr>
-                  <td style="width:33%; text-align:left"><%=RoomsRes%></td>
-                  <td style="width:33%; text-align:left; padding-left:10px;"><%=AdultsRes%></td>
-                  <td style="width:33%; text-align:left; padding-left:20px;"><%=ChildrenRes%></td>
-              </tr>
               <tr>
                   <td>
-                      <telerik:RadComboBox ID="ddlRooms" Skin="Windows7" runat="server"  EnableLoadOnDemand="false" CssClass="homedropdown" Width="100px" >
-                      </telerik:RadComboBox> 
-                  </td>
-                  <td style="text-align:center">
-                    <telerik:RadComboBox ID="ddlAdults" Skin="Windows7" runat="server"  EnableLoadOnDemand="false" CssClass="homedropdown" Width="100px" >
-                       </telerik:RadComboBox></td>
-                  <td style="text-align:right">
-                      <telerik:RadComboBox ID="ddlChildren" Skin="Windows7" runat="server"  EnableLoadOnDemand="false" CssClass="homedropdown" Width="100px" >                       
-                      </telerik:RadComboBox>
+                    <table id="tblRooms" runat="server" border="0" width="100%" cellpadding="0" cellspacing="4">
+                        <tr>
+                            <td style="width:40px; text-align:left;">
+                                <%=RoomsRes%>
+                            </td>
+                            <td></td>
+                            <td>
+                                <%=AdultsRes%>
+                            </td>
+                            <td>
+                                <%=ChildrenRes%>
+                            </td>
+                            <td style="visibility:hidden; display:none;">
+                                <%=AgeOfChildren%>
+                            </td>
+                        </tr>
+                    </table>
                   </td>
               </tr>
-                 <tr>
-                  <td colspan="3" style="padding-right:5px; padding-top:5px;"> 
+              <tr>
+                  <td style="padding-right:5px; padding-top:5px;"> 
                       <asp:Button ID="btnSearch" runat="server" OnClick="btnSearch_Click" Text="<%$Resources:Vikkisoft, Search %>" ValidationGroup="HomeSEARCHING" CssClass="formbutton" Width="250"  Height="50px"/>
                   </td>
               </tr>

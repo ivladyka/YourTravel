@@ -116,7 +116,7 @@ function VIKKI_HideControl(ControlObject, hide) {
         }
         else {
             ControlObject.style.visibility = "inherit";
-            ControlObject.style.display = "inline";
+            ControlObject.style.display = "";
         }
     }
 }
@@ -165,6 +165,7 @@ function VIKKI_GetCurrentElementOrTarget(e) {
     if (e.target != null) {
         return e.target;
     }
+    return e;
 }
 
 function VIKKI_LoadDefaultPage() {
@@ -224,3 +225,12 @@ function VIIKILanguageChanged(sender, eventArgs) {
     }
 }
 
+function VIKKI_GetDDL(ctrl, id) {
+    var selects = ctrl.getElementsByTagName("select");
+    for (var i = 0; i < selects.length; i++) {
+        if (selects[i].id.indexOf(id) != -1) {
+            return selects[i];
+        }
+    }
+    return null;
+}
