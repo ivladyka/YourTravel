@@ -19,7 +19,11 @@ public partial class Controls_SiteTableView : System.Web.UI.UserControl
 
     private void LoadSites()
     {
-        const int countCells = 2;
+        int countCells = 2;
+        if(IsSitePage)
+        {
+            countCells = 3;
+        }
         HtmlTableRow row = new HtmlTableRow();
         Site s = new Site();
         if (s.LoadBySiteTypeID(SiteTypeID))
@@ -45,11 +49,15 @@ public partial class Controls_SiteTableView : System.Web.UI.UserControl
         tblSites.Rows.Add(row);
     }
 
-    private static HtmlTableCell AddSiteCellInnerHTML(string name, string banner, string url)
+    private HtmlTableCell AddSiteCellInnerHTML(string name, string banner, string url)
     {
         HtmlTableCell cell = new HtmlTableCell();
         Panel pnl = new Panel();
         pnl.CssClass = "sitesbanerhome";
+        if(IsSitePage)
+        {
+            pnl.CssClass = "sitespagebaner";
+        }
         HyperLink hl = new HyperLink();
         hl.NavigateUrl = url;
         hl.Attributes["rel"] = "nofollow";
@@ -69,7 +77,7 @@ public partial class Controls_SiteTableView : System.Web.UI.UserControl
         return cell;
     }
 
-    private static HtmlTableCell AddTableCell(string innerHtml)
+    private HtmlTableCell AddTableCell(string innerHtml)
     {
         HtmlTableCell cell = new HtmlTableCell();
         cell.InnerHtml = innerHtml;
@@ -87,5 +95,17 @@ public partial class Controls_SiteTableView : System.Web.UI.UserControl
             }
             return 1;
         }
-    }   
+    }
+
+    private bool IsSitePage
+    {
+        get
+        {
+            if (Request.Url.ToString().ToLower().IndexOf("sites.aspx") >= 0)
+            {
+                return true;
+            }
+            return false;
+        }
+    }
 }
