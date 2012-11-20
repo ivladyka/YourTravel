@@ -59,7 +59,11 @@ public partial class _Default : ProjectPageBase
 
     private DropDownList AddChildAgeDDL(string id, int index, string style)
     {
-        DropDownList ddl = AddDDL(id, index, 0, 6);
+        DropDownList ddl = AddDDL(id, index, 1, 17);
+        ddl.Items.Insert(0, new ListItem("<1", "0"));
+        ListItem item = new ListItem(" ", "-1");
+        item.Selected = true;
+        ddl.Items.Insert(0, item);
         HideControl((WebControl)ddl);
         return ddl;
     }

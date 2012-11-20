@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/DefaultMP.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
 <%@ Register TagPrefix="uc1" TagName="DatePicker" Src="Controls/ValueControls/DatePicker.ascx" %>
+<%@ Register TagPrefix="uc1" TagName="SiteTableView" Src="Controls/SiteTableView.ascx" %>
 <%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
@@ -186,61 +187,16 @@
 
 	 </div>
             </div> 
-      <table width="100%" class="sitesbanerhometabl">
+      <table width="100%">
           <tr>
               <td>
-                  <div class="sitesbanerhome">
-                    <a>
-                        <img src="Images/WEBSite/3d9c16c0-1aba-42c2-99c5-2568431f8bec.jpg" />
-                    </a>
-                </div>
-              </td>
-              <td>
-                <div class="sitesbanerhome">
-                    <a>
-                        <img src="Images/WEBSite/614deddc-5ae2-41da-acff-14825bf36949.jpg" />
-                    </a>
-                </div>
+                  <uc1:SiteTableView id="siteTableView" runat="server"></uc1:SiteTableView>
               </td>
           </tr>
           <tr>
-              <td>
-                <div class="sitesbanerhome">
-                    <a>
-                        <img src="Images/WEBSite/870b858a-23fc-4dbb-be62-4a17c9c07e60.jpg" />
-                    </a>
-                </div>
-              </td>
-
-              <td>
-                <div class="sitesbanerhome">
-                    <a>
-                        <img src="Images/WEBSite/84563ee4-3afa-4d3f-b6d5-0df247289e25.jpg" />
-                    </a>
-                </div>
-              </td>
-          </tr>
-          <tr>
-              <td>
-                <div class="sitesbanerhome">
-                    <a>
-                        <img src="Images/WEBSite/59679955-ee6e-468c-b371-df73665e6a61.jpg" />
-                    </a>
-                </div>
-              </td>
-
-              <td>
-                <div class="sitesbanerhome">
-                    <a>
-                        <img src="Images/WEBSite/e5dba1b3-2df1-4c17-af88-d9a624f38dde.jpg" />
-                    </a>
-                </div>
-              </td>
-          </tr>
-          <tr>
-              <td colspan="2" align="center">
-            <asp:Button ID="Button1" runat="server" Text="More" CssClass="moreSites"  />
-              </td>
+            <td align="center">
+                <asp:HyperLink ID="hlMore" runat="server" Text="More" CssClass="moreSites" NavigateUrl="Sites.aspx?st=1"></asp:HyperLink>
+            </td>
           </tr>
       </table>
          </li>

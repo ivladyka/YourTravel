@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -8,7 +7,7 @@ using System.Web.UI.HtmlControls;
 using VikkiSoft_BLL;
 using System.IO;
 
-public partial class Controls_Sites : System.Web.UI.Page
+public partial class Controls_SiteTableView : System.Web.UI.UserControl
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -49,7 +48,8 @@ public partial class Controls_Sites : System.Web.UI.Page
     private static HtmlTableCell AddSiteCellInnerHTML(string name, string banner, string url)
     {
         HtmlTableCell cell = new HtmlTableCell();
-        cell.Align = "center";
+        Panel pnl = new Panel();
+        pnl.CssClass = "sitesbanerhome";
         HyperLink hl = new HyperLink();
         hl.NavigateUrl = url;
         hl.Attributes["rel"] = "nofollow";
@@ -64,7 +64,8 @@ public partial class Controls_Sites : System.Web.UI.Page
         {
             hl.Text = name;
         }
-        cell.Controls.Add(hl);
+        pnl.Controls.Add(hl);
+        cell.Controls.Add(pnl);
         return cell;
     }
 
@@ -84,7 +85,7 @@ public partial class Controls_Sites : System.Web.UI.Page
             {
                 return int.Parse(Request.QueryString["st"].ToString());
             }
-            return 0;
+            return 1;
         }
     }   
 }
