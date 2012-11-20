@@ -63,11 +63,11 @@
     }
 </script>
 </telerik:RadCodeBlock>
-    <div style="width:1100px; display:block;">
+    <div style="width:1100px; display:block; overflow:hidden;  margin-bottom:120px;">
     <ul class="ulblock" >
         <li class="li1block">
      <div class="bookingblock" >
-    <table border="0" width="350px" class="bookingblocktabl"  >
+    <table border="0" width="350px" class="bookingblocktabl" cellpadding="5" cellspacing="0">
               <tr >
                   <td class="bookingblockheader"><%=Booking%></td>
               </tr>
@@ -82,28 +82,27 @@
               </tr>
               <tr>
                   <td>
-                      <table border="0" width="100%" class="dateCheckInOut">
+                      <table border="0" width="100%" class="dateCheckInOut"  cellpadding="0" cellspacing="0">
                           <tr>
                               <td><%=CheckInRes%></td> 
-                              <td><%=CheckOutRes%></td>
+                              <td style="padding-left:10px"><%=CheckOutRes%></td>
                           </tr>
                           <tr>
-                              <td><uc1:DatePicker Width="160" id="dpCheckInDate" runat="server" IsRequire="true"  ValidationGroup="HomeSEARCHING" OnClientDateSelected="VIKKI_CheckInDateSelected"></uc1:DatePicker></td> 
-                              <td><uc1:DatePicker  Width="160"  id="dpCheckOutDate" runat="server" IsRequire="true" ValidationGroup="HomeSEARCHING"></uc1:DatePicker></td>
+                              <td><uc1:DatePicker Width="160"  id="dpCheckInDate" runat="server" IsRequire="true"  ValidationGroup="HomeSEARCHING" OnClientDateSelected="VIKKI_CheckInDateSelected"></uc1:DatePicker></td> 
+                              <td align="right"><uc1:DatePicker  Width="160"  id="dpCheckOutDate" runat="server" IsRequire="true" ValidationGroup="HomeSEARCHING"></uc1:DatePicker></td>
                           </tr>
                       </table>
                    <asp:Label ID="dateCompare" runat="server" Visible="False" ForeColor="white" Text="<%$Resources:Vikkisoft, DateCompareError %>"></asp:Label>
-
                   </td>
               </tr>
               <tr>
-                  <td>
-                    <table id="tblRooms" runat="server" border="0" width="100%" cellpadding="0" cellspacing="4">
+                  <td style="padding:0px; margin:0px">
+                    <table id="tblRooms" runat="server" border="0" width="100%" cellpadding="5" cellspacing="0">
                         <tr>
                             <td style="width:40px; text-align:left;">
                                 <%=RoomsRes%>
                             </td>
-                            <td></td>
+                            <td  ></td>
                             <td>
                                 <%=AdultsRes%>
                             </td>
@@ -118,14 +117,15 @@
                   </td>
               </tr>
               <tr>
-                  <td style="padding-right:5px; padding-top:5px;"> 
+                  <td style="padding-right:5px; "> 
                       <asp:Button ID="btnSearch" runat="server" OnClick="btnSearch_Click" Text="<%$Resources:Vikkisoft, Search %>" ValidationGroup="HomeSEARCHING" CssClass="formbutton" Width="250"  Height="50px"/>
                   </td>
               </tr>
           </table>
         </div>
+        <asp:ImageButton ID="ImageButton1" ImageUrl="~/Images/parisbanner.jpg" runat="server" cssclass="leftcitybanner"/>
         </li>
-         <li> <div style=" width:680px; float:right">
+         <li style=" width:680px; float:right">           
              <div id="header">
 	 <div class="container" id="header-content">
 	     <div class="slideshow">
@@ -182,14 +182,69 @@
 		</div>
 <!-- pcvector.net -->
 <script type="text/javascript" src="/templates/pcv/js/pcvector.js"></script>
-<!-- /pcvector.net -->    </div>
+<!-- /pcvector.net -->    
 
+	 </div>
             </div> 
+      <table width="100%" class="sitesbanerhometabl">
+          <tr>
+              <td>
+                  <div class="sitesbanerhome">
+                    <a>
+                        <img src="Images/WEBSite/3d9c16c0-1aba-42c2-99c5-2568431f8bec.jpg" />
+                    </a>
+                </div>
+              </td>
+              <td>
+                <div class="sitesbanerhome">
+                    <a>
+                        <img src="Images/WEBSite/614deddc-5ae2-41da-acff-14825bf36949.jpg" />
+                    </a>
+                </div>
+              </td>
+          </tr>
+          <tr>
+              <td>
+                <div class="sitesbanerhome">
+                    <a>
+                        <img src="Images/WEBSite/870b858a-23fc-4dbb-be62-4a17c9c07e60.jpg" />
+                    </a>
+                </div>
+              </td>
+
+              <td>
+                <div class="sitesbanerhome">
+                    <a>
+                        <img src="Images/WEBSite/84563ee4-3afa-4d3f-b6d5-0df247289e25.jpg" />
+                    </a>
+                </div>
+              </td>
+          </tr>
+          <tr>
+              <td>
+                <div class="sitesbanerhome">
+                    <a>
+                        <img src="Images/WEBSite/59679955-ee6e-468c-b371-df73665e6a61.jpg" />
+                    </a>
+                </div>
+              </td>
+
+              <td>
+                <div class="sitesbanerhome">
+                    <a>
+                        <img src="Images/WEBSite/e5dba1b3-2df1-4c17-af88-d9a624f38dde.jpg" />
+                    </a>
+                </div>
+              </td>
+          </tr>
+          <tr>
+              <td colspan="2" align="center">
+            <asp:Button ID="Button1" runat="server" Text="More" CssClass="moreSites"  />
+              </td>
+          </tr>
+      </table>
          </li>
     </ul>
-  
-
-
     </div>
 </asp:Content>
 

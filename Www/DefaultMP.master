@@ -44,8 +44,8 @@
 <body style="width:100%; height:100%">
 
     <form id="form1" runat="server" style="width:100%; height:100%">    
-        <div class="formdiv">
-        <div class="divmenu"> 
+   <div class="formdiv">
+      <div class="divmenu"> 
     <ul id="topnav" class="v2">
 		<li id="startlimenu"><a href="#">Главная</a>           
 		</li>
@@ -55,14 +55,16 @@
 		<li><a href="#">О нас</a></li>
 		<li><asp:HyperLink ID="hlContactUs" runat="server" Text="<%$Resources:Vikkisoft, ContactUS %>" /></li>
 	</ul>
-	</div>
-        <div class="logodiv">  
+	</div>       
+      <div class="logodiv">   
+        <a href="Default.aspx">   
         <asp:Image ID="logo" runat="server" ImageUrl="Images/logo.png" Width="100px"  />
         <div id="logospan">           
-      <asp:Label ID="Label1" runat="server" Text="YourTravel" CssClass="CompanyName">Your</asp:Label>
-      <asp:Label ID="Label2" runat="server" Text="YourTravel" CssClass="CompanyName1">Travel</asp:Label>
+        <asp:Label ID="Label1" runat="server" Text="YourTravel" CssClass="CompanyName">Your</asp:Label>
+        <asp:Label ID="Label2" runat="server" Text="YourTravel" CssClass="CompanyName1">Travel</asp:Label>
         </div> 
-            <div class="langv">
+        </a>
+        <div class="langv">
             <asp:HyperLink id="hlEnglishLang" NavigateUrl="~/default.aspx" BorderWidth="0px" runat="server" ToolTip="<%$Resources:Vikkisoft, English %>">
              <asp:Label ID="lblEnglishLang" runat="server" Text="<%$Resources:Vikkisoft, English %>"></asp:Label>
              </asp:HyperLink> | 
@@ -76,15 +78,14 @@
         </div>		     
         <telerik:RadScriptManager runat="Server" ID="RadScriptManager1" />
         <asp:ContentPlaceHolder id="cphWithoutScroll" runat="server">        
-        </asp:ContentPlaceHolder>        
-   </div> 
-          <div class="footer">  
-        <div class="footerlinks">
- <asp:HyperLink ID="HyperLink1" runat="server">Home</asp:HyperLink> | <asp:HyperLink ID="HyperLink2" runat="server">Hotels</asp:HyperLink> | <asp:HyperLink ID="HyperLink3" runat="server">Contact Us</asp:HyperLink>
-      </div>
-    </div> 
+        </asp:ContentPlaceHolder>  
+      
+   </div>     
+        <div class="footer">  
+         <div class="footerlinks">
+            <asp:HyperLink ID="HyperLink1" runat="server">Home</asp:HyperLink> | <asp:HyperLink ID="HyperLink2" runat="server">Hotels</asp:HyperLink> | <asp:HyperLink ID="HyperLink3" runat="server">Contact Us</asp:HyperLink>
+        </div>
+        </div>
     </form> 
-
-    
 </body>
 </html>

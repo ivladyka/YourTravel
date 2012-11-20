@@ -19,16 +19,14 @@ Form
 {
    width: 100%;
     height:100% !important;
-    position:absolute;   
 }
 .formdiv
 {
     max-width: 1100px;
-    height:100% !important;
-    position:relative;
+    position: relative;
     float: none;
-    overflow:hidden;
-    margin: 0 auto;
+    overflow: visible;
+    margin: 0 auto 80px auto;
 }
 @font-face {
  font-family:Bolid;
@@ -198,9 +196,9 @@ p {
     position: relative;
     width: 680px;
     float:right;    
-    border-radius: 0px 10px 10px 0px ; 
-    -webkit-border-radius: 0px 10px 10px 0px; 
-    -moz-border-radius:0px 10px 10px 0px;
+    border-radius: 10px 10px 10px 10px ; 
+    -webkit-border-radius: 10px 10px 10px 10px ; 
+    -moz-border-radius:10px 10px 10px 10px ; 
     behavior: url(PIE.htc);   
 }
 .slide{
@@ -212,9 +210,9 @@ p {
 	opacity: 1; 
 	 width: 680px;
 	height: 390px;
-    border-radius: 0px 10px 10px 0px ; 
-    -webkit-border-radius: 0px 10px 10px 0px; 
-    -moz-border-radius:0px 10px 10px 0px;
+    border-radius: 10px 10px 10px 10px ; 
+    -webkit-border-radius: 10px 10px 10px 10px ; 
+    -moz-border-radius:10px 10px 10px 10px ; 
     behavior: url(PIE.htc);   
 }
 
@@ -229,9 +227,9 @@ p {
     position: relative;
      width: 680px;
     z-index: 100;
-    border-radius: 0px 10px 10px 0px ; 
-    -webkit-border-radius: 0px 10px 10px 0px; 
-    -moz-border-radius:0px 10px 10px 0px;
+    border-radius: 10px 10px 10px 10px ; 
+    -webkit-border-radius: 10px 10px 10px 10px ; 
+    -moz-border-radius:10px 10px 10px 10px ; 
     behavior: url(PIE.htc);       
   
 }
@@ -348,19 +346,20 @@ ul#slider {
     width:100%;
     position:fixed;
     background-color:#849db6;
-    padding:20px;
-    
+    padding:20px;    
 }
 .footerlinks
 {    
     position:absolute;
-    margin: 0 auto;  
     max-width: 1110px;
     float: none;
     overflow:hidden;
      margin: 0 auto;
      color:#ffffff;
-     bottom:0px;
+     margin: -10px 0 0;
+    padding: 10px 0 7px;
+    position: relative;
+    text-align: center;
 }
 div.footerlinks a
 {    
@@ -393,22 +392,17 @@ div.footerlinks a
 {
     width:410px; 
     margin-right:00px; 
-    height:390px;
+    min-height:390px;
     background-color:#f5ac00;
     margin-top:0px;   
-    border-radius: 10px 0px 0px 10px ; 
-    -webkit-border-radius: 10px  0px 0px 10px ; 
-    -moz-border-radius:10px  0px 0px  10px ;
+    border-radius: 10px 10px 10px 10px; 
+    -webkit-border-radius: 10px 10px 10px 10px; 
+    -moz-border-radius:10px 10px 10px 10px; 
     behavior: url(PIE.htc);       
 
 }
 
-.bookingblock table input
-    {
-     
-       margin:0px;
-       padding:0px;
-    }
+
 .homedropdown table
 {
     margin:0px;
@@ -428,29 +422,67 @@ div.footerlinks a
     font-weight:bold;  
 }
 
-.datapickerstyle
-{    
 
-}
 .formbutton
 {
     background-color:#e4e4e4;
     text-align:center !important;
     margin-top:20px  !important;
+    padding-top:20px;
     margin-left:50px !important;
-    border-radius: 10px 10px 10px 10px ; 
-    -webkit-border-radius: 10px 10px 10px 10px ; 
-    -moz-border-radius:10px 10px 10px 10px ;
+    border-radius: 10px 10px 10px 10px   !important;
+    -webkit-border-radius: 10px 10px 10px 10px  !important; 
+    -moz-border-radius:10px 10px 10px 10px   !important;
     behavior: url(PIE.htc);  
-    border-right:1px solid #858585;   
-    border-bottom:1px solid #858585;  
-    border-top:1px solid #ffffff;   
-    border-left:1px solid #ffffff; 
+    border-right:1px solid #858585  !important;  
+    border-bottom:1px solid #858585  !important; 
+    border-top:1px solid #ffffff  !important;  
+    border-left:1px solid #ffffff  !important; 
     font-size:24pt;
     color:#8c8c8c;
     vertical-align:middle !important;
-    padding-bottom:17px !important;
+    background: -moz-linear-gradient(center top, #f4f4f4, #e3e3e3 ) repeat scroll 0 0 transparent;
+	 /* Safari 4-5, Chrome 1-9 */ 
+	 background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f4f4f4), to(#e3e3e3)) repeat scroll 0 0 transparent; 	 
+	 /* Firefox 3.6+ */ 
+	 background: -moz-linear-gradient(top, #f4f4f4, #e3e3e3) repeat scroll 0 0 transparent;
+	 /* IE 10 */ 
+	 background: -ms-linear-gradient(top, #f4f4f4, #e3e3e3) repeat scroll 0 0 transparent;
+	 /* Opera 11.10+ */ 
+	 background: -o-linear-gradient(top, #f4f4f4, #e3e3e3) repeat scroll 0 0 transparent; 
+	 /* IE6 & IE7 */
+	 -pie-background: linear-gradient(#f4f4f4, #e3e3e3);
 }
+.moreSites
+{
+    background-color: #00b0ee;
+    text-align: center;
+    border-radius: 10px 10px 10px 10px !important;
+    -webkit-border-radius: 10px 10px 10px 10px !important;
+    -moz-border-radius: 10px 10px 10px 10px !important;
+    behavior: url(PIE.htc);
+    border-right: 1px solid #0a608c !important;
+    border-bottom: 1px solid #0a608c !important;
+    border-top: 1px solid #99ddff !important;
+    border-left: 1px solid #99ddff !important;
+    font-size: 24pt;
+    color: #ffffff;
+    vertical-align: middle !important;
+    background: -moz-linear-gradient(center top, #00c6ff, #0094e1) repeat scroll 0 0 transparent; /* Safari 4-5, Chrome 1-9 */
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#00c6ff), to(#0094e1)) repeat scroll 0 0 transparent; /* Firefox 3.6+ */
+    background: -moz-linear-gradient(top, #00c6ff, #0094e1) repeat scroll 0 0 transparent; /* IE 10 */
+    background: -ms-linear-gradient(top, #00c6ff, #0094e1) repeat scroll 0 0 transparent; /* Opera 11.10+ */
+    background: -o-linear-gradient(top, #00c6ff, #0094e1) repeat scroll 0 0 transparent; /* IE6 & IE7 */
+    -pie-background: linear-gradient(#00c6ff, #0094e1);
+    width:70%;
+    height: 50px;
+    vertical-align: bottom;
+    margin-top: 20px;
+    margin-bottom: 30px;
+     text-shadow:0px 2px 1px rgba(50, 50, 50, 0.35);
+     display:block
+}
+
 .Validatorstyle
 {
     font-size:12pt
@@ -460,12 +492,100 @@ div.footerlinks a
     margin:0px !important;
     padding:0px !important;
 }
+
+
+.bookingblocktabl select
+{
+    padding:5px;
+    width: 70px;
+    border-radius: 5px 5px 5px 5px; 
+    -webkit-border-radius: 5px 5px 5px 5px; 
+    -moz-border-radius: 5px 5px 5px 5px; 
+    border-style:none;
+    behavior: url(PIE.htc);  
+}
+.datapickerstyle .RadInput input
+{   
+    height:28px !important;
+    border-radius: 5px 5px 5px 5px; 
+    -webkit-border-radius: 5px 5px 5px 5px; 
+    -moz-border-radius: 5px 5px 5px 5px; 
+     border-style:none;
+    behavior: url(PIE.htc);  
+}
+.bookingblock table input
+    {
+     
+    margin:0px;
+    padding:0px;
+    border-radius: 5px 5px 5px 5px; 
+    -webkit-border-radius: 5px 5px 5px 5px; 
+    -moz-border-radius: 5px 5px 5px 5px; 
+     border-style:none;
+    behavior: url(PIE.htc); 
+    }
+table#tblRooms
+{
+    margin:0px !important;
+    padding:0px !important;
+}
+.bookingblocktabl table
+{
+       margin:0px !important;
+    padding:0px !important;
+}
+bookingblocktabl td
+{  margin:0px !important;
+    padding:0px !important;
+}
 .bookingblocktabl
 {
-    padding-top:10px;
+    padding-top:20px;
     padding-bottom:20px;
     margin-left:30px;
     margin-right:30px;
+    
     position:relative;
     color:#ffffff;
+ min-height: 390px !important;
+}
+.sitesbaner
+{
+    margin-top:40px;
+    margin-bottom:80px;
+}
+.sitesbaner img
+{
+    height:150px;
+}
+.sitesbanerhome
+{
+    text-align: center;
+    border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-box-shadow: 2px 4px 5px rgba(50, 50, 50, 0.35);
+    -moz-box-shadow: 2px 4px 5px rgba(50, 50, 50, 0.35);
+    box-shadow: 2px 4px 5px rgba(50, 50, 50, 0.35);
+    behavior: url(PIE.htc);
+    border: 1px solid #e3e3e3;
+    margin-bottom: 10px;
+}
+.sitesbanerhome img
+{
+   height:100px;
+}
+.sitesbanerhometabl
+{
+    padding-top:20px;
+}
+.leftcitybanner
+{
+    margin-top:20px;
+    border-radius: 10px 10px 10px 10px; 
+    -webkit-border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+        border: 1px solid #e3e3e3;
+        padding:0px;
+        
 }
