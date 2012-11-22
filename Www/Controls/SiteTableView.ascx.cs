@@ -19,10 +19,10 @@ public partial class Controls_SiteTableView : System.Web.UI.UserControl
 
     private void LoadSites()
     {
-        int countCells = 2;
+        int countCells = 1;
         if(IsSitePage)
         {
-            countCells = 3;
+            countCells = 2;
         }
         HtmlTableRow row = new HtmlTableRow();
         Site s = new Site();

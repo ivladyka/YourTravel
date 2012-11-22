@@ -181,7 +181,27 @@ public partial class _Default : ProjectPageBase
             return Resources.Vikkisoft.AgeOfChildren;
         }
     }
-
+    public string SearchhotelsRes
+    {
+        get
+        {
+            return Resources.Vikkisoft.SearchhotelsRes;
+        }
+    }
+    public string hotels
+    {
+        get
+        {
+            return Resources.Vikkisoft.hotels;
+        }
+    }
+    public string PopulardestinationsRes
+    {
+        get
+        {
+            return Resources.Vikkisoft.PopulardestinationsRes;
+        }
+    }
     protected void btnSearch_Click(object sender, EventArgs e)
     {
         NameValueCollection data = new NameValueCollection();

@@ -47,14 +47,32 @@
    <div class="formdiv">
       <div class="divmenu"> 
     <ul id="topnav" class="v2">
-		<li id="startlimenu"><a href="#">Главная</a>           
+		<li id="startlimenu">
+            <a href="#">
+                <%=menuHome%>
+            </a>           
 		</li>
-		<li><a href="http://reservations.yourtravel.biz/templates/407972/index">Готелі</a></li>
-		<li><a href="#">Портфолио</a></li>
-		<li><a href="#">Блог</a></li>
-		<li><a href="#">О нас</a></li>
-		<li><asp:HyperLink ID="hlContactUs" runat="server" Text="<%$Resources:Vikkisoft, ContactUS %>" /></li>
-	</ul>
+		<li>
+            <a href="http://reservations.yourtravel.biz/templates/407972/index"> 
+                <%=menuHotels%>
+            </a>
+		</li>
+		<li>
+            <a href="#">
+                <%=menuAboutUS%>
+            </a>
+		</li>		
+        <li>
+            <a href="#">
+                <%=menuPrivacyPolicy%>
+            </a>
+		</li>
+		<li>
+            <a href="#">
+                <%=menuContactUS%>
+            </a>
+		</li>	
+	</ul>   
 	</div>       
       <div class="logodiv">   
         <a href="Default.aspx">   
@@ -64,17 +82,18 @@
         <asp:Label ID="Label2" runat="server" Text="YourTravel" CssClass="CompanyName1">Travel</asp:Label>
         </div> 
         </a>
-        <div class="langv">
+
+        </div>        
+       <div class="langv">           
             <asp:HyperLink id="hlEnglishLang" NavigateUrl="~/default.aspx" BorderWidth="0px" runat="server" ToolTip="<%$Resources:Vikkisoft, English %>">
-             <asp:Label ID="lblEnglishLang" runat="server" Text="<%$Resources:Vikkisoft, English %>"></asp:Label>
-             </asp:HyperLink> | 
+                <asp:Image ID="Image1"  runat="server"  ImageUrl="~/Images/engflag.jpg" />
+             </asp:HyperLink> 
             <asp:HyperLink ID="hlUkrainianLang" NavigateUrl="~/default.aspx" BorderWidth="0px" runat="server" ToolTip="<%$Resources:Vikkisoft, Ukrainian %>">
-            <asp:Label ID="lblUkrainianLang" runat="server" Text="<%$Resources:Vikkisoft, Ukrainian %>"></asp:Label>
-            </asp:HyperLink> | 
+               <asp:Image ID="Image2"  runat="server"  ImageUrl="~/Images/ukrflag.jpg" />
+            </asp:HyperLink> 
             <asp:HyperLink ID="hlRussianLang" NavigateUrl="~/default.aspx" BorderWidth="0px" runat="server" ToolTip="<%$Resources:Vikkisoft, Russian %>">
-            <asp:Label ID="lblRussianLang" runat="server" Text="<%$Resources:Vikkisoft, Russian %>"></asp:Label>
+            <asp:Image ID="Image3"  runat="server"  ImageUrl="~/Images/ruflag.jpg" />
             </asp:HyperLink>
-        </div>
         </div>		     
         <telerik:RadScriptManager runat="Server" ID="RadScriptManager1" />
         <asp:ContentPlaceHolder id="cphWithoutScroll" runat="server">        

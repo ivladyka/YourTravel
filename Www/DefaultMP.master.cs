@@ -44,4 +44,39 @@ public partial class MasterPage : MasterPageBase
             return "<script src='" + path + "js/Scripts.js' type='text/javascript'></script>";
         }
     }
+    public string menuHome
+    {
+        get
+        {
+            return Resources.Vikkisoft.menuHome;
+        }
+    }
+    public string menuHotels
+    {
+        get
+        {
+            return Resources.Vikkisoft.menuHotels;
+        }
+    }
+    public string menuPrivacyPolicy
+    {
+        get
+        {
+            return Resources.Vikkisoft.menuPrivacyPolicy;
+        }
+    }
+    public string menuAboutUS
+    {
+        get
+        {
+            return Resources.Vikkisoft.menuAboutUS;
+        }
+    }
+    public string menuContactUS
+    {
+        get
+        {
+            return Resources.Vikkisoft.menuContactUS;
+        }
+    }
 }

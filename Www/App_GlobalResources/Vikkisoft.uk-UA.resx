@@ -147,8 +147,29 @@
   <data name="English" xml:space="preserve">
     <value>Анг</value>
   </data>
+  <data name="hotels" xml:space="preserve">
+    <value>готелів</value>
+  </data>
+  <data name="menuAboutUS" xml:space="preserve">
+    <value>Про нас</value>
+  </data>
+  <data name="menuContactUS" xml:space="preserve">
+    <value>Контакти</value>
+  </data>
+  <data name="menuHome" xml:space="preserve">
+    <value>Головна</value>
+  </data>
+  <data name="menuHotels" xml:space="preserve">
+    <value>Пошук готелів</value>
+  </data>
+  <data name="menuPrivacyPolicy" xml:space="preserve">
+    <value>Конфіденційність</value>
+  </data>
   <data name="PageTitle" xml:space="preserve">
     <value />
+  </data>
+  <data name="PopulardestinationsRes" xml:space="preserve">
+    <value>Популярні напрямки</value>
   </data>
   <data name="RequiredField" xml:space="preserve">
     <value>required field.</value>
@@ -164,6 +185,9 @@
   </data>
   <data name="Search" xml:space="preserve">
     <value>Пошук</value>
+  </data>
+  <data name="SearchhotelsRes" xml:space="preserve">
+    <value>Пошук готелів</value>
   </data>
   <data name="Ukrainian" xml:space="preserve">
     <value>Укр</value>

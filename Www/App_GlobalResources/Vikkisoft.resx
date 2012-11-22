@@ -147,8 +147,29 @@
   <data name="English" xml:space="preserve">
     <value>Eng</value>
   </data>
+  <data name="hotels" xml:space="preserve">
+    <value>hotels</value>
+  </data>
+  <data name="menuAboutUS" xml:space="preserve">
+    <value>About US</value>
+  </data>
+  <data name="menuContactUS" xml:space="preserve">
+    <value>Contact US</value>
+  </data>
+  <data name="menuHome" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="menuHotels" xml:space="preserve">
+    <value>Search hotels</value>
+  </data>
+  <data name="menuPrivacyPolicy" xml:space="preserve">
+    <value>Privacy Policy</value>
+  </data>
   <data name="PageTitle" xml:space="preserve">
     <value>YourTravel.biz</value>
+  </data>
+  <data name="PopulardestinationsRes" xml:space="preserve">
+    <value>Popular destinations</value>
   </data>
   <data name="RequiredField" xml:space="preserve">
     <value>required field.</value>
@@ -164,6 +185,9 @@
   </data>
   <data name="Search" xml:space="preserve">
     <value>Search</value>
+  </data>
+  <data name="SearchhotelsRes" xml:space="preserve">
+    <value>Search hotels</value>
   </data>
   <data name="Ukrainian" xml:space="preserve">
     <value>Ukr</value>
