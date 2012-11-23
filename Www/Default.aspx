@@ -187,7 +187,7 @@
 
 	 </div>
             </div>   
-         <h1> <%=PopulardestinationsRes%> </h1>
+         <div style="top: 20px;  margin-bottom:20px; height:40px;"><h1> <%=PopulardestinationsRes%> </h1></div>
                        <div class="homecitybannerleft" style="margin-top:20px;"> 
                            <a href="http://reservations.yourtravel.biz/templates/407972/hotels/list?lang=en&currency=USD&mcicid=407972.homepage.hotel.city-AREA-9b0681e3-6d9f-47e8-8e14-5389f83569dd&secureUrlFromDataBridge=https%3A%2F%2Fwww.travelnow.com&requestVersion=V2&targetId=AREA-9b0681e3-6d9f-47e8-8e14-5389f83569dd|cities&checkout=&checkin=&roomsCount=1&rooms[0].adultsCount=2&rooms[0].childrenCount=0&dateless=true&search=true&mcicid=407972.homepage.hotel.city-AREA-9b0681e3-6d9f-47e8-8e14-5389f83569dd&pagename=ToSearchResults">
                        <div class="homecitybannerimg">
