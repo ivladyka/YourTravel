@@ -12,51 +12,10 @@
             VIKKI_SetDataPicketValue($find("<%= dpCheckOutDate.DatePickerClientID %>"), e.get_newDate());
         }
     }
+
     function VIKKI_SetDataPicketValue(datePicker, date) {
         date.setDate(date.getDate() + 1);
         datePicker.set_selectedDate(date);
-    }
-    function VIKKI_RoomsChange(e) {
-        var control = VIKKI_GetCurrentElementOrTarget(e);
-        var countRooms = parseInt(control.options[control.selectedIndex].text);
-        var tableRooms = document.getElementById("<%= tblRooms.ClientID %>");
-        for (var i = 1; i < tableRooms.rows.length; i++) {
-            var hide = true;
-            if (i <= countRooms) {
-                hide = false;
-            }
-            VIKKI_HideControl(tableRooms.rows[i], hide);
-        }
-        VIKKI_InitAgesColumn();
-    }
-    function VIKKI_ChildrenChange(e) {
-        var control = VIKKI_GetCurrentElementOrTarget(e);
-        var countChildren = parseInt(control.options[control.selectedIndex].text);
-        var tableRooms = document.getElementById("<%= tblRooms.ClientID %>");
-        for (var i = 0; i < 3; i++) {
-            var hide = true;
-            if (i < countChildren) {
-                hide = false;
-            }
-            var ChildAgeDDL = VIKKI_GetDDL(control.parentNode.parentNode.cells[4], "ddlChildAge" + i + "_");
-            VIKKI_HideControl(ChildAgeDDL, hide);
-        }
-        VIKKI_InitAgesColumn();
-    }
-    function VIKKI_InitAgesColumn() {
-        var tableRooms = document.getElementById("<%= tblRooms.ClientID %>");
-        var roomsDDL = VIKKI_GetDDL(tableRooms.rows[1].cells[0], "ddlRooms");
-        var countRooms = parseInt(roomsDDL.options[roomsDDL.selectedIndex].text);
-        var hideAgesColumn = true;
-        for (var i = 1; i <= countRooms; i++) {
-            var ChildrenDDL = VIKKI_GetDDL(tableRooms.rows[i].cells[3], "ddlChildren");
-            if (parseInt(ChildrenDDL.options[ChildrenDDL.selectedIndex].text) > 0) {
-                hideAgesColumn = false;
-            }
-        }
-        for (var i = 0; i <= countRooms; i++) {
-            VIKKI_HideControl(tableRooms.rows[i].cells[4], hideAgesColumn);
-        }
     }
 </script>
 </telerik:RadCodeBlock>
@@ -109,9 +68,6 @@
                             </td>
                             <td>
                                 <%=ChildrenRes%>
-                            </td>
-                            <td style="visibility:hidden; display:none;">
-                                <%=AgeOfChildren%>
                             </td>
                         </tr>
                     </table>

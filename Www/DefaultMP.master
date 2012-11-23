@@ -53,9 +53,9 @@
             </a>           
 		</li>
 		<li>
-            <a href="http://reservations.yourtravel.biz/templates/407972/index"> 
+            <asp:HyperLink id="hlMenuHotelSearch" runat="server"> 
                 <%=menuHotels%>
-            </a>
+            </asp:HyperLink>
 		</li>
 		<li>
             <a href="#">

@@ -73,11 +73,15 @@ function VIKKI_HideLeftMenuItem(itemId, leftMenuTableClientID) {
     return false;
 }
 
-function VIKKI_ControlIsHidden(ControlClientID) {
-    var control = document.getElementById(ControlClientID);
+function VIKKI_ControlIsHiddenByID(ControlClientID) 
+{
+    return VIKKI_ControlIsHidden(control);
+}
+
+function VIKKI_ControlIsHidden(control) 
+{
     if (control != null) {
-        if(control.style.visibility == "hidden" || control.style.display == "none")
-        {
+        if (control.style.visibility == "hidden" || control.style.display == "none") {
             return true;
         }
     }
@@ -233,4 +237,67 @@ function VIKKI_GetDDL(ctrl, id) {
         }
     }
     return null;
+}
+
+function VIKKI_RoomsChange(e) {
+    var control = VIKKI_GetCurrentElementOrTarget(e);
+    var countRooms = parseInt(control.options[control.selectedIndex].text);
+    var tableRooms = control.parentNode.parentNode.parentNode.parentNode;
+    countRooms = countRooms * 3;
+    for (var i = 1; i < tableRooms.rows.length; i = i + 3) {
+        var hide = true;
+        if (i <= countRooms) {
+            hide = false;
+        }
+        VIKKI_HideControl(tableRooms.rows[i], hide);
+        var ChildrenDDL = VIKKI_GetDDL(tableRooms.rows[i].cells[3], "ddlChildren");
+        var hideChildrenAge = true;
+        if (parseInt(ChildrenDDL.options[ChildrenDDL.selectedIndex].text) > 0 && i <= countRooms) {
+            hideChildrenAge = false;
+        }
+        VIKKI_HideControl(tableRooms.rows[i + 1], hideChildrenAge);
+        VIKKI_HideControl(tableRooms.rows[i + 2], hideChildrenAge);
+    }
+}
+
+function VIKKI_ChildrenChange(e) {
+    var control = VIKKI_GetCurrentElementOrTarget(e);
+    var countChildren = parseInt(control.options[control.selectedIndex].text);
+    var tableRooms = control.parentNode.parentNode.parentNode.parentNode;
+    var rowIndex = control.parentNode.parentNode.rowIndex;
+    var hideChildrenAge = true;
+    if (countChildren > 0) {
+        hideChildrenAge = false;
+    }
+    VIKKI_HideControl(tableRooms.rows[rowIndex + 1], hideChildrenAge);
+    VIKKI_HideControl(tableRooms.rows[rowIndex + 2], hideChildrenAge);
+    for (var i = 0; i < 3; i++) {
+        var hide = true;
+        if (i < countChildren) {
+            hide = false;
+        }
+        var ChildAgeDDL = VIKKI_GetDDL(tableRooms.rows[rowIndex + 2].cells[2], "ddlChildAge" + i + "_");
+        VIKKI_HideControl(ChildAgeDDL, hide);
+    }
+}
+
+function VIKKI_CheckHotelSearch(tableRoomsClientID, ChildrenAgeAlert) {
+    var validated = Page_ClientValidate();
+    if (validated) {
+        var tableRooms = document.getElementById(tableRoomsClientID);
+        for (var i = 3; i < tableRooms.rows.length; i = i + 3) {
+            if (!VIKKI_ControlIsHidden(tableRooms.rows[i])) {
+                for (var j = 0; j < 3; j++) {
+                    var ChildAgeDDL = VIKKI_GetDDL(tableRooms.rows[i].cells[2], "ddlChildAge" + j + "_");
+                    if (!VIKKI_ControlIsHidden(ChildAgeDDL)) {
+                        if (ChildAgeDDL.options[ChildAgeDDL.selectedIndex].text == "?") {
+                            alert(ChildrenAgeAlert);
+                            return false;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    return true;
 }

@@ -195,4 +195,7 @@
   <data name="WhereGo" xml:space="preserve">
     <value>Куда вы хотите поехать?</value>
   </data>
+  <data name="ChildrenAgeAlert" xml:space="preserve">
+    <value>Укажите возраст ребенка на момент поездки.</value>
+  </data>
 </root>

@@ -26,6 +26,7 @@ public partial class Controls_SiteTableView : System.Web.UI.UserControl
         }
         HtmlTableRow row = new HtmlTableRow();
         Site s = new Site();
+        int index = 0;
         if (s.LoadBySiteTypeID(SiteTypeID))
         {
             do
@@ -40,6 +41,11 @@ public partial class Controls_SiteTableView : System.Web.UI.UserControl
                     row = new HtmlTableRow();
                     row.Cells.Add(AddSiteCellInnerHTML(s.s_Name, s.s_Banner, s.s_URL));
                 }
+                if (!IsSitePage && index >= 5)
+                {
+                    break;
+                }
+                index++;
             } while (s.MoveNext());
         }
         for (int i = row.Cells.Count; i < countCells; i++)

@@ -701,3 +701,9 @@ h1
     font-size:30pt;
     text-shadow: 0px 2px 1px rgba(50, 50, 50, 0.35);
 }
+
+.VIKKI_Children_AgeDDL
+{
+    margin-right: 4px;
+    width: 55px !important;
+}

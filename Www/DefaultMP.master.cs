@@ -30,6 +30,7 @@ public partial class MasterPage : MasterPageBase
                 hlUkrainianLang.CssClass = "VS_LangActive";
                 break;
         }
+        hlMenuHotelSearch.NavigateUrl = "http://reservations.yourtravel.biz/templates/407972/index?lang=" + Utils.LangPrefURL;
     }
 
     public string ScriptTag

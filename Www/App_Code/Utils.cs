@@ -242,12 +242,30 @@ public class Utils
 
     public static void InitCulture()
     {
-        string culture = "en-US";
-        if (HttpContext.Current.Request.Cookies["YOURTRAVEL_LV_UKR_LNG"] != null)
-        {
-            culture = HttpContext.Current.Request.Cookies["YOURTRAVEL_LV_UKR_LNG"].Value.ToString();
-        }
-        Thread.CurrentThread.CurrentUICulture = new CultureInfo(culture);
+        string culture = SelectedCultureName;
+        Thread.CurrentThread.CurrentUICulture = new CultureInfo(SelectedCultureName);
         Thread.CurrentThread.CurrentCulture = new CultureInfo(culture);
+    }
+
+    public static string SelectedCultureName
+    {
+        get
+        {
+            string culture = "en-US";
+            if (HttpContext.Current.Request.Cookies["YOURTRAVEL_LV_UKR_LNG"] != null)
+            {
+                culture = HttpContext.Current.Request.Cookies["YOURTRAVEL_LV_UKR_LNG"].Value.ToString();
+            }
+            return culture;
+        }
+    }
+
+    public static string LangPrefURL
+    {
+        get
+        {
+            string culture = SelectedCultureName;
+            return culture.Substring(0, 2);
+        }
     }
 }

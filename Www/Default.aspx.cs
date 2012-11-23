@@ -16,6 +16,7 @@ public partial class _Default : ProjectPageBase
         {
             LoadDDLs();
         }
+        btnSearch.OnClientClick = "return VIKKI_CheckHotelSearch('" + tblRooms.ClientID + "', '" + Resources.Vikkisoft.ChildrenAgeAlert + "');";
     }
 
     private void LoadDDLs()
@@ -38,17 +39,29 @@ public partial class _Default : ProjectPageBase
                 cell.Controls.Add(AddDDL("ddlRooms", -1, 1, 8, "", "VIKKI_RoomsChange(this)"));
             }
             row.Cells.Add(cell);
-            cell = new HtmlTableCell();
-            cell.InnerHtml = Resources.Vikkisoft.Room + " " + (i + 1).ToString();
-            row.Cells.Add(cell);
+            row.Cells.Add(AddCell(Resources.Vikkisoft.Room + " " + (i + 1).ToString()));
             cell = new HtmlTableCell();
             cell.Controls.Add(AddDDL("ddlAdults", i, 1, 4));
             row.Cells.Add(cell);
             cell = new HtmlTableCell();
             cell.Controls.Add(AddDDL("ddlChildren", i, 0, 3, "", "VIKKI_ChildrenChange(this)"));
             row.Cells.Add(cell);
+            tblRooms.Rows.Add(row);
+
+            row = new HtmlTableRow();
+            HideControl((HtmlControl)row);
+            HideControl((HtmlControl)row);
+            row.Cells.Add(AddCell("&nbsp;"));
+            row.Cells.Add(AddCell("&nbsp;"));
+            row.Cells.Add(AddCell(Resources.Vikkisoft.AgeOfChildren, 2));
+            tblRooms.Rows.Add(row);
+
+            row = new HtmlTableRow();
+            HideControl((HtmlControl)row);
+            row.Cells.Add(AddCell("&nbsp;"));
+            row.Cells.Add(AddCell("&nbsp;"));
             cell = new HtmlTableCell();
-            HideControl((HtmlControl)cell);
+            cell.ColSpan = 2;
             cell.Controls.Add(AddChildAgeDDL("ddlChildAge0_", i, ""));
             cell.Controls.Add(AddChildAgeDDL("ddlChildAge1_", i, "margin-left: 2px;"));
             cell.Controls.Add(AddChildAgeDDL("ddlChildAge2_", i, "margin-left: 2px;"));
@@ -57,11 +70,28 @@ public partial class _Default : ProjectPageBase
         }
     }
 
+    private HtmlTableCell AddCell(string text)
+    {
+        return AddCell(text, 0);
+    }
+
+    private HtmlTableCell AddCell(string text, int colspan)
+    {
+        HtmlTableCell cell = new HtmlTableCell();
+        cell.InnerHtml = text;
+        if (colspan > 1)
+        {
+            cell.ColSpan = colspan;
+        }
+        return cell;
+    }
+
     private DropDownList AddChildAgeDDL(string id, int index, string style)
     {
         DropDownList ddl = AddDDL(id, index, 1, 17);
+        ddl.CssClass = "VIKKI_Children_AgeDDL";
         ddl.Items.Insert(0, new ListItem("<1", "0"));
-        ListItem item = new ListItem(" ", "-1");
+        ListItem item = new ListItem("?", "-1");
         item.Selected = true;
         ddl.Items.Insert(0, item);
         HideControl((WebControl)ddl);
@@ -202,12 +232,14 @@ public partial class _Default : ProjectPageBase
             return Resources.Vikkisoft.PopulardestinationsRes;
         }
     }
+
     protected void btnSearch_Click(object sender, EventArgs e)
     {
         NameValueCollection data = new NameValueCollection();
         data.Add("pageName", "hotSearch");
         data.Add("cid", "407972");
         data.Add("submitted", "true");
+        data.Add("locale", Utils.SelectedCultureName.Replace("-", "_"));
         data.Add("validateCity", "true");
         data.Add("avail", "true");
         data.Add("passThrough", "true");
@@ -234,6 +266,11 @@ public partial class _Default : ProjectPageBase
         {
             data.Add("room-" + i + "-adult-total", GetDDLSelectedValue("ddlAdults" + i));
             data.Add("room-" + i + "-child-total", GetDDLSelectedValue("ddlChildren" + i));
+            int countChildren = int.Parse(GetDDLSelectedValue("ddlChildren" + i));
+            for (int j = 0; j < countChildren; j++)
+            {
+                data.Add("room-" + i + "-child-" + j + "-age", GetDDLSelectedValue("ddlChildAge" + j + "_" + i));
+            }
         }
         HttpHelper.RedirectAndPOST(this.Page, "http://reservations.yourtravel.biz/index.jsp", data);
     }
