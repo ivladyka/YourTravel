@@ -48,7 +48,7 @@
       <div class="divmenu"> 
     <ul id="topnav" class="v2">
 		<li id="startlimenu">
-            <a href="#">
+            <a href="Default.aspx">
                 <%=menuHome%>
             </a>           
 		</li>
@@ -58,17 +58,17 @@
             </asp:HyperLink>
 		</li>
 		<li>
-            <a href="#">
+            <a href="CategoryView.aspx?ct=1">
                 <%=menuAboutUS%>
             </a>
 		</li>		
         <li>
-            <a href="#">
+            <a href="CategoryView.aspx?ct=2">
                 <%=menuPrivacyPolicy%>
             </a>
 		</li>
 		<li>
-            <a href="#">
+            <a href="ContactUs.aspx">
                 <%=menuContactUS%>
             </a>
 		</li>	

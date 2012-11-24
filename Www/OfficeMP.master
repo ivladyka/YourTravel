@@ -19,6 +19,7 @@
             <td><asp:Image ID="logo" runat="server" ImageUrl="Images/logo.png" Width="100px"  /></td>
             <td>
                 <asp:HyperLink ID="hlSites" runat="server" Text="Сайти" NavigateUrl="~/Office/Office.aspx?content=SiteList"></asp:HyperLink>&nbsp;&nbsp;&nbsp;
+                <asp:HyperLink ID="jlPages" runat="server" Text="Сторінки" NavigateUrl="~/Office/Office.aspx?content=CategoryList"></asp:HyperLink>&nbsp;&nbsp;&nbsp;
                 <asp:HyperLink ID="hlChangePassword" runat="server" Text="Змінити пароль" NavigateUrl="~/Office/Office.aspx?content=ChangePassword"></asp:HyperLink>&nbsp;&nbsp;&nbsp;
                 <asp:HyperLink ID="hlLogOff" runat="server" Text="Вийти" NavigateUrl="~/LogOff.aspx"></asp:HyperLink>
             </td>

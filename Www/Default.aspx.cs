@@ -17,6 +17,10 @@ public partial class _Default : ProjectPageBase
             LoadDDLs();
         }
         btnSearch.OnClientClick = "return VIKKI_CheckHotelSearch('" + tblRooms.ClientID + "', '" + Resources.Vikkisoft.ChildrenAgeAlert + "');";
+        aParis.HRef = InitReservLink("http://reservations.yourtravel.biz/index.jsp?pageName=hotNetList&cid=407972&city=paris&stateProvince=  &country=FR&validateCity=true&submitted=true");
+        aNewYourk.HRef = InitReservLink("http://reservations.yourtravel.biz/index.jsp?pageName=hotSearch&cid=407972&city=New+York&stateProvince=NY&country=US&validateCity=true&submitted=true");
+        aLondon.HRef = InitReservLink("http://reservations.yourtravel.biz/index.jsp?pageName=hotSearch&cid=407972&city=london&stateProvince=  &country=GB&validateCity=true&submitted=true");
+        aRome.HRef = InitReservLink("http://reservations.yourtravel.biz/index.jsp?pageName=hotSearch&cid=407972&city=rome&stateProvince=  &country=IT&validateCity=true&submitted=true");
     }
 
     private void LoadDDLs()
@@ -285,5 +289,10 @@ public partial class _Default : ProjectPageBase
             }
         }
         return "";
+    }
+
+    private string InitReservLink(string url)
+    {
+        return url + "&lang=" + Utils.LangPrefURL;
     }
 }

@@ -230,7 +230,7 @@ public class Utils
             switch (culture)
             {
                 case "uk-UA":
-                    prefCulture = "";
+                    prefCulture = "_uk";
                     break;
                 case "ru-RU":
                     prefCulture = "_ru";

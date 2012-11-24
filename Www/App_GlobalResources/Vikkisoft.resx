@@ -198,4 +198,22 @@
   <data name="ChildrenAgeAlert" xml:space="preserve">
     <value>Please select age of child at time of travel.</value>
   </data>
+  <data name="IncorrectEmail" xml:space="preserve">
+    <value>Incorrect Email.</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="MessageFrom" xml:space="preserve">
+    <value>Message from</value>
+  </data>
+  <data name="MessageSent" xml:space="preserve">
+    <value>Message sent.</value>
+  </data>
+  <data name="SendMessage" xml:space="preserve">
+    <value>Send Message</value>
+  </data>
+  <data name="YourName" xml:space="preserve">
+    <value>Your Name:</value>
+  </data>
 </root>

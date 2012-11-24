@@ -198,4 +198,22 @@
   <data name="ChildrenAgeAlert" xml:space="preserve">
     <value>Виберіть вік дитини на час поїздки.</value>
   </data>
+  <data name="IncorrectEmail" xml:space="preserve">
+    <value>Неправильний Email.</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>Повідомлення</value>
+  </data>
+  <data name="MessageFrom" xml:space="preserve">
+    <value>Повідомлення від</value>
+  </data>
+  <data name="MessageSent" xml:space="preserve">
+    <value>Повідомлення відправлено.</value>
+  </data>
+  <data name="SendMessage" xml:space="preserve">
+    <value>Відправити повідомлення</value>
+  </data>
+  <data name="YourName" xml:space="preserve">
+    <value>Ваше ім'я:</value>
+  </data>
 </root>
