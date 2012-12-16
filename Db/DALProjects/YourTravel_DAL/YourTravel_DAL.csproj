@@ -41,10 +41,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dal\Category.cs" />
+    <Compile Include="Dal\City.cs" />
+    <Compile Include="Dal\Country.cs" />
     <Compile Include="Dal\Settings.cs" />
     <Compile Include="Dal\Site.cs" />
     <Compile Include="Dal\SiteType.cs" />
     <Compile Include="Entity\Category.cs" />
+    <Compile Include="Entity\City.cs" />
+    <Compile Include="Entity\Country.cs" />
     <Compile Include="Entity\Settings.cs" />
     <Compile Include="Entity\Site.cs" />
     <Compile Include="Entity\SiteType.cs" />
