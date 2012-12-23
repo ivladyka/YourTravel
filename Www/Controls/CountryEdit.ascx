@@ -2,7 +2,7 @@
 <%@ Register TagPrefix="uc1" TagName="EditorHTML" Src="ValueControls/EditorHTML.ascx" %>
 <%@ Register TagPrefix="uc1" TagName="IntInput" Src="ValueControls/IntInput.ascx" %>
 <%@ Register TagPrefix="uc1" TagName="CityChoice" Src="ChoiceControls/CityChoice.ascx" %>
-<TABLE id="Table3" class="EditControl3" cellpadding="2" cellspacing="7"  align="center" border="0" width="550px">	
+<TABLE id="Table3" class="EditControl3" cellpadding="2" cellspacing="7"  align="center" border="0" width="950px">	
     <tr>
         <td align="right">
             Назва:
@@ -35,6 +35,20 @@
             <asp:RequiredFieldValidator ID="rfvName_en" runat="server" ControlToValidate="text_Name_en" Display="Dynamic" 
                 ErrorMessage="Обов'язкове поле."></asp:RequiredFieldValidator>
         </td>
+    </tr>
+    <tr>
+		<td align="right">Активний:
+		</td>
+		<td>
+           <asp:CheckBox id="chk_Active" runat="server" Text="" Checked="false"></asp:CheckBox>
+		</td>
+    </tr>
+    <tr>
+	    <td align="right">Столиця:
+		</td>
+		<td>
+            <uc1:CityChoice id="choice_CapitalID" runat="server" UseValueInsteadText="true" Width="300"></uc1:CityChoice>
+		</td>
     </tr>
     <tr>
         <td align="right" valign="top">
@@ -113,7 +127,7 @@
             Ключові слова:
         </td>
         <td>
-            <asp:TextBox ID="text_Keywords_uk" runat="server" CssClass="textBoxStyle" MaxLength="250" Width="300px"></asp:TextBox>
+            <asp:TextBox ID="text_Keywords_uk" runat="server" CssClass="textBoxStyle" MaxLength="250" Width="675px"></asp:TextBox>
         </td>
     </tr>
     <tr>
@@ -121,7 +135,7 @@
             Ключові слова, рос.:
         </td>
         <td>
-            <asp:TextBox ID="text_Keywords_ru" runat="server" CssClass="textBoxStyle" MaxLength="250" Width="300px"></asp:TextBox>
+            <asp:TextBox ID="text_Keywords_ru" runat="server" CssClass="textBoxStyle" MaxLength="250" Width="675px"></asp:TextBox>
         </td>
     </tr>
     <tr>
@@ -129,22 +143,32 @@
             Ключові слова, анг.:
         </td>
         <td>
-            <asp:TextBox ID="text_Keywords_en" runat="server" CssClass="textBoxStyle" MaxLength="250" Width="300px"></asp:TextBox>
+            <asp:TextBox ID="text_Keywords_en" runat="server" CssClass="textBoxStyle" MaxLength="250" Width="675px"></asp:TextBox>
         </td>
     </tr>
     <tr>
-		<td align="right">Активний:
-		</td>
-		<td>
-           <asp:CheckBox id="chk_Active" runat="server" Text="" Checked="false"></asp:CheckBox>
-		</td>
+        <td align="right">
+            Description meta tag:
+        </td>
+        <td>
+            <asp:TextBox ID="text_Description_uk" runat="server" CssClass="textBoxStyle" MaxLength="200" Width="675px"></asp:TextBox>
+        </td>
     </tr>
     <tr>
-	    <td align="right">Столиця:
-		</td>
-		<td>
-            <uc1:CityChoice id="choice_CapitalID" runat="server" UseValueInsteadText="true" Width="300"></uc1:CityChoice>
-		</td>
+        <td align="right">
+            Description meta tag, рос.:
+        </td>
+        <td>
+            <asp:TextBox ID="text_Description_ru" runat="server" CssClass="textBoxStyle" MaxLength="200" Width="675px"></asp:TextBox>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            Description meta tag, анг.:
+        </td>
+        <td>
+            <asp:TextBox ID="text_Description_en" runat="server" CssClass="textBoxStyle" MaxLength="200" Width="675px"></asp:TextBox>
+        </td>
     </tr>
   	<tr>
 	    <td colspan="2" align="right">

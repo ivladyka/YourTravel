@@ -8,7 +8,7 @@ using System.Web.UI.HtmlControls;
 using VikkiSoft_BLL;
 using System.IO;
 
-public partial class Controls_Sites : System.Web.UI.Page
+public partial class Controls_Sites : ProjectPageBase
 {
     protected void Page_Load(object sender, EventArgs e)
     {

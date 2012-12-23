@@ -61,7 +61,7 @@ public partial class Login : System.Web.UI.Page
 
     protected override void InitializeCulture()
     {
-        Utils.InitCulture();
+        Utils.InitCulture(Page);
         base.InitializeCulture();
     }
 }

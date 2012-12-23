@@ -1,88 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/DefaultMP.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
-<%@ Register TagPrefix="uc1" TagName="DatePicker" Src="Controls/ValueControls/DatePicker.ascx" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BookMasterPage.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
 <%@ Register TagPrefix="uc1" TagName="SiteTableView" Src="Controls/SiteTableView.ascx" %>
-<%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="cphWithoutScroll" Runat="Server">
-<telerik:RadCodeBlock ID="RadCodeBlock1" runat="server">
-<script language="javascript">
-    function VIKKI_CheckInDateSelected(sender, e) {
-        if (e.get_newDate() != null) {
-            VIKKI_SetDataPicketValue($find("<%= dpCheckOutDate.DatePickerClientID %>"), e.get_newDate());
-        }
-    }
-
-    function VIKKI_SetDataPicketValue(datePicker, date) {
-        date.setDate(date.getDate() + 1);
-        datePicker.set_selectedDate(date);
-    }
-</script>
-</telerik:RadCodeBlock>
-    <div style="width:1100px; display:block; overflow:hidden;  margin-bottom:120px;">
-    <ul class="ulblock" >
-        <li class="li1block">
-     <div class="bookingblock" >
-    <table border="0" width="350px" class="bookingblocktabl" cellpadding="5" cellspacing="0">
-              <tr >
-                  <td class="bookingblockheader"><%=Booking%></td>
-              </tr>
-              <tr>
-                  <td><%=WhereGo%></td>
-              </tr>
-              <tr>
-                  <td>
-                    <asp:TextBox ID="tbWhereGo" runat="server" Width="100%" Height="26px"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="rfvWhereGo" runat="server" ErrorMessage="<%$Resources:Vikkisoft, RequiredField %>" ControlToValidate="tbWhereGo" Display="Dynamic" ValidationGroup="HomeSEARCHING"></asp:RequiredFieldValidator>
-                  </td>
-              </tr>
-              <tr>
-                  <td>
-                      <table border="0" width="100%" class="dateCheckInOut"  cellpadding="0" cellspacing="0">
-                          <tr>
-                              <td>
-                                  <%=CheckInRes%>
-                              </td> 
-                              <td style="padding-left:10px">
-                                  <%=CheckOutRes%>
-                              </td>
-                          </tr>
-                          <tr>
-                              <td><uc1:DatePicker Width="160"  id="dpCheckInDate" runat="server" IsRequire="true"  ValidationGroup="HomeSEARCHING" OnClientDateSelected="VIKKI_CheckInDateSelected"></uc1:DatePicker></td> 
-                              <td align="right"><uc1:DatePicker  Width="160"  id="dpCheckOutDate" runat="server" IsRequire="true" ValidationGroup="HomeSEARCHING"></uc1:DatePicker></td>
-                          </tr>
-                      </table>
-                   <asp:Label ID="dateCompare" runat="server" Visible="False" ForeColor="white" Text="<%$Resources:Vikkisoft, DateCompareError %>"></asp:Label>
-                  </td>
-              </tr>
-              <tr>
-                  <td style="padding:0px; margin:0px">
-                    <table id="tblRooms" runat="server" border="0" width="100%" cellpadding="5" cellspacing="0">
-                        <tr>
-                            <td style="width:40px; text-align:left;">
-                                <%=RoomsRes%>
-                            </td>
-                            <td  ></td>
-                            <td>
-                                <%=AdultsRes%>
-                            </td>
-                            <td>
-                                <%=ChildrenRes%>
-                            </td>
-                        </tr>
-                    </table>
-                  </td>
-              </tr>
-              <tr>
-                  <td style="padding-right:5px; "> 
-                      <asp:Button ID="btnSearch" runat="server" OnClick="btnSearch_Click" Text="<%$Resources:Vikkisoft, Search %>" ValidationGroup="HomeSEARCHING" CssClass="formbutton" Width="250"  Height="50px"/>
-                  </td>
-              </tr>
-          </table>
-        </div>
+<asp:Content ID="Content1" ContentPlaceHolderID="cphLeftSide" Runat="Server">
                 <uc1:SiteTableView id="siteTableView" runat="server"></uc1:SiteTableView>  
-                <asp:HyperLink ID="hlMore" runat="server" Text="More" CssClass="moreSites" NavigateUrl="Sites.aspx?st=1"></asp:HyperLink>  </li>
-         <li style=" width:680px; float:right">           
+                <asp:HyperLink ID="hlMore" runat="server" Text="More" CssClass="moreSites" NavigateUrl="Sites.aspx?st=1"></asp:HyperLink>  
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cphRightSide" Runat="Server">
              <div id="header">
 	 <div class="container" id="header-content">
 	     <div class="slideshow">
@@ -184,8 +106,6 @@
              </td>
                </tr>
            </table>
-         </li>
-    </ul>
-    </div>
+         
 </asp:Content>
 

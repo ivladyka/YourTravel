@@ -195,6 +195,30 @@ namespace VikkiSoft_BLL.DAL
 				}
 			}
 			
+			public static SqlParameter Description_uk
+			{
+				get
+				{
+					return new SqlParameter("@Description_uk", SqlDbType.VarChar, 200);
+				}
+			}
+			
+			public static SqlParameter Description_en
+			{
+				get
+				{
+					return new SqlParameter("@Description_en", SqlDbType.VarChar, 200);
+				}
+			}
+			
+			public static SqlParameter Description_ru
+			{
+				get
+				{
+					return new SqlParameter("@Description_ru", SqlDbType.VarChar, 200);
+				}
+			}
+			
 		}
 		#endregion		
 	
@@ -213,6 +237,9 @@ namespace VikkiSoft_BLL.DAL
             public const string Keywords_en = "Keywords_en";
             public const string Keywords_ru = "Keywords_ru";
             public const string Active = "Active";
+            public const string Description_uk = "Description_uk";
+            public const string Description_en = "Description_en";
+            public const string Description_ru = "Description_ru";
 
 			static public string ToPropertyName(string columnName)
 			{
@@ -232,6 +259,9 @@ namespace VikkiSoft_BLL.DAL
 					ht[Keywords_en] = _City.PropertyNames.Keywords_en;
 					ht[Keywords_ru] = _City.PropertyNames.Keywords_ru;
 					ht[Active] = _City.PropertyNames.Active;
+					ht[Description_uk] = _City.PropertyNames.Description_uk;
+					ht[Description_en] = _City.PropertyNames.Description_en;
+					ht[Description_ru] = _City.PropertyNames.Description_ru;
 
 				}
 				return (string)ht[columnName];
@@ -256,6 +286,9 @@ namespace VikkiSoft_BLL.DAL
             public const string Keywords_en = "Keywords_en";
             public const string Keywords_ru = "Keywords_ru";
             public const string Active = "Active";
+            public const string Description_uk = "Description_uk";
+            public const string Description_en = "Description_en";
+            public const string Description_ru = "Description_ru";
 
 			static public string ToColumnName(string propertyName)
 			{
@@ -275,6 +308,9 @@ namespace VikkiSoft_BLL.DAL
 					ht[Keywords_en] = _City.ColumnNames.Keywords_en;
 					ht[Keywords_ru] = _City.ColumnNames.Keywords_ru;
 					ht[Active] = _City.ColumnNames.Active;
+					ht[Description_uk] = _City.ColumnNames.Description_uk;
+					ht[Description_en] = _City.ColumnNames.Description_en;
+					ht[Description_ru] = _City.ColumnNames.Description_ru;
 
 				}
 				return (string)ht[propertyName];
@@ -299,6 +335,9 @@ namespace VikkiSoft_BLL.DAL
             public const string Keywords_en = "s_Keywords_en";
             public const string Keywords_ru = "s_Keywords_ru";
             public const string Active = "s_Active";
+            public const string Description_uk = "s_Description_uk";
+            public const string Description_en = "s_Description_en";
+            public const string Description_ru = "s_Description_ru";
 
 		}
 		#endregion		
@@ -446,6 +485,42 @@ namespace VikkiSoft_BLL.DAL
 			set
 	        {
 				base.Setbool(ColumnNames.Active, value);
+			}
+		}
+
+		public virtual string Description_uk
+	    {
+			get
+	        {
+				return base.Getstring(ColumnNames.Description_uk);
+			}
+			set
+	        {
+				base.Setstring(ColumnNames.Description_uk, value);
+			}
+		}
+
+		public virtual string Description_en
+	    {
+			get
+	        {
+				return base.Getstring(ColumnNames.Description_en);
+			}
+			set
+	        {
+				base.Setstring(ColumnNames.Description_en, value);
+			}
+		}
+
+		public virtual string Description_ru
+	    {
+			get
+	        {
+				return base.Getstring(ColumnNames.Description_ru);
+			}
+			set
+	        {
+				base.Setstring(ColumnNames.Description_ru, value);
 			}
 		}
 
@@ -634,6 +709,51 @@ namespace VikkiSoft_BLL.DAL
 			}
 		}
 
+		public virtual string s_Description_uk
+	    {
+			get
+	        {
+				return this.IsColumnNull(ColumnNames.Description_uk) ? string.Empty : base.GetstringAsString(ColumnNames.Description_uk);
+			}
+			set
+	        {
+				if(string.Empty == value)
+					this.SetColumnNull(ColumnNames.Description_uk);
+				else
+					this.Description_uk = base.SetstringAsString(ColumnNames.Description_uk, value);
+			}
+		}
+
+		public virtual string s_Description_en
+	    {
+			get
+	        {
+				return this.IsColumnNull(ColumnNames.Description_en) ? string.Empty : base.GetstringAsString(ColumnNames.Description_en);
+			}
+			set
+	        {
+				if(string.Empty == value)
+					this.SetColumnNull(ColumnNames.Description_en);
+				else
+					this.Description_en = base.SetstringAsString(ColumnNames.Description_en, value);
+			}
+		}
+
+		public virtual string s_Description_ru
+	    {
+			get
+	        {
+				return this.IsColumnNull(ColumnNames.Description_ru) ? string.Empty : base.GetstringAsString(ColumnNames.Description_ru);
+			}
+			set
+	        {
+				if(string.Empty == value)
+					this.SetColumnNull(ColumnNames.Description_ru);
+				else
+					this.Description_ru = base.SetstringAsString(ColumnNames.Description_ru, value);
+			}
+		}
+
 
 		#endregion		
 	
@@ -782,6 +902,36 @@ namespace VikkiSoft_BLL.DAL
 					get
 					{
 							WhereParameter where = new WhereParameter(ColumnNames.Active, Parameters.Active);
+							this._clause._entity.Query.AddWhereParameter(where);
+							return where;
+					}
+				}
+
+				public WhereParameter Description_uk
+				{
+					get
+					{
+							WhereParameter where = new WhereParameter(ColumnNames.Description_uk, Parameters.Description_uk);
+							this._clause._entity.Query.AddWhereParameter(where);
+							return where;
+					}
+				}
+
+				public WhereParameter Description_en
+				{
+					get
+					{
+							WhereParameter where = new WhereParameter(ColumnNames.Description_en, Parameters.Description_en);
+							this._clause._entity.Query.AddWhereParameter(where);
+							return where;
+					}
+				}
+
+				public WhereParameter Description_ru
+				{
+					get
+					{
+							WhereParameter where = new WhereParameter(ColumnNames.Description_ru, Parameters.Description_ru);
 							this._clause._entity.Query.AddWhereParameter(where);
 							return where;
 					}
@@ -936,6 +1086,42 @@ namespace VikkiSoft_BLL.DAL
 				}
 			}
 
+			public WhereParameter Description_uk
+		    {
+				get
+		        {
+					if(_Description_uk_W == null)
+	        	    {
+						_Description_uk_W = TearOff.Description_uk;
+					}
+					return _Description_uk_W;
+				}
+			}
+
+			public WhereParameter Description_en
+		    {
+				get
+		        {
+					if(_Description_en_W == null)
+	        	    {
+						_Description_en_W = TearOff.Description_en;
+					}
+					return _Description_en_W;
+				}
+			}
+
+			public WhereParameter Description_ru
+		    {
+				get
+		        {
+					if(_Description_ru_W == null)
+	        	    {
+						_Description_ru_W = TearOff.Description_ru;
+					}
+					return _Description_ru_W;
+				}
+			}
+
 			private WhereParameter _CityID_W = null;
 			private WhereParameter _Name_uk_W = null;
 			private WhereParameter _Name_en_W = null;
@@ -948,6 +1134,9 @@ namespace VikkiSoft_BLL.DAL
 			private WhereParameter _Keywords_en_W = null;
 			private WhereParameter _Keywords_ru_W = null;
 			private WhereParameter _Active_W = null;
+			private WhereParameter _Description_uk_W = null;
+			private WhereParameter _Description_en_W = null;
+			private WhereParameter _Description_ru_W = null;
 
 			public void WhereClauseReset()
 			{
@@ -963,6 +1152,9 @@ namespace VikkiSoft_BLL.DAL
 				_Keywords_en_W = null;
 				_Keywords_ru_W = null;
 				_Active_W = null;
+				_Description_uk_W = null;
+				_Description_en_W = null;
+				_Description_ru_W = null;
 
 				this._entity.Query.FlushWhereParameters();
 
@@ -1139,6 +1331,36 @@ namespace VikkiSoft_BLL.DAL
 					}
 				}
 
+				public AggregateParameter Description_uk
+				{
+					get
+					{
+							AggregateParameter aggregate = new AggregateParameter(ColumnNames.Description_uk, Parameters.Description_uk);
+							this._clause._entity.Query.AddAggregateParameter(aggregate);
+							return aggregate;
+					}
+				}
+
+				public AggregateParameter Description_en
+				{
+					get
+					{
+							AggregateParameter aggregate = new AggregateParameter(ColumnNames.Description_en, Parameters.Description_en);
+							this._clause._entity.Query.AddAggregateParameter(aggregate);
+							return aggregate;
+					}
+				}
+
+				public AggregateParameter Description_ru
+				{
+					get
+					{
+							AggregateParameter aggregate = new AggregateParameter(ColumnNames.Description_ru, Parameters.Description_ru);
+							this._clause._entity.Query.AddAggregateParameter(aggregate);
+							return aggregate;
+					}
+				}
+
 
 				private AggregateClause _clause;
 			}
@@ -1288,6 +1510,42 @@ namespace VikkiSoft_BLL.DAL
 				}
 			}
 
+			public AggregateParameter Description_uk
+		    {
+				get
+		        {
+					if(_Description_uk_W == null)
+	        	    {
+						_Description_uk_W = TearOff.Description_uk;
+					}
+					return _Description_uk_W;
+				}
+			}
+
+			public AggregateParameter Description_en
+		    {
+				get
+		        {
+					if(_Description_en_W == null)
+	        	    {
+						_Description_en_W = TearOff.Description_en;
+					}
+					return _Description_en_W;
+				}
+			}
+
+			public AggregateParameter Description_ru
+		    {
+				get
+		        {
+					if(_Description_ru_W == null)
+	        	    {
+						_Description_ru_W = TearOff.Description_ru;
+					}
+					return _Description_ru_W;
+				}
+			}
+
 			private AggregateParameter _CityID_W = null;
 			private AggregateParameter _Name_uk_W = null;
 			private AggregateParameter _Name_en_W = null;
@@ -1300,6 +1558,9 @@ namespace VikkiSoft_BLL.DAL
 			private AggregateParameter _Keywords_en_W = null;
 			private AggregateParameter _Keywords_ru_W = null;
 			private AggregateParameter _Active_W = null;
+			private AggregateParameter _Description_uk_W = null;
+			private AggregateParameter _Description_en_W = null;
+			private AggregateParameter _Description_ru_W = null;
 
 			public void AggregateClauseReset()
 			{
@@ -1315,6 +1576,9 @@ namespace VikkiSoft_BLL.DAL
 				_Keywords_en_W = null;
 				_Keywords_ru_W = null;
 				_Active_W = null;
+				_Description_uk_W = null;
+				_Description_en_W = null;
+				_Description_ru_W = null;
 
 				this._entity.Query.FlushAggregateParameters();
 
@@ -1435,6 +1699,18 @@ namespace VikkiSoft_BLL.DAL
 
 			p = cmd.Parameters.Add(Parameters.Active);
 			p.SourceColumn = ColumnNames.Active;
+			p.SourceVersion = DataRowVersion.Current;
+
+			p = cmd.Parameters.Add(Parameters.Description_uk);
+			p.SourceColumn = ColumnNames.Description_uk;
+			p.SourceVersion = DataRowVersion.Current;
+
+			p = cmd.Parameters.Add(Parameters.Description_en);
+			p.SourceColumn = ColumnNames.Description_en;
+			p.SourceVersion = DataRowVersion.Current;
+
+			p = cmd.Parameters.Add(Parameters.Description_ru);
+			p.SourceColumn = ColumnNames.Description_ru;
 			p.SourceVersion = DataRowVersion.Current;
 
 

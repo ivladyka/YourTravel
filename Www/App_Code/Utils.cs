@@ -240,11 +240,43 @@ public class Utils
         }
     }
 
-    public static void InitCulture()
+    public static void InitCulture(System.Web.UI.Page page)
     {
-        string culture = SelectedCultureName;
-        Thread.CurrentThread.CurrentUICulture = new CultureInfo(SelectedCultureName);
+        string culture = GetCultureName(page);
+        Thread.CurrentThread.CurrentUICulture = new CultureInfo(culture);
         Thread.CurrentThread.CurrentCulture = new CultureInfo(culture);
+    }
+
+    public static string GetCultureName(System.Web.UI.Page page)
+    {
+        string culture = "en-US";
+        if (page.Request.QueryString["lang"] != null)
+        {
+            culture = page.Request.QueryString["lang"].ToString();
+            switch (culture)
+            {
+                case "uk":
+                    culture = "uk-UA";
+                    break;
+                case "en":
+                    culture = "en-US";
+                    break;
+                case "ru":
+                    culture = "ru-RU";
+                    break;
+            }
+            if (!page.ClientScript.IsStartupScriptRegistered("VIKKI_ChangeLanguageScript"))
+            {
+                page.ClientScript.RegisterStartupScript(page.GetType(), "VIKKI_ChangeLanguageScript", "VIKKI_ChangeLanguage('" + 
+                    culture + "');", true);
+            }
+            return culture;
+        }
+        if (HttpContext.Current.Request.Cookies["YOURTRAVEL_LV_UKR_LNG"] != null)
+        {
+            culture = HttpContext.Current.Request.Cookies["YOURTRAVEL_LV_UKR_LNG"].Value.ToString();
+        }
+        return culture;
     }
 
     public static string SelectedCultureName
@@ -252,9 +284,9 @@ public class Utils
         get
         {
             string culture = "en-US";
-            if (HttpContext.Current.Request.Cookies["YOURTRAVEL_LV_UKR_LNG"] != null)
+            if (Thread.CurrentThread.CurrentCulture != null)
             {
-                culture = HttpContext.Current.Request.Cookies["YOURTRAVEL_LV_UKR_LNG"].Value.ToString();
+                culture = Thread.CurrentThread.CurrentCulture.Name;
             }
             return culture;
         }
@@ -264,8 +296,52 @@ public class Utils
     {
         get
         {
-            string culture = SelectedCultureName;
+            string culture = "en-US";
+            if (Thread.CurrentThread.CurrentCulture != null)
+            {
+                culture = Thread.CurrentThread.CurrentCulture.Name;
+            }
             return culture.Substring(0, 2);
         }
+    }
+
+    public static string GenerateFriendlyURL(string subfolderName, string title)
+    {
+        string friendlyURL = "~/" + subfolderName + "/";
+        title = title.Trim();
+        title = title.Trim('-');
+
+        title = title.ToLower();
+        char[] chars = @"$%#@!*?;:~`+=()[]{}|\'<>,/^&"".".ToCharArray();
+        title = title.Replace("c#", "C-Sharp");
+        title = title.Replace("vb.net", "VB-Net");
+        title = title.Replace("asp.net", "Asp-Net");
+
+        title = title.Replace(".", "-");
+
+        for (int i = 0; i < chars.Length; i++)
+        {
+            string strChar = chars.GetValue(i).ToString();
+            if (title.Contains(strChar))
+            {
+                title = title.Replace(strChar, string.Empty);
+            }
+        }
+
+        title = title.Replace(" ", "-");
+
+        title = title.Replace("--", "-");
+        title = title.Replace("---", "-");
+        title = title.Replace("----", "-");
+        title = title.Replace("-----", "-");
+        title = title.Replace("----", "-");
+        title = title.Replace("---", "-");
+        title = title.Replace("--", "-");
+
+        title = title.Trim();
+        title = title.Trim('-');
+
+
+        return friendlyURL + title + "/";
     }
 }
