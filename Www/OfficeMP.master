@@ -22,6 +22,7 @@
                 <asp:HyperLink ID="jlPages" runat="server" Text="Сторінки" NavigateUrl="~/Office/Office.aspx?content=CategoryList"></asp:HyperLink>&nbsp;&nbsp;&nbsp;
                 <asp:HyperLink ID="hlCountries" runat="server" Text="Країни" NavigateUrl="~/Office/Office.aspx?content=CountryList"></asp:HyperLink>&nbsp;&nbsp;&nbsp;
                 <asp:HyperLink ID="hlCities" runat="server" Text="Міста" NavigateUrl="~/Office/Office.aspx?content=CityList"></asp:HyperLink>&nbsp;&nbsp;&nbsp;
+                <asp:HyperLink ID="hlSettings" runat="server" Text="Налаштування" NavigateUrl="~/Office/Office.aspx?content=SettingsEdit&SettingID=1"></asp:HyperLink>&nbsp;&nbsp;&nbsp;
                 <asp:HyperLink ID="hlChangePassword" runat="server" Text="Змінити пароль" NavigateUrl="~/Office/Office.aspx?content=ChangePassword"></asp:HyperLink>&nbsp;&nbsp;&nbsp;
                 <asp:HyperLink ID="hlLogOff" runat="server" Text="Вийти" NavigateUrl="~/LogOff.aspx"></asp:HyperLink>
             </td>

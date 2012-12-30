@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BookMasterPage.master" AutoEventWireup="true" CodeFile="CountryView.aspx.cs" Inherits="CountryView" %>
-
+<%@ MasterType VirtualPath="~/BookMasterPage.master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="cphLeftSide" Runat="Server">
     Other Cities in this Country
 </asp:Content>

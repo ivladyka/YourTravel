@@ -39,7 +39,7 @@ using System.Collections.Specialized;
 
 using MyGeneration.dOOdads;
 
-namespace  VikkiSoft_BLL.DAL
+namespace VikkiSoft_BLL.DAL
 {
 	public abstract class _Settings : SqlClientEntity
 	{
@@ -123,6 +123,102 @@ namespace  VikkiSoft_BLL.DAL
 				}
 			}
 			
+			public static SqlParameter Keywords_uk
+			{
+				get
+				{
+					return new SqlParameter("@Keywords_uk", SqlDbType.VarChar, 250);
+				}
+			}
+			
+			public static SqlParameter Keywords_en
+			{
+				get
+				{
+					return new SqlParameter("@Keywords_en", SqlDbType.VarChar, 250);
+				}
+			}
+			
+			public static SqlParameter Keywords_ru
+			{
+				get
+				{
+					return new SqlParameter("@Keywords_ru", SqlDbType.VarChar, 250);
+				}
+			}
+			
+			public static SqlParameter Title_uk
+			{
+				get
+				{
+					return new SqlParameter("@Title_uk", SqlDbType.VarChar, 100);
+				}
+			}
+			
+			public static SqlParameter Title_en
+			{
+				get
+				{
+					return new SqlParameter("@Title_en", SqlDbType.VarChar, 100);
+				}
+			}
+			
+			public static SqlParameter Title_ru
+			{
+				get
+				{
+					return new SqlParameter("@Title_ru", SqlDbType.VarChar, 100);
+				}
+			}
+			
+			public static SqlParameter Description_uk
+			{
+				get
+				{
+					return new SqlParameter("@Description_uk", SqlDbType.VarChar, 200);
+				}
+			}
+			
+			public static SqlParameter Description_en
+			{
+				get
+				{
+					return new SqlParameter("@Description_en", SqlDbType.VarChar, 200);
+				}
+			}
+			
+			public static SqlParameter Description_ru
+			{
+				get
+				{
+					return new SqlParameter("@Description_ru", SqlDbType.VarChar, 200);
+				}
+			}
+			
+			public static SqlParameter TitleSuffix_uk
+			{
+				get
+				{
+					return new SqlParameter("@TitleSuffix_uk", SqlDbType.VarChar, 100);
+				}
+			}
+			
+			public static SqlParameter TitleSuffix_en
+			{
+				get
+				{
+					return new SqlParameter("@TitleSuffix_en", SqlDbType.VarChar, 100);
+				}
+			}
+			
+			public static SqlParameter TitleSuffix_ru
+			{
+				get
+				{
+					return new SqlParameter("@TitleSuffix_ru", SqlDbType.VarChar, 100);
+				}
+			}
+			
 		}
 		#endregion		
 	
@@ -132,6 +228,18 @@ namespace  VikkiSoft_BLL.DAL
             public const string SettingID = "SettingID";
             public const string UserName = "UserName";
             public const string Password = "Password";
+            public const string Keywords_uk = "Keywords_uk";
+            public const string Keywords_en = "Keywords_en";
+            public const string Keywords_ru = "Keywords_ru";
+            public const string Title_uk = "Title_uk";
+            public const string Title_en = "Title_en";
+            public const string Title_ru = "Title_ru";
+            public const string Description_uk = "Description_uk";
+            public const string Description_en = "Description_en";
+            public const string Description_ru = "Description_ru";
+            public const string TitleSuffix_uk = "TitleSuffix_uk";
+            public const string TitleSuffix_en = "TitleSuffix_en";
+            public const string TitleSuffix_ru = "TitleSuffix_ru";
 
 			static public string ToPropertyName(string columnName)
 			{
@@ -142,6 +250,18 @@ namespace  VikkiSoft_BLL.DAL
 					ht[SettingID] = _Settings.PropertyNames.SettingID;
 					ht[UserName] = _Settings.PropertyNames.UserName;
 					ht[Password] = _Settings.PropertyNames.Password;
+					ht[Keywords_uk] = _Settings.PropertyNames.Keywords_uk;
+					ht[Keywords_en] = _Settings.PropertyNames.Keywords_en;
+					ht[Keywords_ru] = _Settings.PropertyNames.Keywords_ru;
+					ht[Title_uk] = _Settings.PropertyNames.Title_uk;
+					ht[Title_en] = _Settings.PropertyNames.Title_en;
+					ht[Title_ru] = _Settings.PropertyNames.Title_ru;
+					ht[Description_uk] = _Settings.PropertyNames.Description_uk;
+					ht[Description_en] = _Settings.PropertyNames.Description_en;
+					ht[Description_ru] = _Settings.PropertyNames.Description_ru;
+					ht[TitleSuffix_uk] = _Settings.PropertyNames.TitleSuffix_uk;
+					ht[TitleSuffix_en] = _Settings.PropertyNames.TitleSuffix_en;
+					ht[TitleSuffix_ru] = _Settings.PropertyNames.TitleSuffix_ru;
 
 				}
 				return (string)ht[columnName];
@@ -157,6 +277,18 @@ namespace  VikkiSoft_BLL.DAL
             public const string SettingID = "SettingID";
             public const string UserName = "UserName";
             public const string Password = "Password";
+            public const string Keywords_uk = "Keywords_uk";
+            public const string Keywords_en = "Keywords_en";
+            public const string Keywords_ru = "Keywords_ru";
+            public const string Title_uk = "Title_uk";
+            public const string Title_en = "Title_en";
+            public const string Title_ru = "Title_ru";
+            public const string Description_uk = "Description_uk";
+            public const string Description_en = "Description_en";
+            public const string Description_ru = "Description_ru";
+            public const string TitleSuffix_uk = "TitleSuffix_uk";
+            public const string TitleSuffix_en = "TitleSuffix_en";
+            public const string TitleSuffix_ru = "TitleSuffix_ru";
 
 			static public string ToColumnName(string propertyName)
 			{
@@ -167,6 +299,18 @@ namespace  VikkiSoft_BLL.DAL
 					ht[SettingID] = _Settings.ColumnNames.SettingID;
 					ht[UserName] = _Settings.ColumnNames.UserName;
 					ht[Password] = _Settings.ColumnNames.Password;
+					ht[Keywords_uk] = _Settings.ColumnNames.Keywords_uk;
+					ht[Keywords_en] = _Settings.ColumnNames.Keywords_en;
+					ht[Keywords_ru] = _Settings.ColumnNames.Keywords_ru;
+					ht[Title_uk] = _Settings.ColumnNames.Title_uk;
+					ht[Title_en] = _Settings.ColumnNames.Title_en;
+					ht[Title_ru] = _Settings.ColumnNames.Title_ru;
+					ht[Description_uk] = _Settings.ColumnNames.Description_uk;
+					ht[Description_en] = _Settings.ColumnNames.Description_en;
+					ht[Description_ru] = _Settings.ColumnNames.Description_ru;
+					ht[TitleSuffix_uk] = _Settings.ColumnNames.TitleSuffix_uk;
+					ht[TitleSuffix_en] = _Settings.ColumnNames.TitleSuffix_en;
+					ht[TitleSuffix_ru] = _Settings.ColumnNames.TitleSuffix_ru;
 
 				}
 				return (string)ht[propertyName];
@@ -182,6 +326,18 @@ namespace  VikkiSoft_BLL.DAL
             public const string SettingID = "s_SettingID";
             public const string UserName = "s_UserName";
             public const string Password = "s_Password";
+            public const string Keywords_uk = "s_Keywords_uk";
+            public const string Keywords_en = "s_Keywords_en";
+            public const string Keywords_ru = "s_Keywords_ru";
+            public const string Title_uk = "s_Title_uk";
+            public const string Title_en = "s_Title_en";
+            public const string Title_ru = "s_Title_ru";
+            public const string Description_uk = "s_Description_uk";
+            public const string Description_en = "s_Description_en";
+            public const string Description_ru = "s_Description_ru";
+            public const string TitleSuffix_uk = "s_TitleSuffix_uk";
+            public const string TitleSuffix_en = "s_TitleSuffix_en";
+            public const string TitleSuffix_ru = "s_TitleSuffix_ru";
 
 		}
 		#endregion		
@@ -221,6 +377,150 @@ namespace  VikkiSoft_BLL.DAL
 			set
 	        {
 				base.Setstring(ColumnNames.Password, value);
+			}
+		}
+
+		public virtual string Keywords_uk
+	    {
+			get
+	        {
+				return base.Getstring(ColumnNames.Keywords_uk);
+			}
+			set
+	        {
+				base.Setstring(ColumnNames.Keywords_uk, value);
+			}
+		}
+
+		public virtual string Keywords_en
+	    {
+			get
+	        {
+				return base.Getstring(ColumnNames.Keywords_en);
+			}
+			set
+	        {
+				base.Setstring(ColumnNames.Keywords_en, value);
+			}
+		}
+
+		public virtual string Keywords_ru
+	    {
+			get
+	        {
+				return base.Getstring(ColumnNames.Keywords_ru);
+			}
+			set
+	        {
+				base.Setstring(ColumnNames.Keywords_ru, value);
+			}
+		}
+
+		public virtual string Title_uk
+	    {
+			get
+	        {
+				return base.Getstring(ColumnNames.Title_uk);
+			}
+			set
+	        {
+				base.Setstring(ColumnNames.Title_uk, value);
+			}
+		}
+
+		public virtual string Title_en
+	    {
+			get
+	        {
+				return base.Getstring(ColumnNames.Title_en);
+			}
+			set
+	        {
+				base.Setstring(ColumnNames.Title_en, value);
+			}
+		}
+
+		public virtual string Title_ru
+	    {
+			get
+	        {
+				return base.Getstring(ColumnNames.Title_ru);
+			}
+			set
+	        {
+				base.Setstring(ColumnNames.Title_ru, value);
+			}
+		}
+
+		public virtual string Description_uk
+	    {
+			get
+	        {
+				return base.Getstring(ColumnNames.Description_uk);
+			}
+			set
+	        {
+				base.Setstring(ColumnNames.Description_uk, value);
+			}
+		}
+
+		public virtual string Description_en
+	    {
+			get
+	        {
+				return base.Getstring(ColumnNames.Description_en);
+			}
+			set
+	        {
+				base.Setstring(ColumnNames.Description_en, value);
+			}
+		}
+
+		public virtual string Description_ru
+	    {
+			get
+	        {
+				return base.Getstring(ColumnNames.Description_ru);
+			}
+			set
+	        {
+				base.Setstring(ColumnNames.Description_ru, value);
+			}
+		}
+
+		public virtual string TitleSuffix_uk
+	    {
+			get
+	        {
+				return base.Getstring(ColumnNames.TitleSuffix_uk);
+			}
+			set
+	        {
+				base.Setstring(ColumnNames.TitleSuffix_uk, value);
+			}
+		}
+
+		public virtual string TitleSuffix_en
+	    {
+			get
+	        {
+				return base.Getstring(ColumnNames.TitleSuffix_en);
+			}
+			set
+	        {
+				base.Setstring(ColumnNames.TitleSuffix_en, value);
+			}
+		}
+
+		public virtual string TitleSuffix_ru
+	    {
+			get
+	        {
+				return base.Getstring(ColumnNames.TitleSuffix_ru);
+			}
+			set
+	        {
+				base.Setstring(ColumnNames.TitleSuffix_ru, value);
 			}
 		}
 
@@ -271,6 +571,186 @@ namespace  VikkiSoft_BLL.DAL
 					this.SetColumnNull(ColumnNames.Password);
 				else
 					this.Password = base.SetstringAsString(ColumnNames.Password, value);
+			}
+		}
+
+		public virtual string s_Keywords_uk
+	    {
+			get
+	        {
+				return this.IsColumnNull(ColumnNames.Keywords_uk) ? string.Empty : base.GetstringAsString(ColumnNames.Keywords_uk);
+			}
+			set
+	        {
+				if(string.Empty == value)
+					this.SetColumnNull(ColumnNames.Keywords_uk);
+				else
+					this.Keywords_uk = base.SetstringAsString(ColumnNames.Keywords_uk, value);
+			}
+		}
+
+		public virtual string s_Keywords_en
+	    {
+			get
+	        {
+				return this.IsColumnNull(ColumnNames.Keywords_en) ? string.Empty : base.GetstringAsString(ColumnNames.Keywords_en);
+			}
+			set
+	        {
+				if(string.Empty == value)
+					this.SetColumnNull(ColumnNames.Keywords_en);
+				else
+					this.Keywords_en = base.SetstringAsString(ColumnNames.Keywords_en, value);
+			}
+		}
+
+		public virtual string s_Keywords_ru
+	    {
+			get
+	        {
+				return this.IsColumnNull(ColumnNames.Keywords_ru) ? string.Empty : base.GetstringAsString(ColumnNames.Keywords_ru);
+			}
+			set
+	        {
+				if(string.Empty == value)
+					this.SetColumnNull(ColumnNames.Keywords_ru);
+				else
+					this.Keywords_ru = base.SetstringAsString(ColumnNames.Keywords_ru, value);
+			}
+		}
+
+		public virtual string s_Title_uk
+	    {
+			get
+	        {
+				return this.IsColumnNull(ColumnNames.Title_uk) ? string.Empty : base.GetstringAsString(ColumnNames.Title_uk);
+			}
+			set
+	        {
+				if(string.Empty == value)
+					this.SetColumnNull(ColumnNames.Title_uk);
+				else
+					this.Title_uk = base.SetstringAsString(ColumnNames.Title_uk, value);
+			}
+		}
+
+		public virtual string s_Title_en
+	    {
+			get
+	        {
+				return this.IsColumnNull(ColumnNames.Title_en) ? string.Empty : base.GetstringAsString(ColumnNames.Title_en);
+			}
+			set
+	        {
+				if(string.Empty == value)
+					this.SetColumnNull(ColumnNames.Title_en);
+				else
+					this.Title_en = base.SetstringAsString(ColumnNames.Title_en, value);
+			}
+		}
+
+		public virtual string s_Title_ru
+	    {
+			get
+	        {
+				return this.IsColumnNull(ColumnNames.Title_ru) ? string.Empty : base.GetstringAsString(ColumnNames.Title_ru);
+			}
+			set
+	        {
+				if(string.Empty == value)
+					this.SetColumnNull(ColumnNames.Title_ru);
+				else
+					this.Title_ru = base.SetstringAsString(ColumnNames.Title_ru, value);
+			}
+		}
+
+		public virtual string s_Description_uk
+	    {
+			get
+	        {
+				return this.IsColumnNull(ColumnNames.Description_uk) ? string.Empty : base.GetstringAsString(ColumnNames.Description_uk);
+			}
+			set
+	        {
+				if(string.Empty == value)
+					this.SetColumnNull(ColumnNames.Description_uk);
+				else
+					this.Description_uk = base.SetstringAsString(ColumnNames.Description_uk, value);
+			}
+		}
+
+		public virtual string s_Description_en
+	    {
+			get
+	        {
+				return this.IsColumnNull(ColumnNames.Description_en) ? string.Empty : base.GetstringAsString(ColumnNames.Description_en);
+			}
+			set
+	        {
+				if(string.Empty == value)
+					this.SetColumnNull(ColumnNames.Description_en);
+				else
+					this.Description_en = base.SetstringAsString(ColumnNames.Description_en, value);
+			}
+		}
+
+		public virtual string s_Description_ru
+	    {
+			get
+	        {
+				return this.IsColumnNull(ColumnNames.Description_ru) ? string.Empty : base.GetstringAsString(ColumnNames.Description_ru);
+			}
+			set
+	        {
+				if(string.Empty == value)
+					this.SetColumnNull(ColumnNames.Description_ru);
+				else
+					this.Description_ru = base.SetstringAsString(ColumnNames.Description_ru, value);
+			}
+		}
+
+		public virtual string s_TitleSuffix_uk
+	    {
+			get
+	        {
+				return this.IsColumnNull(ColumnNames.TitleSuffix_uk) ? string.Empty : base.GetstringAsString(ColumnNames.TitleSuffix_uk);
+			}
+			set
+	        {
+				if(string.Empty == value)
+					this.SetColumnNull(ColumnNames.TitleSuffix_uk);
+				else
+					this.TitleSuffix_uk = base.SetstringAsString(ColumnNames.TitleSuffix_uk, value);
+			}
+		}
+
+		public virtual string s_TitleSuffix_en
+	    {
+			get
+	        {
+				return this.IsColumnNull(ColumnNames.TitleSuffix_en) ? string.Empty : base.GetstringAsString(ColumnNames.TitleSuffix_en);
+			}
+			set
+	        {
+				if(string.Empty == value)
+					this.SetColumnNull(ColumnNames.TitleSuffix_en);
+				else
+					this.TitleSuffix_en = base.SetstringAsString(ColumnNames.TitleSuffix_en, value);
+			}
+		}
+
+		public virtual string s_TitleSuffix_ru
+	    {
+			get
+	        {
+				return this.IsColumnNull(ColumnNames.TitleSuffix_ru) ? string.Empty : base.GetstringAsString(ColumnNames.TitleSuffix_ru);
+			}
+			set
+	        {
+				if(string.Empty == value)
+					this.SetColumnNull(ColumnNames.TitleSuffix_ru);
+				else
+					this.TitleSuffix_ru = base.SetstringAsString(ColumnNames.TitleSuffix_ru, value);
 			}
 		}
 
@@ -337,6 +817,126 @@ namespace  VikkiSoft_BLL.DAL
 					}
 				}
 
+				public WhereParameter Keywords_uk
+				{
+					get
+					{
+							WhereParameter where = new WhereParameter(ColumnNames.Keywords_uk, Parameters.Keywords_uk);
+							this._clause._entity.Query.AddWhereParameter(where);
+							return where;
+					}
+				}
+
+				public WhereParameter Keywords_en
+				{
+					get
+					{
+							WhereParameter where = new WhereParameter(ColumnNames.Keywords_en, Parameters.Keywords_en);
+							this._clause._entity.Query.AddWhereParameter(where);
+							return where;
+					}
+				}
+
+				public WhereParameter Keywords_ru
+				{
+					get
+					{
+							WhereParameter where = new WhereParameter(ColumnNames.Keywords_ru, Parameters.Keywords_ru);
+							this._clause._entity.Query.AddWhereParameter(where);
+							return where;
+					}
+				}
+
+				public WhereParameter Title_uk
+				{
+					get
+					{
+							WhereParameter where = new WhereParameter(ColumnNames.Title_uk, Parameters.Title_uk);
+							this._clause._entity.Query.AddWhereParameter(where);
+							return where;
+					}
+				}
+
+				public WhereParameter Title_en
+				{
+					get
+					{
+							WhereParameter where = new WhereParameter(ColumnNames.Title_en, Parameters.Title_en);
+							this._clause._entity.Query.AddWhereParameter(where);
+							return where;
+					}
+				}
+
+				public WhereParameter Title_ru
+				{
+					get
+					{
+							WhereParameter where = new WhereParameter(ColumnNames.Title_ru, Parameters.Title_ru);
+							this._clause._entity.Query.AddWhereParameter(where);
+							return where;
+					}
+				}
+
+				public WhereParameter Description_uk
+				{
+					get
+					{
+							WhereParameter where = new WhereParameter(ColumnNames.Description_uk, Parameters.Description_uk);
+							this._clause._entity.Query.AddWhereParameter(where);
+							return where;
+					}
+				}
+
+				public WhereParameter Description_en
+				{
+					get
+					{
+							WhereParameter where = new WhereParameter(ColumnNames.Description_en, Parameters.Description_en);
+							this._clause._entity.Query.AddWhereParameter(where);
+							return where;
+					}
+				}
+
+				public WhereParameter Description_ru
+				{
+					get
+					{
+							WhereParameter where = new WhereParameter(ColumnNames.Description_ru, Parameters.Description_ru);
+							this._clause._entity.Query.AddWhereParameter(where);
+							return where;
+					}
+				}
+
+				public WhereParameter TitleSuffix_uk
+				{
+					get
+					{
+							WhereParameter where = new WhereParameter(ColumnNames.TitleSuffix_uk, Parameters.TitleSuffix_uk);
+							this._clause._entity.Query.AddWhereParameter(where);
+							return where;
+					}
+				}
+
+				public WhereParameter TitleSuffix_en
+				{
+					get
+					{
+							WhereParameter where = new WhereParameter(ColumnNames.TitleSuffix_en, Parameters.TitleSuffix_en);
+							this._clause._entity.Query.AddWhereParameter(where);
+							return where;
+					}
+				}
+
+				public WhereParameter TitleSuffix_ru
+				{
+					get
+					{
+							WhereParameter where = new WhereParameter(ColumnNames.TitleSuffix_ru, Parameters.TitleSuffix_ru);
+							this._clause._entity.Query.AddWhereParameter(where);
+							return where;
+					}
+				}
+
 
 				private WhereClause _clause;
 			}
@@ -378,15 +978,183 @@ namespace  VikkiSoft_BLL.DAL
 				}
 			}
 
+			public WhereParameter Keywords_uk
+		    {
+				get
+		        {
+					if(_Keywords_uk_W == null)
+	        	    {
+						_Keywords_uk_W = TearOff.Keywords_uk;
+					}
+					return _Keywords_uk_W;
+				}
+			}
+
+			public WhereParameter Keywords_en
+		    {
+				get
+		        {
+					if(_Keywords_en_W == null)
+	        	    {
+						_Keywords_en_W = TearOff.Keywords_en;
+					}
+					return _Keywords_en_W;
+				}
+			}
+
+			public WhereParameter Keywords_ru
+		    {
+				get
+		        {
+					if(_Keywords_ru_W == null)
+	        	    {
+						_Keywords_ru_W = TearOff.Keywords_ru;
+					}
+					return _Keywords_ru_W;
+				}
+			}
+
+			public WhereParameter Title_uk
+		    {
+				get
+		        {
+					if(_Title_uk_W == null)
+	        	    {
+						_Title_uk_W = TearOff.Title_uk;
+					}
+					return _Title_uk_W;
+				}
+			}
+
+			public WhereParameter Title_en
+		    {
+				get
+		        {
+					if(_Title_en_W == null)
+	        	    {
+						_Title_en_W = TearOff.Title_en;
+					}
+					return _Title_en_W;
+				}
+			}
+
+			public WhereParameter Title_ru
+		    {
+				get
+		        {
+					if(_Title_ru_W == null)
+	        	    {
+						_Title_ru_W = TearOff.Title_ru;
+					}
+					return _Title_ru_W;
+				}
+			}
+
+			public WhereParameter Description_uk
+		    {
+				get
+		        {
+					if(_Description_uk_W == null)
+	        	    {
+						_Description_uk_W = TearOff.Description_uk;
+					}
+					return _Description_uk_W;
+				}
+			}
+
+			public WhereParameter Description_en
+		    {
+				get
+		        {
+					if(_Description_en_W == null)
+	        	    {
+						_Description_en_W = TearOff.Description_en;
+					}
+					return _Description_en_W;
+				}
+			}
+
+			public WhereParameter Description_ru
+		    {
+				get
+		        {
+					if(_Description_ru_W == null)
+	        	    {
+						_Description_ru_W = TearOff.Description_ru;
+					}
+					return _Description_ru_W;
+				}
+			}
+
+			public WhereParameter TitleSuffix_uk
+		    {
+				get
+		        {
+					if(_TitleSuffix_uk_W == null)
+	        	    {
+						_TitleSuffix_uk_W = TearOff.TitleSuffix_uk;
+					}
+					return _TitleSuffix_uk_W;
+				}
+			}
+
+			public WhereParameter TitleSuffix_en
+		    {
+				get
+		        {
+					if(_TitleSuffix_en_W == null)
+	        	    {
+						_TitleSuffix_en_W = TearOff.TitleSuffix_en;
+					}
+					return _TitleSuffix_en_W;
+				}
+			}
+
+			public WhereParameter TitleSuffix_ru
+		    {
+				get
+		        {
+					if(_TitleSuffix_ru_W == null)
+	        	    {
+						_TitleSuffix_ru_W = TearOff.TitleSuffix_ru;
+					}
+					return _TitleSuffix_ru_W;
+				}
+			}
+
 			private WhereParameter _SettingID_W = null;
 			private WhereParameter _UserName_W = null;
 			private WhereParameter _Password_W = null;
+			private WhereParameter _Keywords_uk_W = null;
+			private WhereParameter _Keywords_en_W = null;
+			private WhereParameter _Keywords_ru_W = null;
+			private WhereParameter _Title_uk_W = null;
+			private WhereParameter _Title_en_W = null;
+			private WhereParameter _Title_ru_W = null;
+			private WhereParameter _Description_uk_W = null;
+			private WhereParameter _Description_en_W = null;
+			private WhereParameter _Description_ru_W = null;
+			private WhereParameter _TitleSuffix_uk_W = null;
+			private WhereParameter _TitleSuffix_en_W = null;
+			private WhereParameter _TitleSuffix_ru_W = null;
 
 			public void WhereClauseReset()
 			{
 				_SettingID_W = null;
 				_UserName_W = null;
 				_Password_W = null;
+				_Keywords_uk_W = null;
+				_Keywords_en_W = null;
+				_Keywords_ru_W = null;
+				_Title_uk_W = null;
+				_Title_en_W = null;
+				_Title_ru_W = null;
+				_Description_uk_W = null;
+				_Description_en_W = null;
+				_Description_ru_W = null;
+				_TitleSuffix_uk_W = null;
+				_TitleSuffix_en_W = null;
+				_TitleSuffix_ru_W = null;
 
 				this._entity.Query.FlushWhereParameters();
 
@@ -473,6 +1241,126 @@ namespace  VikkiSoft_BLL.DAL
 					}
 				}
 
+				public AggregateParameter Keywords_uk
+				{
+					get
+					{
+							AggregateParameter aggregate = new AggregateParameter(ColumnNames.Keywords_uk, Parameters.Keywords_uk);
+							this._clause._entity.Query.AddAggregateParameter(aggregate);
+							return aggregate;
+					}
+				}
+
+				public AggregateParameter Keywords_en
+				{
+					get
+					{
+							AggregateParameter aggregate = new AggregateParameter(ColumnNames.Keywords_en, Parameters.Keywords_en);
+							this._clause._entity.Query.AddAggregateParameter(aggregate);
+							return aggregate;
+					}
+				}
+
+				public AggregateParameter Keywords_ru
+				{
+					get
+					{
+							AggregateParameter aggregate = new AggregateParameter(ColumnNames.Keywords_ru, Parameters.Keywords_ru);
+							this._clause._entity.Query.AddAggregateParameter(aggregate);
+							return aggregate;
+					}
+				}
+
+				public AggregateParameter Title_uk
+				{
+					get
+					{
+							AggregateParameter aggregate = new AggregateParameter(ColumnNames.Title_uk, Parameters.Title_uk);
+							this._clause._entity.Query.AddAggregateParameter(aggregate);
+							return aggregate;
+					}
+				}
+
+				public AggregateParameter Title_en
+				{
+					get
+					{
+							AggregateParameter aggregate = new AggregateParameter(ColumnNames.Title_en, Parameters.Title_en);
+							this._clause._entity.Query.AddAggregateParameter(aggregate);
+							return aggregate;
+					}
+				}
+
+				public AggregateParameter Title_ru
+				{
+					get
+					{
+							AggregateParameter aggregate = new AggregateParameter(ColumnNames.Title_ru, Parameters.Title_ru);
+							this._clause._entity.Query.AddAggregateParameter(aggregate);
+							return aggregate;
+					}
+				}
+
+				public AggregateParameter Description_uk
+				{
+					get
+					{
+							AggregateParameter aggregate = new AggregateParameter(ColumnNames.Description_uk, Parameters.Description_uk);
+							this._clause._entity.Query.AddAggregateParameter(aggregate);
+							return aggregate;
+					}
+				}
+
+				public AggregateParameter Description_en
+				{
+					get
+					{
+							AggregateParameter aggregate = new AggregateParameter(ColumnNames.Description_en, Parameters.Description_en);
+							this._clause._entity.Query.AddAggregateParameter(aggregate);
+							return aggregate;
+					}
+				}
+
+				public AggregateParameter Description_ru
+				{
+					get
+					{
+							AggregateParameter aggregate = new AggregateParameter(ColumnNames.Description_ru, Parameters.Description_ru);
+							this._clause._entity.Query.AddAggregateParameter(aggregate);
+							return aggregate;
+					}
+				}
+
+				public AggregateParameter TitleSuffix_uk
+				{
+					get
+					{
+							AggregateParameter aggregate = new AggregateParameter(ColumnNames.TitleSuffix_uk, Parameters.TitleSuffix_uk);
+							this._clause._entity.Query.AddAggregateParameter(aggregate);
+							return aggregate;
+					}
+				}
+
+				public AggregateParameter TitleSuffix_en
+				{
+					get
+					{
+							AggregateParameter aggregate = new AggregateParameter(ColumnNames.TitleSuffix_en, Parameters.TitleSuffix_en);
+							this._clause._entity.Query.AddAggregateParameter(aggregate);
+							return aggregate;
+					}
+				}
+
+				public AggregateParameter TitleSuffix_ru
+				{
+					get
+					{
+							AggregateParameter aggregate = new AggregateParameter(ColumnNames.TitleSuffix_ru, Parameters.TitleSuffix_ru);
+							this._clause._entity.Query.AddAggregateParameter(aggregate);
+							return aggregate;
+					}
+				}
+
 
 				private AggregateClause _clause;
 			}
@@ -514,15 +1402,183 @@ namespace  VikkiSoft_BLL.DAL
 				}
 			}
 
+			public AggregateParameter Keywords_uk
+		    {
+				get
+		        {
+					if(_Keywords_uk_W == null)
+	        	    {
+						_Keywords_uk_W = TearOff.Keywords_uk;
+					}
+					return _Keywords_uk_W;
+				}
+			}
+
+			public AggregateParameter Keywords_en
+		    {
+				get
+		        {
+					if(_Keywords_en_W == null)
+	        	    {
+						_Keywords_en_W = TearOff.Keywords_en;
+					}
+					return _Keywords_en_W;
+				}
+			}
+
+			public AggregateParameter Keywords_ru
+		    {
+				get
+		        {
+					if(_Keywords_ru_W == null)
+	        	    {
+						_Keywords_ru_W = TearOff.Keywords_ru;
+					}
+					return _Keywords_ru_W;
+				}
+			}
+
+			public AggregateParameter Title_uk
+		    {
+				get
+		        {
+					if(_Title_uk_W == null)
+	        	    {
+						_Title_uk_W = TearOff.Title_uk;
+					}
+					return _Title_uk_W;
+				}
+			}
+
+			public AggregateParameter Title_en
+		    {
+				get
+		        {
+					if(_Title_en_W == null)
+	        	    {
+						_Title_en_W = TearOff.Title_en;
+					}
+					return _Title_en_W;
+				}
+			}
+
+			public AggregateParameter Title_ru
+		    {
+				get
+		        {
+					if(_Title_ru_W == null)
+	        	    {
+						_Title_ru_W = TearOff.Title_ru;
+					}
+					return _Title_ru_W;
+				}
+			}
+
+			public AggregateParameter Description_uk
+		    {
+				get
+		        {
+					if(_Description_uk_W == null)
+	        	    {
+						_Description_uk_W = TearOff.Description_uk;
+					}
+					return _Description_uk_W;
+				}
+			}
+
+			public AggregateParameter Description_en
+		    {
+				get
+		        {
+					if(_Description_en_W == null)
+	        	    {
+						_Description_en_W = TearOff.Description_en;
+					}
+					return _Description_en_W;
+				}
+			}
+
+			public AggregateParameter Description_ru
+		    {
+				get
+		        {
+					if(_Description_ru_W == null)
+	        	    {
+						_Description_ru_W = TearOff.Description_ru;
+					}
+					return _Description_ru_W;
+				}
+			}
+
+			public AggregateParameter TitleSuffix_uk
+		    {
+				get
+		        {
+					if(_TitleSuffix_uk_W == null)
+	        	    {
+						_TitleSuffix_uk_W = TearOff.TitleSuffix_uk;
+					}
+					return _TitleSuffix_uk_W;
+				}
+			}
+
+			public AggregateParameter TitleSuffix_en
+		    {
+				get
+		        {
+					if(_TitleSuffix_en_W == null)
+	        	    {
+						_TitleSuffix_en_W = TearOff.TitleSuffix_en;
+					}
+					return _TitleSuffix_en_W;
+				}
+			}
+
+			public AggregateParameter TitleSuffix_ru
+		    {
+				get
+		        {
+					if(_TitleSuffix_ru_W == null)
+	        	    {
+						_TitleSuffix_ru_W = TearOff.TitleSuffix_ru;
+					}
+					return _TitleSuffix_ru_W;
+				}
+			}
+
 			private AggregateParameter _SettingID_W = null;
 			private AggregateParameter _UserName_W = null;
 			private AggregateParameter _Password_W = null;
+			private AggregateParameter _Keywords_uk_W = null;
+			private AggregateParameter _Keywords_en_W = null;
+			private AggregateParameter _Keywords_ru_W = null;
+			private AggregateParameter _Title_uk_W = null;
+			private AggregateParameter _Title_en_W = null;
+			private AggregateParameter _Title_ru_W = null;
+			private AggregateParameter _Description_uk_W = null;
+			private AggregateParameter _Description_en_W = null;
+			private AggregateParameter _Description_ru_W = null;
+			private AggregateParameter _TitleSuffix_uk_W = null;
+			private AggregateParameter _TitleSuffix_en_W = null;
+			private AggregateParameter _TitleSuffix_ru_W = null;
 
 			public void AggregateClauseReset()
 			{
 				_SettingID_W = null;
 				_UserName_W = null;
 				_Password_W = null;
+				_Keywords_uk_W = null;
+				_Keywords_en_W = null;
+				_Keywords_ru_W = null;
+				_Title_uk_W = null;
+				_Title_en_W = null;
+				_Title_ru_W = null;
+				_Description_uk_W = null;
+				_Description_en_W = null;
+				_Description_ru_W = null;
+				_TitleSuffix_uk_W = null;
+				_TitleSuffix_en_W = null;
+				_TitleSuffix_ru_W = null;
 
 				this._entity.Query.FlushAggregateParameters();
 
@@ -607,6 +1663,54 @@ namespace  VikkiSoft_BLL.DAL
 
 			p = cmd.Parameters.Add(Parameters.Password);
 			p.SourceColumn = ColumnNames.Password;
+			p.SourceVersion = DataRowVersion.Current;
+
+			p = cmd.Parameters.Add(Parameters.Keywords_uk);
+			p.SourceColumn = ColumnNames.Keywords_uk;
+			p.SourceVersion = DataRowVersion.Current;
+
+			p = cmd.Parameters.Add(Parameters.Keywords_en);
+			p.SourceColumn = ColumnNames.Keywords_en;
+			p.SourceVersion = DataRowVersion.Current;
+
+			p = cmd.Parameters.Add(Parameters.Keywords_ru);
+			p.SourceColumn = ColumnNames.Keywords_ru;
+			p.SourceVersion = DataRowVersion.Current;
+
+			p = cmd.Parameters.Add(Parameters.Title_uk);
+			p.SourceColumn = ColumnNames.Title_uk;
+			p.SourceVersion = DataRowVersion.Current;
+
+			p = cmd.Parameters.Add(Parameters.Title_en);
+			p.SourceColumn = ColumnNames.Title_en;
+			p.SourceVersion = DataRowVersion.Current;
+
+			p = cmd.Parameters.Add(Parameters.Title_ru);
+			p.SourceColumn = ColumnNames.Title_ru;
+			p.SourceVersion = DataRowVersion.Current;
+
+			p = cmd.Parameters.Add(Parameters.Description_uk);
+			p.SourceColumn = ColumnNames.Description_uk;
+			p.SourceVersion = DataRowVersion.Current;
+
+			p = cmd.Parameters.Add(Parameters.Description_en);
+			p.SourceColumn = ColumnNames.Description_en;
+			p.SourceVersion = DataRowVersion.Current;
+
+			p = cmd.Parameters.Add(Parameters.Description_ru);
+			p.SourceColumn = ColumnNames.Description_ru;
+			p.SourceVersion = DataRowVersion.Current;
+
+			p = cmd.Parameters.Add(Parameters.TitleSuffix_uk);
+			p.SourceColumn = ColumnNames.TitleSuffix_uk;
+			p.SourceVersion = DataRowVersion.Current;
+
+			p = cmd.Parameters.Add(Parameters.TitleSuffix_en);
+			p.SourceColumn = ColumnNames.TitleSuffix_en;
+			p.SourceVersion = DataRowVersion.Current;
+
+			p = cmd.Parameters.Add(Parameters.TitleSuffix_ru);
+			p.SourceColumn = ColumnNames.TitleSuffix_ru;
 			p.SourceVersion = DataRowVersion.Current;
 
 

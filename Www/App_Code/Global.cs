@@ -14,6 +14,7 @@ namespace VikkiSoft
         protected void Application_Start()
         {
             RouteTable.Routes.MapPageRoute("CountryRoute", "country/{CountryName}", "~/CountryView.aspx");
+            RouteTable.Routes.MapPageRoute("CityRoute", "city/{CityName}", "~/CityView.aspx");
         }
     }
 }

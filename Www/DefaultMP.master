@@ -4,21 +4,17 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>YourTravel.biz | Cheap Hotels, Discounts, Hotel Deals and Offers</title>
- <link href="style.css" type="text/css" rel="stylesheet"/>
+    <link href="style.css" type="text/css" rel="stylesheet"/>
     <link rel="icon" type="image/gif" href="Images/icon.gif"/>		
-    <meta name="title" content="YourTravel.biz | Cheap Hotels, Discounts, Hotel Deals and Offers" />
-    <meta name="description" content="Find cheap hotels and discounts when you book on YourTravel.biz. Compare to find the Best Price for hotel." xml:lang="en" />
-    <meta name="keywords" content="Your Travel, hotels, rooms, bookings, bookings, cheap, romantic hotels, offers, discount, deals, lastminute" />
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />	
     <meta content="VIKKI Soft, office@vikkisoft.com" name="VIKKIsoft" /> 
     <link rel="shortcut icon" href="/favicon.ico" />
-	<script type="text/javascript" src="js/jquery.min.js"></script>
-	<script type='text/javascript' src='js/jquery.cycle.all.js'></script>
-	<script type='text/javascript' src='js/jquery.easing.1.3.js'></script>
-	<script type='text/javascript' src='js/cycle_script.js'></script>  
     <telerik:RadCodeBlock ID="RadCodeBlock1" runat="server">
+    <%=Title%>
+    <%=Description%>
+    <%=Keywords%>
     <%=ScriptTag%> 
+    <%=Canonical%>
     </telerik:RadCodeBlock>
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -29,7 +25,7 @@
                 var linkText = $(this).find("a").html(); //Find the text inside of the a tag
                 $(this).find("span").show().html(linkText); //Add the text in the span tag
             });
-            $("#topnav li").hover(function () {	//On hover...
+            $("#topnav li").hover(function () { //On hover...
                 $(this).find("span").stop().animate({
                     marginTop: "-40" //Find the span tag and move it up 40 pixels
                 }, 250);
@@ -42,7 +38,6 @@
 </script>
 </head>
 <body style="width:100%; height:100%">
-
     <form id="form1" runat="server" style="width:100%; height:100%">    
    <div class="formdiv">
       <div class="divmenu"> 
