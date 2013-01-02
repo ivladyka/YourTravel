@@ -71,7 +71,7 @@ public partial class CountryList : ListControlBase, Interfaces.IColouredGrid
                     HyperLink hl = new HyperLink();
                     hl.Target = "_blank";
                     hl.Text = "Go this page";
-                    hl.NavigateUrl = Utils.GenerateFriendlyURL("country", dataRowView[Country.ColumnNames.Name_en].ToString());
+                    hl.NavigateUrl = Utils.GenerateFriendlyURL("country", new string[] {dataRowView[Country.ColumnNames.Name_en].ToString()});
                     e.Item.Cells[15].Controls.Add(hl);
                 }
             }

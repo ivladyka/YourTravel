@@ -19,5 +19,22 @@ namespace VikkiSoft_BLL
         {
             return base.LoadFromSql("[" + this.SchemaStoredProcedure + "usp_City_LoadWithCountry]");
         }
+
+        public virtual bool LoadByName(string cityName, string countryName)
+        {
+            ListDictionary parameters = new ListDictionary();
+            parameters.Add(new SqlParameter("@CityName", SqlDbType.VarChar), cityName);
+            parameters.Add(new SqlParameter("@CountryName", SqlDbType.VarChar), countryName);
+
+            return base.LoadFromSql("[" + this.SchemaStoredProcedure + "usp_City_LoadByName]", parameters);
+        }
+
+        public virtual bool LoadDetailInfo(int cityID)
+        {
+            ListDictionary parameters = new ListDictionary();
+            parameters.Add(new SqlParameter("@CityID", SqlDbType.Int), cityID);
+
+            return base.LoadFromSql("[" + this.SchemaStoredProcedure + "usp_City_LoadDetailInfo]", parameters);
+        }
 	}
 }

@@ -36,6 +36,10 @@ public partial class MasterPage : MasterPageBase
                 break;
         }
         hlMenuHotelSearch.NavigateUrl = "http://reservations.yourtravel.biz/templates/407972/index?lang=" + Utils.LangPrefURL;
+        hlHomeTop.NavigateUrl = this.SiteURL + "/Default.aspx";
+        hlAboutUs.NavigateUrl = this.SiteURL + "/CategoryView.aspx?ct=1";
+        hlPrivacyPolicy.NavigateUrl = this.SiteURL + "/CategoryView.aspx?ct=2";
+        hlContactUsTop.NavigateUrl = this.SiteURL + "/ContactUs.aspx";
         if (!Page.IsPostBack)
         {
             LoadCommonPageData();
@@ -54,8 +58,7 @@ public partial class MasterPage : MasterPageBase
 
     private string GetJavaScriptTag(string scriptURL)
     {
-        return "<script src='" + SiteURL + System.Configuration.ConfigurationManager.AppSettings["VitrualFolderPath"] 
-            + scriptURL + "' type='text/javascript'></script>";
+        return "<script src='" + SiteURL + scriptURL + "' type='text/javascript'></script>";
     }
 
     public string Canonical

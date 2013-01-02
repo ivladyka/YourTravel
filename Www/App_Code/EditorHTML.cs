@@ -88,4 +88,28 @@ public class EditorHTML : ControlBase
             rfvEditorHTML.Enabled = value;
         }
     }
+
+    public string ImageManagerViewPaths
+    {
+        set
+        {
+            editorHTML.ImageManager.ViewPaths = new string [] {value};
+        }
+    }
+
+    public string ImageManagerUploadPaths
+    {
+        set
+        {
+            editorHTML.ImageManager.UploadPaths = new string [] {value};
+        }
+    }
+
+    public string ImageManagerDeletePaths
+    {
+        set
+        {
+            editorHTML.ImageManager.DeletePaths = new string[] { value };
+        }
+    }
 }

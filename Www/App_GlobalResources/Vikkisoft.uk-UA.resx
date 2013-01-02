@@ -216,4 +216,22 @@
   <data name="YourName" xml:space="preserve">
     <value>Ваше ім'я:</value>
   </data>
+  <data name="Area" xml:space="preserve">
+    <value>Площа</value>
+  </data>
+  <data name="AreaMeasure" xml:space="preserve">
+    <value>кв. км.</value>
+  </data>
+  <data name="Capital" xml:space="preserve">
+    <value>Столиця</value>
+  </data>
+  <data name="Currency" xml:space="preserve">
+    <value>Валюта</value>
+  </data>
+  <data name="Population" xml:space="preserve">
+    <value>Населення</value>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>Країна</value>
+  </data>
 </root>

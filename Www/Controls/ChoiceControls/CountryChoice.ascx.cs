@@ -18,6 +18,7 @@ public partial class CountryChoice : ChoiceControlBase
             do
             {
                 RadComboBoxItem item = new RadComboBoxItem(c.s_Name_uk, c.CountryID.ToString());
+                item.Attributes["NameEn"] = c.s_Name_en;
                 this.ddlList.Items.Add(item);
             } while (c.MoveNext());
         }

@@ -64,6 +64,7 @@ public class MasterPageBase : System.Web.UI.MasterPage
             string serverURL = Request.Url.Scheme + Uri.SchemeDelimiter + System.Web.HttpContext.Current.Request.ServerVariables["SERVER_NAME"];
             if (!Request.Url.IsDefaultPort)
                 serverURL += ":" + Request.Url.Port;
+            serverURL += System.Configuration.ConfigurationManager.AppSettings["VitrualFolderPath"].ToString();
             return serverURL;
         }
     }
@@ -147,12 +148,13 @@ public class MasterPageBase : System.Web.UI.MasterPage
     {
         get
         {
-            if (Page.RouteData.Values["CityName"] != null)
+            if (Page.RouteData.Values["CityName"] != null 
+                && Page.RouteData.Values["CountryName"] != null)
             {
                 string cityName = Page.RouteData.Values["CityName"].ToString();
+                string countryName = Page.RouteData.Values["CountryName"].ToString();
                 City c = new City();
-                c.Where.Name_en.Value = cityName;
-                if (c.Query.Load())
+                if (c.LoadByName(cityName, countryName))
                 {
                     m_CityID = c.CityID;
                     return m_CityID;

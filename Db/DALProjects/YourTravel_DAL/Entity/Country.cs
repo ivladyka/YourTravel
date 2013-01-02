@@ -19,5 +19,13 @@ namespace VikkiSoft_BLL
         {
             return base.LoadFromSql("[" + this.SchemaStoredProcedure + "usp_Country_LoadWithCapital]");
         }
+
+        public virtual bool LoadDetailInfo(int countryID)
+        {
+            ListDictionary parameters = new ListDictionary();
+            parameters.Add(new SqlParameter("@CountryID", SqlDbType.Int), countryID);
+
+            return base.LoadFromSql("[" + this.SchemaStoredProcedure + "usp_Country_LoadDetailInfo]", parameters);
+        }
 	}
 }

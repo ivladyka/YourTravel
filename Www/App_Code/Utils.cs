@@ -155,22 +155,6 @@ public class Utils
         }
     }
 
-    public static string OrderImagePath
-    {
-        get
-        {
-            return System.Configuration.ConfigurationManager.AppSettings["OrderImagePath"];
-        }
-    }
-
-    public static string OrderFTPPath
-    {
-        get
-        {
-            return System.Configuration.ConfigurationManager.AppSettings["OrderFTPPath"];
-        }
-    }
-
     public static string FontPath
     {
         get
@@ -305,9 +289,18 @@ public class Utils
         }
     }
 
-    public static string GenerateFriendlyURL(string subfolderName, string title)
+    public static string GenerateFriendlyURL(string subfolderName, string[] titles)
     {
         string friendlyURL = "~/" + subfolderName + "/";
+        foreach (string title in titles)
+        {
+            friendlyURL += PrepareFolderName(title) + "/";
+        }
+        return friendlyURL;
+    }
+
+    private static string PrepareFolderName(string title)
+    {
         title = title.Trim();
         title = title.Trim('-');
 
@@ -340,8 +333,6 @@ public class Utils
 
         title = title.Trim();
         title = title.Trim('-');
-
-
-        return friendlyURL + title + "/";
+        return title;
     }
 }

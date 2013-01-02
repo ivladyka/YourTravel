@@ -22,5 +22,39 @@ public partial class CountryEdit : EditControlBase
     {
         base.InitOnFirstLoading();
         text_Name_uk.Focus();
+        if (!IsNew)
+        {
+            text_Name_en.Enabled = false;
+            string countryFolder = Server.MapPath(Utils.GaleryImagePath + "//country");
+            if (!System.IO.Directory.Exists(countryFolder))
+            {
+                System.IO.Directory.CreateDirectory(countryFolder);
+            }
+            countryFolder = Server.MapPath(Utils.GaleryImagePath + "//country//" + text_Name_en.Text.ToLower());
+            if (!System.IO.Directory.Exists(countryFolder))
+            {
+                System.IO.Directory.CreateDirectory(countryFolder);
+            }
+            string countryFolderVirtual = Utils.GaleryImagePath + "/country/" + text_Name_en.Text.ToLower();
+            editor_Content_uk.ImageManagerViewPaths = countryFolderVirtual;
+            editor_Content_en.ImageManagerViewPaths = countryFolderVirtual;
+            editor_Content_ru.ImageManagerViewPaths = countryFolderVirtual;
+        }
+    }
+
+    protected override void SetEventHandlers()
+    {
+        if (!IsNew)
+        {
+            string countryFolderVirtual = Utils.GaleryImagePath + "/country/" + text_Name_en.Text.ToLower();
+
+            editor_Content_uk.ImageManagerUploadPaths = countryFolderVirtual;
+            editor_Content_en.ImageManagerUploadPaths = countryFolderVirtual;
+            editor_Content_ru.ImageManagerUploadPaths = countryFolderVirtual;
+            editor_Content_uk.ImageManagerDeletePaths = countryFolderVirtual;
+            editor_Content_en.ImageManagerDeletePaths = countryFolderVirtual;
+            editor_Content_ru.ImageManagerDeletePaths = countryFolderVirtual;
+        }
+        base.SetEventHandlers();
     }
 }

@@ -254,4 +254,12 @@ public class ChoiceControlBase : ControlBase
             return ddlList.Items.Count;
         }
     }
+
+    public RadComboBoxItem DDLSelectedItem
+    {
+        get
+        {
+            return ddlList.SelectedItem;
+        }
+    }
 }

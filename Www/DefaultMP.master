@@ -43,9 +43,9 @@
       <div class="divmenu"> 
     <ul id="topnav" class="v2">
 		<li id="startlimenu">
-            <a href="Default.aspx">
+            <asp:HyperLink id="hlHomeTop" runat="server">
                 <%=menuHome%>
-            </a>           
+            </asp:HyperLink>           
 		</li>
 		<li>
             <asp:HyperLink id="hlMenuHotelSearch" runat="server"> 
@@ -53,19 +53,19 @@
             </asp:HyperLink>
 		</li>
 		<li>
-            <a href="CategoryView.aspx?ct=1">
+            <asp:HyperLink id="hlAboutUs" runat="server">
                 <%=menuAboutUS%>
-            </a>
+            </asp:HyperLink>
 		</li>		
         <li>
-            <a href="CategoryView.aspx?ct=2">
+            <asp:HyperLink id="hlPrivacyPolicy" runat="server">
                 <%=menuPrivacyPolicy%>
-            </a>
+            </asp:HyperLink>
 		</li>
 		<li>
-            <a href="ContactUs.aspx">
+            <asp:HyperLink id="hlContactUsTop" runat="server">
                 <%=menuContactUS%>
-            </a>
+            </asp:HyperLink>
 		</li>	
 	</ul>   
 	</div>       
