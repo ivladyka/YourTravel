@@ -8,7 +8,7 @@ using System.Collections.Specialized;
 using System.Web.UI.HtmlControls;
 using VikkiSoft_BLL;
 
-public partial class BookMasterPage : System.Web.UI.MasterPage
+public partial class BookMasterPage : BookMasterPageBase
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -264,37 +264,5 @@ public partial class BookMasterPage : System.Web.UI.MasterPage
             }
         }
         return "";
-    }
-
-    public MasterPageBase MasterPage
-    {
-        get
-        {
-            return (Page.Master.Master as MasterPageBase);
-        }
-    }
-
-    public string SiteURL
-    {
-        get
-        {
-            return MasterPage.SiteURL;
-        }
-    }
-
-    public int CityID
-    {
-        get
-        {
-            return MasterPage.CityID;
-        }
-    }
-
-    public int CountryID
-    {
-        get
-        {
-            return MasterPage.CountryID;
-        }
     }
 }

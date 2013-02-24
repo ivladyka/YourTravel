@@ -27,5 +27,10 @@ namespace VikkiSoft_BLL
 
             return base.LoadFromSql("[" + this.SchemaStoredProcedure + "usp_Country_LoadDetailInfo]", parameters);
         }
+
+        public virtual bool LoadSiteMap()
+        {
+            return base.LoadFromSql("[" + this.SchemaStoredProcedure + "usp_Country_LoadSiteMap]");
+        }
 	}
 }

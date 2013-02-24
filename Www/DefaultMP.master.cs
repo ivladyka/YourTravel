@@ -65,23 +65,7 @@ public partial class MasterPage : MasterPageBase
     {
         get
         {
-            return "<link rel=\"canonical\" href=\"" + CanonicalURL + "\" /> ";
-        }
-    }
-
-    private string CanonicalURL
-    {
-        get
-        {
-            if (IsCountryPage)
-            {
-                return SiteURL + "/CountryView.aspx?cid=" + CountryID;
-            }
-            if (IsCityPage)
-            {
-                return SiteURL + "/CityView.aspx?ctid=" + CityID;
-            }
-            return Page.Request.Url.ToString();
+            return "<link rel=\"canonical\" href=\"" + Page.Request.Url.ToString() + "\" /> ";
         }
     }
 

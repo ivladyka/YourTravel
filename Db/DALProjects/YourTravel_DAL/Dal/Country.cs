@@ -267,6 +267,14 @@ namespace VikkiSoft_BLL.DAL
 				}
 			}
 			
+			public static SqlParameter DateUpdate
+			{
+				get
+				{
+					return new SqlParameter("@DateUpdate", SqlDbType.SmallDateTime, 0);
+				}
+			}
+			
 		}
 		#endregion		
 	
@@ -294,6 +302,7 @@ namespace VikkiSoft_BLL.DAL
             public const string Description_uk = "Description_uk";
             public const string Description_en = "Description_en";
             public const string Description_ru = "Description_ru";
+            public const string DateUpdate = "DateUpdate";
 
 			static public string ToPropertyName(string columnName)
 			{
@@ -322,6 +331,7 @@ namespace VikkiSoft_BLL.DAL
 					ht[Description_uk] = _Country.PropertyNames.Description_uk;
 					ht[Description_en] = _Country.PropertyNames.Description_en;
 					ht[Description_ru] = _Country.PropertyNames.Description_ru;
+					ht[DateUpdate] = _Country.PropertyNames.DateUpdate;
 
 				}
 				return (string)ht[columnName];
@@ -355,6 +365,7 @@ namespace VikkiSoft_BLL.DAL
             public const string Description_uk = "Description_uk";
             public const string Description_en = "Description_en";
             public const string Description_ru = "Description_ru";
+            public const string DateUpdate = "DateUpdate";
 
 			static public string ToColumnName(string propertyName)
 			{
@@ -383,6 +394,7 @@ namespace VikkiSoft_BLL.DAL
 					ht[Description_uk] = _Country.ColumnNames.Description_uk;
 					ht[Description_en] = _Country.ColumnNames.Description_en;
 					ht[Description_ru] = _Country.ColumnNames.Description_ru;
+					ht[DateUpdate] = _Country.ColumnNames.DateUpdate;
 
 				}
 				return (string)ht[propertyName];
@@ -416,6 +428,7 @@ namespace VikkiSoft_BLL.DAL
             public const string Description_uk = "s_Description_uk";
             public const string Description_en = "s_Description_en";
             public const string Description_ru = "s_Description_ru";
+            public const string DateUpdate = "s_DateUpdate";
 
 		}
 		#endregion		
@@ -671,6 +684,18 @@ namespace VikkiSoft_BLL.DAL
 			set
 	        {
 				base.Setstring(ColumnNames.Description_ru, value);
+			}
+		}
+
+		public virtual DateTime DateUpdate
+	    {
+			get
+	        {
+				return base.GetDateTime(ColumnNames.DateUpdate);
+			}
+			set
+	        {
+				base.SetDateTime(ColumnNames.DateUpdate, value);
 			}
 		}
 
@@ -994,6 +1019,21 @@ namespace VikkiSoft_BLL.DAL
 			}
 		}
 
+		public virtual string s_DateUpdate
+	    {
+			get
+	        {
+				return this.IsColumnNull(ColumnNames.DateUpdate) ? string.Empty : base.GetDateTimeAsString(ColumnNames.DateUpdate);
+			}
+			set
+	        {
+				if(string.Empty == value)
+					this.SetColumnNull(ColumnNames.DateUpdate);
+				else
+					this.DateUpdate = base.SetDateTimeAsString(ColumnNames.DateUpdate, value);
+			}
+		}
+
 
 		#endregion		
 	
@@ -1232,6 +1272,16 @@ namespace VikkiSoft_BLL.DAL
 					get
 					{
 							WhereParameter where = new WhereParameter(ColumnNames.Description_ru, Parameters.Description_ru);
+							this._clause._entity.Query.AddWhereParameter(where);
+							return where;
+					}
+				}
+
+				public WhereParameter DateUpdate
+				{
+					get
+					{
+							WhereParameter where = new WhereParameter(ColumnNames.DateUpdate, Parameters.DateUpdate);
 							this._clause._entity.Query.AddWhereParameter(where);
 							return where;
 					}
@@ -1494,6 +1544,18 @@ namespace VikkiSoft_BLL.DAL
 				}
 			}
 
+			public WhereParameter DateUpdate
+		    {
+				get
+		        {
+					if(_DateUpdate_W == null)
+	        	    {
+						_DateUpdate_W = TearOff.DateUpdate;
+					}
+					return _DateUpdate_W;
+				}
+			}
+
 			private WhereParameter _CountryID_W = null;
 			private WhereParameter _Name_uk_W = null;
 			private WhereParameter _Name_en_W = null;
@@ -1515,6 +1577,7 @@ namespace VikkiSoft_BLL.DAL
 			private WhereParameter _Description_uk_W = null;
 			private WhereParameter _Description_en_W = null;
 			private WhereParameter _Description_ru_W = null;
+			private WhereParameter _DateUpdate_W = null;
 
 			public void WhereClauseReset()
 			{
@@ -1539,6 +1602,7 @@ namespace VikkiSoft_BLL.DAL
 				_Description_uk_W = null;
 				_Description_en_W = null;
 				_Description_ru_W = null;
+				_DateUpdate_W = null;
 
 				this._entity.Query.FlushWhereParameters();
 
@@ -1805,6 +1869,16 @@ namespace VikkiSoft_BLL.DAL
 					}
 				}
 
+				public AggregateParameter DateUpdate
+				{
+					get
+					{
+							AggregateParameter aggregate = new AggregateParameter(ColumnNames.DateUpdate, Parameters.DateUpdate);
+							this._clause._entity.Query.AddAggregateParameter(aggregate);
+							return aggregate;
+					}
+				}
+
 
 				private AggregateClause _clause;
 			}
@@ -2062,6 +2136,18 @@ namespace VikkiSoft_BLL.DAL
 				}
 			}
 
+			public AggregateParameter DateUpdate
+		    {
+				get
+		        {
+					if(_DateUpdate_W == null)
+	        	    {
+						_DateUpdate_W = TearOff.DateUpdate;
+					}
+					return _DateUpdate_W;
+				}
+			}
+
 			private AggregateParameter _CountryID_W = null;
 			private AggregateParameter _Name_uk_W = null;
 			private AggregateParameter _Name_en_W = null;
@@ -2083,6 +2169,7 @@ namespace VikkiSoft_BLL.DAL
 			private AggregateParameter _Description_uk_W = null;
 			private AggregateParameter _Description_en_W = null;
 			private AggregateParameter _Description_ru_W = null;
+			private AggregateParameter _DateUpdate_W = null;
 
 			public void AggregateClauseReset()
 			{
@@ -2107,6 +2194,7 @@ namespace VikkiSoft_BLL.DAL
 				_Description_uk_W = null;
 				_Description_en_W = null;
 				_Description_ru_W = null;
+				_DateUpdate_W = null;
 
 				this._entity.Query.FlushAggregateParameters();
 
@@ -2263,6 +2351,10 @@ namespace VikkiSoft_BLL.DAL
 
 			p = cmd.Parameters.Add(Parameters.Description_ru);
 			p.SourceColumn = ColumnNames.Description_ru;
+			p.SourceVersion = DataRowVersion.Current;
+
+			p = cmd.Parameters.Add(Parameters.DateUpdate);
+			p.SourceColumn = ColumnNames.DateUpdate;
 			p.SourceVersion = DataRowVersion.Current;
 
 

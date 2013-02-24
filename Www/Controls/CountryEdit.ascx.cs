@@ -57,4 +57,11 @@ public partial class CountryEdit : EditControlBase
         }
         base.SetEventHandlers();
     }
+
+    protected override void WriteDataToEntity()
+    {
+        base.WriteDataToEntity();
+        Country c = (Country)this.EditableEntity;
+        c.DateUpdate = DateTime.Now;
+    }
 }

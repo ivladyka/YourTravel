@@ -289,14 +289,19 @@ public class Utils
         }
     }
 
-    public static string GenerateFriendlyURL(string subfolderName, string[] titles)
+    public static string GenerateFriendlyURL(string subfolderName, string[] titles, bool dafaultFolder)
     {
-        string friendlyURL = "~/" + subfolderName + "/";
+        string friendlyURL = (dafaultFolder ? "~/" : "") + subfolderName + "/";
         foreach (string title in titles)
         {
             friendlyURL += PrepareFolderName(title) + "/";
         }
         return friendlyURL;
+    }
+
+    public static string GenerateFriendlyURL(string subfolderName, string[] titles)
+    {
+        return GenerateFriendlyURL(subfolderName, titles, true);
     }
 
     private static string PrepareFolderName(string title)

@@ -81,4 +81,10 @@ public partial class CityEdit : EditControlBase
         }
     }
 
+    protected override void WriteDataToEntity()
+    {
+        base.WriteDataToEntity();
+        City c = (City)this.EditableEntity;
+        c.DateUpdate = DateTime.Now;
+    }
 }
