@@ -12,3 +12,10 @@ D:\project\YourTravel\Db\DALProjects\YourTravel_DAL\bin\Debug\MyGeneration.dOOda
 D:\project\YourTravel\Db\DALProjects\YourTravel_DAL\obj\Debug\YourTravel_DAL.csprojResolveAssemblyReference.cache
 D:\project\YourTravel\Db\DALProjects\YourTravel_DAL\obj\Debug\YourTravel_DAL.dll
 D:\project\YourTravel\Db\DALProjects\YourTravel_DAL\obj\Debug\YourTravel_DAL.pdb
+E:\Project\YourTravel\Db\DALProjects\YourTravel_DAL\bin\Debug\YourTravel_DAL.dll
+E:\Project\YourTravel\Db\DALProjects\YourTravel_DAL\bin\Debug\YourTravel_DAL.pdb
+E:\Project\YourTravel\Db\DALProjects\YourTravel_DAL\bin\Debug\MyGeneration.dOOdads.dll
+E:\Project\YourTravel\Db\DALProjects\YourTravel_DAL\bin\Debug\MyGeneration.dOOdads.pdb
+E:\Project\YourTravel\Db\DALProjects\YourTravel_DAL\obj\Debug\YourTravel_DAL.csprojResolveAssemblyReference.cache
+E:\Project\YourTravel\Db\DALProjects\YourTravel_DAL\obj\Debug\YourTravel_DAL.dll
+E:\Project\YourTravel\Db\DALProjects\YourTravel_DAL\obj\Debug\YourTravel_DAL.pdb
